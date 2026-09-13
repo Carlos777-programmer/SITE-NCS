@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCS Garage | Vitrine de Projetos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#04060b] text-slate-100 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Header / Navbar -->
+    <header class="border-b border-slate-800 py-4 px-6 flex justify-between items-center bg-[#04060b]/80 backdrop-blur sticky top-0 z-50">
+        <h1 class="text-xl font-bold tracking-wider text-white">NCS <span class="text-blue-500">GARAGE</span></h1>
+        <a href="https://wa.me/" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition">Contato</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-16 px-6 text-center max-w-4xl mx-auto">
+        <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4 text-white">Projetos, Performance e Estilo</h2>
+        <p class="text-slate-400 text-lg mb-8">Acompanhe os veículos que passam pela nossa oficina e conheça o nível de acabamento dos nossos serviços.</p>
+    </section>
+
+    <!-- Grid de Veículos (Aqui os dados virão da API do Django) -->
+    <main class="flex-grow px-6 max-w-7xl mx-auto w-full pb-16">
+        <div id="vehicle-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Exemplo de Card Estático -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-lg hover:border-slate-700 transition">
+                <div class="h-48 bg-slate-800 flex items-center justify-center text-slate-500">
+                    [Foto do Veículo]
+                </div>
+                <div class="p-5">
+                    <span class="text-xs uppercase font-semibold text-blue-400 tracking-wider">Customizado</span>
+                    <h3 class="text-xl font-bold text-white mt-1">Exemplo de Veículo</h3>
+                    <p class="text-slate-400 text-sm mt-2">Ano 2023 • Motor 2.0 Turbo • Full Body Kit</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 py-6 text-center text-slate-500 text-sm">
+        &copy; 2026 NCS Garage. Todos os direitos reservados.
+    </footer>
+
+</body>
+</html>
