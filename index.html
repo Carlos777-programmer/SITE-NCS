@@ -92,10 +92,17 @@ input[type=range]{accent-color:#38bdf8}
   <div class="max-w-7xl mx-auto px-4 sm:px-6 h-[72px] flex items-center justify-between">
     <a href="#top" class="flex items-center gap-3 group">
       <div class="pulse-dot w-3 h-3 rounded-full bg-sky-400"></div>
-      <div><div class="font-display font-black text-lg tracking-[.18em] text-white">NCS <span class="text-sky-400">GARAGE</span></div><div class="text-[8px] text-slate-500 tracking-[.28em] uppercase">Engineering • Care • Sound</div></div>
+      <div>
+        <div class="font-display font-black text-lg tracking-[.18em] text-white">NCS <span class="text-sky-400">GARAGE</span></div>
+        <div class="text-[8px] text-slate-500 tracking-[.28em] uppercase">Engineering • Care • Sound</div>
+      </div>
     </a>
     <nav class="hidden lg:flex items-center gap-7 text-[10px] uppercase tracking-[.16em] font-bold text-slate-500">
-      <a class="hover:text-white transition" href="#experience">Experiência</a><a class="hover:text-white transition" href="#services">Serviços</a><a class="hover:text-white transition" href="#projects">Projetos</a><a class="hover:text-white transition" href="#process">Processo</a><a class="hover:text-white transition" href="#reviews">Clientes</a>
+      <a class="hover:text-white transition" href="#experience">Experiência</a>
+      <a class="hover:text-white transition" href="#services">Serviços</a>
+      <a class="hover:text-white transition" href="#projects">Projetos</a>
+      <a class="hover:text-white transition" href="#process">Processo</a>
+      <a class="hover:text-white transition" href="#reviews">Clientes</a>
     </nav>
     <div class="flex items-center gap-2">
       <button id="menuBtn" class="lg:hidden w-10 h-10 rounded-xl glass flex items-center justify-center" aria-label="Abrir menu"><i data-lucide="menu" class="w-4 h-4"></i></button>
@@ -103,220 +110,628 @@ input[type=range]{accent-color:#38bdf8}
     </div>
   </div>
   <div id="mobileMenu" class="mobile-menu lg:hidden absolute top-[72px] inset-x-0 bg-[#05080d]/95 backdrop-blur-2xl border-b border-white/5">
-    <nav class="max-w-7xl mx-auto px-4 py-4 grid gap-2 text-sm font-semibold"><a class="p-3 rounded-xl hover:bg-white/5" href="#experience">Experiência</a><a class="p-3 rounded-xl hover:bg-white/5" href="#services">Serviços</a><a class="p-3 rounded-xl hover:bg-white/5" href="#projects">Projetos</a><a class="p-3 rounded-xl hover:bg-white/5" href="#process">Processo</a><a class="p-3 rounded-xl hover:bg-white/5" href="#reviews">Clientes</a><a href="#quote" class="btn-primary p-3 rounded-xl text-center">Solicitar orçamento</a></nav>
+    <nav class="max-w-7xl mx-auto px-4 py-4 grid gap-2 text-sm font-semibold">
+      <a class="p-3 rounded-xl hover:bg-white/5" href="#experience">Experiência</a>
+      <a class="p-3 rounded-xl hover:bg-white/5" href="#services">Serviços</a>
+      <a class="p-3 rounded-xl hover:bg-white/5" href="#projects">Projetos</a>
+      <a class="p-3 rounded-xl hover:bg-white/5" href="#process">Processo</a>
+      <a class="p-3 rounded-xl hover:bg-white/5" href="#reviews">Clientes</a>
+      <a href="#quote" class="btn-primary p-3 rounded-xl text-center">Solicitar orçamento</a>
+    </nav>
   </div>
 </header>
 
 <main id="top" class="relative z-10 pt-[72px]">
-<!-- HERO -->
-<section id="experience" class="relative overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-16 sm:pt-24 pb-12">
-    <div class="grid lg:grid-cols-[1.1fr_.9fr] gap-10 items-center">
-      <div class="reveal">
-        <div class="badge mb-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Atendimento por agendamento • Ribeirão Preto & região</div>
-        <h1 class="font-display text-5xl sm:text-7xl lg:text-[82px] leading-[.94] font-black tracking-[-.055em] max-w-4xl">SEU CARRO.<br><span class="gradient-text">OUTRO NÍVEL.</span></h1>
-        <p class="mt-7 text-slate-400 text-sm sm:text-base max-w-xl leading-7">Estética automotiva, elétrica e som tratados como projeto — não como improviso. Diagnóstico, execução e acabamento com padrão premium do primeiro contato à entrega.</p>
-        <div class="mt-8 flex flex-col sm:flex-row gap-3">
-          <a href="#quote" class="btn-primary inline-flex justify-center items-center gap-2 px-6 py-4 rounded-2xl text-xs font-black uppercase tracking-[.14em]"><i data-lucide="sparkles" class="w-4 h-4"></i> Montar meu orçamento</a>
-          <a href="#projects" class="btn-secondary inline-flex justify-center items-center gap-2 px-6 py-4 rounded-2xl text-xs font-black uppercase tracking-[.14em]"><i data-lucide="play-circle" class="w-4 h-4"></i> Ver padrão de entrega</a>
-        </div>
-        <div class="mt-9 grid grid-cols-3 max-w-xl gap-4">
-          <div><div class="text-2xl font-display font-black text-white number" data-count="3">0</div><div class="range-label mt-1">Pilares de atuação</div></div>
-          <div><div class="text-2xl font-display font-black text-white">360°</div><div class="range-label mt-1">Visão do veículo</div></div>
-          <div><div class="text-2xl font-display font-black text-white">1:1</div><div class="range-label mt-1">Atendimento direto</div></div>
-        </div>
-      </div>
-      <div class="reveal relative">
-        <div class="glow-card p-3 sm:p-4 float">
-          <div class="rounded-[20px] aspect-[4/3] bg-[radial-gradient(circle_at_30%_30%,rgba(56,189,248,.22),transparent_28%),linear-gradient(145deg,#111a25,#05080b)] relative overflow-hidden">
-            <div class="absolute inset-0 opacity-40" style="background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:28px 28px"></div>
-            <div class="absolute top-5 left-5 text-[9px] font-bold tracking-[.2em] text-slate-500 uppercase">NCS / WORKFLOW 01</div>
-            <div class="absolute top-5 right-5 badge">Live service flow</div>
-            <div class="car-shape !bottom-[24%]"></div><div class="window !bottom-[41%]"></div>
-            <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between"><div><div class="text-[9px] uppercase tracking-[.16em] text-slate-500">Manifesto</div><div class="font-display font-bold text-xl">Sem gambiarra. Sem pressa.</div></div><div class="text-right"><div class="text-xs font-bold text-sky-400">PRECISÃO</div><div class="text-[9px] text-slate-500 uppercase tracking-widest">+ acabamento</div></div></div>
+  <!-- HERO -->
+  <section id="experience" class="relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-16 sm:pt-24 pb-12">
+      <div class="grid lg:grid-cols-[1.1fr_.9fr] gap-10 items-center">
+        <div class="reveal">
+          <div class="badge mb-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Atendimento por agendamento • Ribeirão Preto & região</div>
+          <h1 class="font-display text-5xl sm:text-7xl lg:text-[82px] leading-[.94] font-black tracking-[-.055em] max-w-4xl">SEU CARRO.<br><span class="gradient-text">OUTRO NÍVEL.</span></h1>
+          <p class="mt-7 text-slate-400 text-sm sm:text-base max-w-xl leading-7">Estética automotiva, elétrica e som tratados como projeto — não como improviso. Diagnóstico, execução e acabamento com padrão premium do primeiro contato à entrega.</p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="#quote" class="btn-primary inline-flex justify-center items-center gap-2 px-6 py-4 rounded-2xl text-xs font-black uppercase tracking-[.14em]"><i data-lucide="sparkles" class="w-4 h-4"></i> Montar meu orçamento</a>
+            <a href="#projects" class="btn-secondary inline-flex justify-center items-center gap-2 px-6 py-4 rounded-2xl text-xs font-black uppercase tracking-[.14em]"><i data-lucide="play-circle" class="w-4 h-4"></i> Ver padrão de entrega</a>
+          </div>
+          <div class="mt-9 grid grid-cols-3 max-w-xl gap-4">
+            <div>
+              <div class="text-2xl font-display font-black text-white number" data-count="3">0</div>
+              <div class="range-label mt-1">Pilares de atuação</div>
+            </div>
+            <div>
+              <div class="text-2xl font-display font-black text-white">360°</div>
+              <div class="range-label mt-1">Visão do veículo</div>
+            </div>
+            <div>
+              <div class="text-2xl font-display font-black text-white">1:1</div>
+              <div class="range-label mt-1">Atendimento direto</div>
+            </div>
           </div>
         </div>
+        <div class="reveal relative">
+          <div class="glow-card p-3 sm:p-4 float">
+            <div class="rounded-[20px] aspect-[4/3] bg-[radial-gradient(circle_at_30%_30%,rgba(56,189,248,.22),transparent_28%),linear-gradient(145deg,#111a25,#05080b)] relative overflow-hidden">
+              <div class="absolute inset-0 opacity-40" style="background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:28px 28px"></div>
+              <div class="absolute top-5 left-5 text-[9px] font-bold tracking-[.2em] text-slate-500 uppercase">NCS / WORKFLOW 01</div>
+              <div class="absolute top-5 right-5 badge">Live service flow</div>
+              <div class="car-shape !bottom-[24%]"></div>
+              <div class="window !bottom-[41%]"></div>
+              <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between">
+                <div>
+                  <div class="text-[9px] uppercase tracking-[.16em] text-slate-500">Manifesto</div>
+                  <div class="font-display font-bold text-xl">Sem gambiarra. Sem pressa.</div>
+                </div>
+                <div class="text-right">
+                  <div class="text-xs font-bold text-sky-400">PRECISÃO</div>
+                  <div class="text-[9px] text-slate-500 uppercase tracking-widest">+ acabamento</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-line mt-16"></div>
     </div>
-    <div class="hero-line mt-16"></div>
-  </div>
-</section>
+  </section>
 
-<!-- TRUST STRIP -->
-<section class="py-5 border-y border-white/5 bg-white/[.015]">
- <div class="marquee overflow-hidden"><div class="marquee-track gap-10 opacity-60 text-[10px] uppercase font-black tracking-[.22em] text-slate-500"><span>Diagnóstico preciso</span><span>•</span><span>Acabamento premium</span><span>•</span><span>Instalação limpa</span><span>•</span><span>Atendimento transparente</span><span>•</span><span>Sem gambiarras</span><span>•</span><span>Diagnóstico preciso</span><span>•</span><span>Acabamento premium</span><span>•</span><span>Instalação limpa</span><span>•</span><span>Atendimento transparente</span><span>•</span><span>Sem gambiarras</span><span>•</span></div></div>
-</section>
-
-<!-- VALUE SYSTEM -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
- <div class="reveal max-w-3xl"><div class="eyebrow mb-3">Por que a NCS</div><h2 class="font-display text-3xl sm:text-5xl font-black tracking-tight">Você não compra uma tarefa.<br><span class="gradient-text">Compra confiança no resultado.</span></h2></div>
- <div class="grid md:grid-cols-3 gap-5 mt-10">
-   <article class="glow-card p-6 reveal"><div class="w-11 h-11 rounded-2xl bg-sky-500/10 text-sky-400 flex items-center justify-center"><i data-lucide="search-check"></i></div><h3 class="font-display text-xl font-bold mt-5">Diagnóstico antes da ação</h3><p class="text-sm text-slate-500 leading-6 mt-2">Entendemos o problema, o objetivo e o estado do carro antes de prometer solução.</p></article>
-   <article class="glow-card p-6 reveal"><div class="w-11 h-11 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center"><i data-lucide="workflow"></i></div><h3 class="font-display text-xl font-bold mt-5">Execução com método</h3><p class="text-sm text-slate-500 leading-6 mt-2">Cada serviço segue uma sequência técnica pensada para reduzir retrabalho e preservar o veículo.</p></article>
-   <article class="glow-card p-6 reveal"><div class="w-11 h-11 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center"><i data-lucide="badge-check"></i></div><h3 class="font-display text-xl font-bold mt-5">Entrega que você percebe</h3><p class="text-sm text-slate-500 leading-6 mt-2">O padrão é entregar limpo, organizado, explicado e com transparência sobre o que foi feito.</p></article>
- </div>
-</section>
-
-<!-- QUOTE BUILDER -->
-<section id="quote" class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
- <div class="glow-card overflow-visible">
-  <div class="grid lg:grid-cols-[1fr_.8fr]">
-   <div class="p-6 sm:p-9 lg:p-11">
-    <div class="eyebrow mb-2">Orçamento inteligente</div><h2 class="font-display text-3xl sm:text-4xl font-black">Monte uma prévia do seu atendimento.</h2><p class="text-sm text-slate-500 mt-2 max-w-xl">A estimativa abaixo é uma referência comercial. O valor final depende do estado do veículo, peças, materiais e complexidade.</p>
-    <div class="mt-8 grid sm:grid-cols-2 gap-5">
-      <label class="block"><span class="range-label">Seu veículo</span><select id="vehicle" class="mt-2 w-full rounded-2xl bg-black/25 border border-white/10 px-4 py-3.5 text-sm outline-none focus:border-sky-400/50"><option>Hatch / Sedan médio</option><option>SUV / Picape</option><option>Esportivo / Premium</option></select></label>
-      <label class="block"><span class="range-label">Prioridade</span><select id="priority" class="mt-2 w-full rounded-2xl bg-black/25 border border-white/10 px-4 py-3.5 text-sm outline-none focus:border-sky-400/50"><option>Quero resolver um problema</option><option>Quero melhorar o carro</option><option>Quero transformar o carro</option></select></label>
+  <!-- TRUST STRIP -->
+  <section class="py-5 border-y border-white/5 bg-white/[.015]">
+    <div class="marquee overflow-hidden">
+      <div class="marquee-track gap-10 opacity-60 text-[10px] uppercase font-black tracking-[.22em] text-slate-500">
+        <span>Diagnóstico preciso</span><span>•</span><span>Acabamento premium</span><span>•</span><span>Instalação limpa</span><span>•</span><span>Atendimento transparente</span><span>•</span><span>Sem gambiarras</span><span>•</span>
+        <span>Diagnóstico preciso</span><span>•</span><span>Acabamento premium</span><span>•</span><span>Instalação limpa</span><span>•</span><span>Atendimento transparente</span><span>•</span><span>Sem gambiarras</span><span>•</span>
+      </div>
     </div>
-    <div class="mt-6"><div class="range-label mb-3">O que você quer fazer?</div><div id="serviceChoices" class="grid sm:grid-cols-2 gap-3"></div></div>
-    <div class="mt-7 p-4 rounded-2xl bg-sky-400/[.045] border border-sky-400/10 flex gap-3"><i data-lucide="info" class="w-4 h-4 mt-0.5 text-sky-400 shrink-0"></i><p class="text-xs text-slate-500 leading-5">A melhor venda começa pela clareza. Por isso, o cliente recebe uma prévia do escopo antes de conversar com a equipe.</p></div>
-   </div>
-   <aside class="border-t lg:border-t-0 lg:border-l border-white/5 p-6 sm:p-9 lg:p-11 bg-white/[.018] rounded-b-[26px] lg:rounded-r-[26px] flex flex-col justify-between">
-    <div><div class="range-label">Estimativa dinâmica</div><div id="estimate" class="font-display text-4xl sm:text-5xl font-black text-white mt-2">R$ 0</div><div id="estimateText" class="text-xs text-slate-500 mt-2">Selecione um ou mais serviços.</div><div class="metric-line mt-6"></div><div id="estimateBreakdown" class="mt-5 space-y-2"></div></div>
-    <div class="mt-8"><button id="sendQuote" class="btn-primary w-full py-4 rounded-2xl text-xs font-black uppercase tracking-[.14em] flex items-center justify-center gap-2"><i data-lucide="message-circle" class="w-4 h-4"></i> Quero conversar no WhatsApp</button><button id="copyQuote" class="btn-secondary w-full mt-3 py-3 rounded-2xl text-[10px] font-black uppercase tracking-[.14em] flex items-center justify-center gap-2"><i data-lucide="copy" class="w-4 h-4"></i> Copiar prévia</button></div>
-   </aside>
-  </div>
- </div>
-</section>
+  </section>
 
-<!-- SERVICES -->
-<section id="services" class="max-w-7xl mx-auto px-4 sm:px-6 py-20">
- <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 reveal"><div><div class="eyebrow mb-3">Portfólio de atuação</div><h2 class="font-display text-3xl sm:text-5xl font-black">Um ecossistema. <span class="gradient-text">Três especialidades.</span></h2></div><p class="text-sm text-slate-500 max-w-md">Tudo conectado pela mesma filosofia: precisão técnica, instalação limpa e resultado que faz sentido para o carro.</p></div>
- <div class="flex flex-wrap gap-2 mt-8 reveal" id="serviceTabs"><button data-filter="all" class="service-tab active px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em]">Todos</button><button data-filter="estetica" class="service-tab px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em] text-slate-500">Estética</button><button data-filter="audio" class="service-tab px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em] text-slate-500">Som</button><button data-filter="eletrica" class="service-tab px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em] text-slate-500">Elétrica</button></div>
- <div id="serviceGrid" class="grid lg:grid-cols-3 gap-5 mt-6"></div>
-</section>
-
-<!-- PROCESS -->
-<section id="process" class="max-w-7xl mx-auto px-4 sm:px-6 py-20">
- <div class="reveal text-center max-w-3xl mx-auto"><div class="eyebrow mb-3">Como funciona</div><h2 class="font-display text-3xl sm:text-5xl font-black">A experiência começa <span class="gradient-text">antes da oficina.</span></h2><p class="text-slate-500 mt-4 text-sm leading-6">Você sabe o que vai acontecer, por que vai acontecer e qual é o próximo passo.</p></div>
- <div class="grid md:grid-cols-4 gap-4 mt-12">
-   <article class="reveal relative p-6 rounded-3xl border border-white/5 bg-white/[.02]"><div class="timeline-dot w-10 h-10 rounded-full bg-sky-500/10 text-sky-400 flex items-center justify-center font-display font-black">01</div><h3 class="mt-5 font-bold">Conversa</h3><p class="text-xs text-slate-500 leading-5 mt-2">Você explica o que quer. A equipe entende o contexto e o objetivo.</p></article>
-   <article class="reveal relative p-6 rounded-3xl border border-white/5 bg-white/[.02]"><div class="timeline-dot w-10 h-10 rounded-full bg-sky-500/10 text-sky-400 flex items-center justify-center font-display font-black">02</div><h3 class="mt-5 font-bold">Diagnóstico</h3><p class="text-xs text-slate-500 leading-5 mt-2">O carro é avaliado para definir escopo, materiais e melhor abordagem.</p></article>
-   <article class="reveal relative p-6 rounded-3xl border border-white/5 bg-white/[.02]"><div class="timeline-dot w-10 h-10 rounded-full bg-sky-500/10 text-sky-400 flex items-center justify-center font-display font-black">03</div><h3 class="mt-5 font-bold">Execução</h3><p class="text-xs text-slate-500 leading-5 mt-2">O serviço é realizado com organização, cuidado e foco no acabamento.</p></article>
-   <article class="reveal relative p-6 rounded-3xl border border-white/5 bg-white/[.02]"><div class="timeline-dot w-10 h-10 rounded-full bg-sky-500/10 text-sky-400 flex items-center justify-center font-display font-black">04</div><h3 class="mt-5 font-bold">Entrega</h3><p class="text-xs text-slate-500 leading-5 mt-2">Você recebe o carro e uma explicação objetiva do que foi feito.</p></article>
- </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="max-w-7xl mx-auto px-4 sm:px-6 py-20">
- <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-5 reveal"><div><div class="eyebrow mb-3">Padrão de entrega</div><h2 class="font-display text-3xl sm:text-5xl font-black">Projetos que mostram <span class="gradient-text">como pensamos.</span></h2></div><button id="openGallery" class="btn-secondary px-4 py-3 rounded-xl text-[10px] font-black uppercase tracking-[.14em]">Expandir portfólio</button></div>
- <div class="grid md:grid-cols-3 gap-5 mt-8">
-   <article class="gallery-tile reveal"><div class="car-shape"></div><div class="window"></div><div class="absolute inset-0 p-6 flex flex-col justify-between"><div class="flex justify-between"><span class="badge">Áudio & acústica</span><span class="text-[9px] text-slate-600 uppercase tracking-widest">01</span></div><div><h3 class="font-display text-2xl font-bold">Hi-Fi sem perder originalidade</h3><p class="text-xs text-slate-500 mt-2 max-w-xs">Tratamento, integração e organização da instalação para o som evoluir sem transformar o interior em um caos.</p></div></div></article>
-   <article class="gallery-tile reveal"><div class="car-shape !bg-gradient-to-b !from-slate-500 !to-slate-900 !opacity-70"></div><div class="window !bg-gradient-to-br !from-indigo-300/35 !to-slate-900/20"></div><div class="absolute inset-0 p-6 flex flex-col justify-between"><div class="flex justify-between"><span class="badge">Estética</span><span class="text-[9px] text-slate-600 uppercase tracking-widest">02</span></div><div><h3 class="font-display text-2xl font-bold">Detalhamento que revela o carro</h3><p class="text-xs text-slate-500 mt-2 max-w-xs">Descontaminação, cuidado de áreas críticas e proteção para preservar o resultado por mais tempo.</p></div></div></article>
-   <article class="gallery-tile reveal"><div class="car-shape !from-cyan-900 !to-slate-950"></div><div class="window !from-cyan-200/35 !to-slate-900/20"></div><div class="absolute inset-0 p-6 flex flex-col justify-between"><div class="flex justify-between"><span class="badge">Elétrica</span><span class="text-[9px] text-slate-600 uppercase tracking-widest">03</span></div><div><h3 class="font-display text-2xl font-bold">Elétrica limpa e confiável</h3><p class="text-xs text-slate-500 mt-2 max-w-xs">Diagnóstico de falhas, acessórios e acabamento de chicotes com foco em segurança e confiabilidade.</p></div></div></article>
- </div>
- <div class="mt-5 p-5 rounded-3xl border border-dashed border-white/10 text-center text-xs text-slate-600">As imagens reais dos seus projetos podem entrar aqui. A estrutura já está preparada para transformar cada caso em uma história de resultado.</div>
-</section>
-
-<!-- PHILOSOPHY -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
- <div class="glow-card p-7 sm:p-12 reveal overflow-hidden"><div class="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-blue-500/10 blur-3xl"></div><div class="relative max-w-4xl"><div class="eyebrow">Manifesto NCS</div><h2 class="font-display text-3xl sm:text-5xl font-black mt-3">“O cliente não deveria precisar entender de carro para sentir que está em boas mãos.”</h2><p class="text-slate-400 text-sm sm:text-base leading-7 mt-6 max-w-3xl">Nosso trabalho é traduzir um problema ou desejo em uma experiência clara. Isso significa explicar, executar bem, cuidar do detalhe e nunca esconder o que está sendo feito.</p><div class="mt-7 flex flex-wrap gap-2"><span class="badge">Transparência</span><span class="badge">Precisão</span><span class="badge">Cuidado</span><span class="badge">Organização</span></div></div></div>
-</section>
-
-<!-- REVIEWS -->
-<section id="reviews" class="max-w-7xl mx-auto px-4 sm:px-6 py-20">
- <div class="text-center reveal"><div class="eyebrow mb-3">Prova social</div><h2 class="font-display text-3xl sm:text-5xl font-black">A confiança é parte <span class="gradient-text">do serviço.</span></h2><p class="text-xs text-slate-600 mt-3">Use aqui avaliações reais do Google, WhatsApp ou Instagram. Nada de depoimento inventado.</p></div>
- <div class="grid md:grid-cols-3 gap-5 mt-10">
-  <article class="glow-card p-6 reveal"><div class="flex gap-1 text-sky-400">★★★★★</div><p class="text-sm leading-6 text-slate-300 mt-5">“Serviço impecável, atendimento claro e muito cuidado com o carro. Dá para perceber quando o profissional realmente gosta do que faz.”</p><div class="mt-7 pt-5 border-t border-white/5"><b class="text-sm">Cliente verificado</b><span class="block text-[10px] text-slate-600 uppercase tracking-widest mt-1">Avaliação real — inserir nome</span></div></article>
-  <article class="glow-card p-6 reveal"><div class="flex gap-1 text-sky-400">★★★★★</div><p class="text-sm leading-6 text-slate-300 mt-5">“Explicaram o problema antes de mexer no carro e entregaram tudo organizado. Foi isso que me fez voltar.”</p><div class="mt-7 pt-5 border-t border-white/5"><b class="text-sm">Cliente verificado</b><span class="block text-[10px] text-slate-600 uppercase tracking-widest mt-1">Avaliação real — inserir nome</span></div></article>
-  <article class="glow-card p-6 reveal"><div class="flex gap-1 text-sky-400">★★★★★</div><p class="text-sm leading-6 text-slate-300 mt-5">“A diferença não foi só o resultado. Foi a segurança de saber o que estava sendo feito e por quê.”</p><div class="mt-7 pt-5 border-t border-white/5"><b class="text-sm">Cliente verificado</b><span class="block text-[10px] text-slate-600 uppercase tracking-widest mt-1">Avaliação real — inserir nome</span></div></article>
- </div>
-</section>
-
-<!-- FAQ + CONTACT -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 pb-24">
- <div class="grid lg:grid-cols-[1fr_.75fr] gap-5 items-start">
-  <div class="reveal"><div class="eyebrow mb-3">Perguntas frequentes</div><h2 class="font-display text-3xl sm:text-4xl font-black">Antes de chamar, <span class="gradient-text">tire suas dúvidas.</span></h2>
-    <div class="mt-7 space-y-3" id="faqList">
-      <div class="faq glow-card p-5"><button class="faq-btn w-full flex justify-between items-center text-left font-bold text-sm"><span>Preciso agendar com antecedência?</span><span class="faq-icon w-7 h-7 rounded-full border border-white/10 flex items-center justify-center transition"><i data-lucide="plus" class="w-3 h-3"></i></span></button><div class="faq-content"><div><p class="pt-4 pr-8 text-xs leading-6 text-slate-500">Para serviços planejados, o agendamento é recomendado. Assim conseguimos reservar tempo e preparar materiais quando necessário.</p></div></div></div>
-      <div class="faq glow-card p-5"><button class="faq-btn w-full flex justify-between items-center text-left font-bold text-sm"><span>Vocês trabalham sem cortar fios “na gambiarra”?</span><span class="faq-icon w-7 h-7 rounded-full border border-white/10 flex items-center justify-center transition"><i data-lucide="plus" class="w-3 h-3"></i></span></button><div class="faq-content"><div><p class="pt-4 pr-8 text-xs leading-6 text-slate-500">A proposta da NCS é preservar o carro e priorizar conexões, acabamento e organização adequados ao projeto. O procedimento exato depende de cada veículo.</p></div></div></div>
-      <div class="faq glow-card p-5"><button class="faq-btn w-full flex justify-between items-center text-left font-bold text-sm"><span>O simulador é um preço fechado?</span><span class="faq-icon w-7 h-7 rounded-full border border-white/10 flex items-center justify-center transition"><i data-lucide="plus" class="w-3 h-3"></i></span></button><div class="faq-content"><div><p class="pt-4 pr-8 text-xs leading-6 text-slate-500">Não. Ele é uma prévia comercial para acelerar a conversa. O orçamento final depende do diagnóstico e do escopo definido com o cliente.</p></div></div></div>
-      <div class="faq glow-card p-5"><button class="faq-btn w-full flex justify-between items-center text-left font-bold text-sm"><span>Posso mandar fotos e vídeos do problema?</span><span class="faq-icon w-7 h-7 rounded-full border border-white/10 flex items-center justify-center transition"><i data-lucide="plus" class="w-3 h-3"></i></span></button><div class="faq-content"><div><p class="pt-4 pr-8 text-xs leading-6 text-slate-500">Sim — e isso pode agilizar bastante o primeiro diagnóstico. O WhatsApp é o melhor canal para essa triagem inicial.</p></div></div></div>
+  <!-- VALUE SYSTEM -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+    <div class="reveal max-w-3xl">
+      <div class="eyebrow mb-3">Por que a NCS</div>
+      <h2 class="font-display text-3xl sm:text-5xl font-black tracking-tight">Você não compra uma tarefa.<br><span class="gradient-text">Compra confiança no resultado.</span></h2>
     </div>
-  </div>
-  <aside class="glow-card p-7 reveal sticky top-24"><div class="eyebrow">Próximo passo</div><h3 class="font-display text-2xl font-bold mt-2">Leve seu caso direto para a conversa.</h3><p class="text-sm text-slate-500 leading-6 mt-3">Sem formulário gigante. Sem enrolação. Clique, explique o que precisa e envie fotos se tiver.</p><a id="heroWhatsapp" target="_blank" href="#" class="btn-primary w-full mt-7 py-4 rounded-2xl flex items-center justify-center gap-2 text-xs font-black uppercase tracking-[.14em]"><i data-lucide="message-circle" class="w-4 h-4"></i> Falar com a NCS</a><div class="mt-5 grid grid-cols-2 gap-3 text-center"><div class="rounded-2xl border border-white/5 bg-white/[.02] p-4"><div class="font-display font-black text-xl">1:1</div><div class="range-label mt-1">atendimento</div></div><div class="rounded-2xl border border-white/5 bg-white/[.02] p-4"><div class="font-display font-black text-xl">360°</div><div class="range-label mt-1">visão</div></div></div></aside>
- </div>
-</section>
+    <div class="grid md:grid-cols-3 gap-5 mt-10">
+      <article class="glow-card p-6 reveal">
+        <div class="w-11 h-11 rounded-2xl bg-sky-500/10 text-sky-400 flex items-center justify-center"><i data-lucide="search-check"></i></div>
+        <h3 class="font-display text-xl font-bold mt-5">Diagnóstico antes da ação</h3>
+        <p class="text-sm text-slate-500 leading-6 mt-2">Entendemos o problema, o objetivo e o estado do carro antes de prometer solução.</p>
+      </article>
+      <article class="glow-card p-6 reveal">
+        <div class="w-11 h-11 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center"><i data-lucide="workflow"></i></div>
+        <h3 class="font-display text-xl font-bold mt-5">Execução com método</h3>
+        <p class="text-sm text-slate-500 leading-6 mt-2">Cada serviço segue uma sequência técnica pensada para reduzir retrabalho e preservar o veículo.</p>
+      </article>
+      <article class="glow-card p-6 reveal">
+        <div class="w-11 h-11 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center"><i data-lucide="badge-check"></i></div>
+        <h3 class="font-display text-xl font-bold mt-5">Entrega que você percebe</h3>
+        <p class="text-sm text-slate-500 leading-6 mt-2">O padrão é entregar limpo, organizado, explicado e com transparência sobre o que foi feito.</p>
+      </article>
+    </div>
+  </section>
 
-<!-- FINAL CTA -->
-<section class="border-t border-white/5 bg-gradient-to-b from-sky-500/[.035] to-transparent">
- <div class="max-w-7xl mx-auto px-4 sm:px-6 py-20 text-center reveal"><div class="eyebrow mb-4">NCS Garage</div><h2 class="font-display text-4xl sm:text-6xl font-black tracking-tight">Seu carro merece um serviço<br><span class="gradient-text">à altura dele.</span></h2><p class="text-sm text-slate-500 max-w-xl mx-auto mt-5">Mostre o carro. Conte o objetivo. Deixe o resto com a gente.</p><a id="finalWhatsapp" target="_blank" href="#" class="btn-primary inline-flex items-center gap-2 mt-8 px-7 py-4 rounded-2xl text-xs font-black uppercase tracking-[.14em]"><i data-lucide="arrow-up-right" class="w-4 h-4"></i> Solicitar atendimento</a></div>
-</section>
+  <!-- QUOTE BUILDER -->
+  <section id="quote" class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+    <div class="glow-card overflow-visible">
+      <div class="grid lg:grid-cols-[1fr_.8fr]">
+        <div class="p-6 sm:p-9 lg:p-11">
+          <div class="eyebrow mb-2">Orçamento inteligente</div>
+          <h2 class="font-display text-3xl sm:text-4xl font-black">Monte uma prévia do seu atendimento.</h2>
+          <p class="text-sm text-slate-500 mt-2 max-w-xl">A estimativa abaixo é uma referência comercial. O valor final depende do estado do veículo, peças, materiais e complexidade.</p>
+          <div class="mt-8 grid sm:grid-cols-2 gap-5">
+            <label class="block">
+              <span class="range-label">Seu veículo</span>
+              <select id="vehicle" class="mt-2 w-full rounded-2xl bg-black/25 border border-white/10 px-4 py-3.5 text-sm outline-none focus:border-sky-400/50">
+                <option>Hatch / Sedan médio</option>
+                <option>SUV / Picape</option>
+                <option>Esportivo / Premium</option>
+              </select>
+            </label>
+            <label class="block">
+              <span class="range-label">Prioridade</span>
+              <select id="priority" class="mt-2 w-full rounded-2xl bg-black/25 border border-white/10 px-4 py-3.5 text-sm outline-none focus:border-sky-400/50">
+                <option>Quero resolver um problema</option>
+                <option>Quero melhorar o carro</option>
+                <option>Quero transformar o carro</option>
+              </select>
+            </label>
+          </div>
+          <div class="mt-6">
+            <div class="range-label mb-3">O que você quer fazer?</div>
+            <div id="serviceChoices" class="grid sm:grid-cols-2 gap-3"></div>
+          </div>
+          <div class="mt-7 p-4 rounded-2xl bg-sky-400/[.045] border border-sky-400/10 flex gap-3">
+            <i data-lucide="info" class="w-4 h-4 mt-0.5 text-sky-400 shrink-0"></i>
+            <p class="text-xs text-slate-500 leading-5">A melhor venda começa pela clareza. Por isso, o cliente recebe uma prévia do escopo antes de conversar com a equipe.</p>
+          </div>
+        </div>
+        <aside class="border-t lg:border-t-0 lg:border-l border-white/5 p-6 sm:p-9 lg:p-11 bg-white/[.018] rounded-b-[26px] lg:rounded-r-[26px] flex flex-col justify-between">
+          <div>
+            <div class="range-label">Estimativa dinâmica</div>
+            <div id="estimate" class="font-display text-4xl sm:text-5xl font-black text-white mt-2">R$ 0</div>
+            <div id="estimateText" class="text-xs text-slate-500 mt-2">Selecione um ou mais serviços.</div>
+            <div class="metric-line mt-6"></div>
+            <div id="estimateBreakdown" class="mt-5 space-y-2"></div>
+          </div>
+          <div class="mt-8">
+            <button id="sendQuote" class="btn-primary w-full py-4 rounded-2xl text-xs font-black uppercase tracking-[.14em] flex items-center justify-center gap-2"><i data-lucide="message-circle" class="w-4 h-4"></i> Quero conversar no WhatsApp</button>
+            <button id="copyQuote" class="btn-secondary w-full mt-3 py-3 rounded-2xl text-[10px] font-black uppercase tracking-[.14em] flex items-center justify-center gap-2"><i data-lucide="copy" class="w-4 h-4"></i> Copiar prévia</button>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="max-w-7xl mx-auto px-4 sm:px-6 py-20">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 reveal">
+      <div>
+        <div class="eyebrow mb-3">Portfólio de atuação</div>
+        <h2 class="font-display text-3xl sm:text-5xl font-black">Um ecossistema. <span class="gradient-text">Três especialidades.</span></h2>
+      </div>
+      <p class="text-sm text-slate-500 max-w-md">Tudo conectado pela mesma filosofia: precisão técnica, instalação limpa e resultado que faz sentido para o carro.</p>
+    </div>
+    <div class="flex flex-wrap gap-2 mt-8 reveal" id="serviceTabs">
+      <button data-filter="all" class="service-tab active px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em]">Todos</button>
+      <button data-filter="estetica" class="service-tab px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em] text-slate-500">Estética</button>
+      <button data-filter="audio" class="service-tab px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em] text-slate-500">Som</button>
+      <button data-filter="eletrica" class="service-tab px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em] text-slate-500">Elétrica</button>
+    </div>
+    <div id="serviceGrid" class="grid lg:grid-cols-3 gap-5 mt-6"></div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="max-w-7xl mx-auto px-4 sm:px-6 py-20">
+    <div class="reveal text-center max-w-3xl mx-auto">
+      <div class="eyebrow mb-3">Como funciona</div>
+      <h2 class="font-display text-3xl sm:text-5xl font-black">A experiência começa <span class="gradient-text">antes da oficina.</span></h2>
+      <p class="text-slate-500 mt-4 text-sm leading-6">Você sabe o que vai acontecer, por que vai acontecer e qual é o próximo passo.</p>
+    </div>
+    <div class="grid md:grid-cols-4 gap-4 mt-12">
+      <article class="reveal relative p-6 rounded-3xl border border-white/5 bg-white/[.02]">
+        <div class="timeline-dot w-10 h-10 rounded-full bg-sky-500/10 text-sky-400 flex items-center justify-center font-display font-black">01</div>
+        <h3 class="mt-5 font-bold">Conversa</h3>
+        <p class="text-xs text-slate-500 leading-5 mt-2">Você explica o que quer. A equipe entende o contexto e o objetivo.</p>
+      </article>
+      <article class="reveal relative p-6 rounded-3xl border border-white/5 bg-white/[.02]">
+        <div class="timeline-dot w-10 h-10 rounded-full bg-sky-500/10 text-sky-400 flex items-center justify-center font-display font-black">02</div>
+        <h3 class="mt-5 font-bold">Diagnóstico</h3>
+        <p class="text-xs text-slate-500 leading-5 mt-2">O carro é avaliado para definir escopo, materiais e melhor abordagem.</p>
+      </article>
+      <article class="reveal relative p-6 rounded-3xl border border-white/5 bg-white/[.02]">
+        <div class="timeline-dot w-10 h-10 rounded-full bg-sky-500/10 text-sky-400 flex items-center justify-center font-display font-black">03</div>
+        <h3 class="mt-5 font-bold">Execução</h3>
+        <p class="text-xs text-slate-500 leading-5 mt-2">O serviço é realizado com organização, cuidado e foco no acabamento.</p>
+      </article>
+      <article class="reveal relative p-6 rounded-3xl border border-white/5 bg-white/[.02]">
+        <div class="timeline-dot w-10 h-10 rounded-full bg-sky-500/10 text-sky-400 flex items-center justify-center font-display font-black">04</div>
+        <h3 class="mt-5 font-bold">Entrega</h3>
+        <p class="text-xs text-slate-500 leading-5 mt-2">Você recebe o carro e uma explicação objetiva do que foi feito.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="max-w-7xl mx-auto px-4 sm:px-6 py-20">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-5 reveal">
+      <div>
+        <div class="eyebrow mb-3">Padrão de entrega</div>
+        <h2 class="font-display text-3xl sm:text-5xl font-black">Projetos que mostram <span class="gradient-text">como pensamos.</span></h2>
+      </div>
+      <button id="openGallery" class="btn-secondary px-4 py-3 rounded-xl text-[10px] font-black uppercase tracking-[.14em]">Expandir portfólio</button>
+    </div>
+    <div class="grid md:grid-cols-3 gap-5 mt-8">
+      <article class="gallery-tile reveal">
+        <div class="car-shape"></div>
+        <div class="window"></div>
+        <div class="absolute inset-0 p-6 flex flex-col justify-between">
+          <div class="flex justify-between"><span class="badge">Áudio & acústica</span><span class="text-[9px] text-slate-600 uppercase tracking-widest">01</span></div>
+          <div>
+            <h3 class="font-display text-2xl font-bold">Hi-Fi sem perder originalidade</h3>
+            <p class="text-xs text-slate-500 mt-2 max-w-xs">Tratamento, integração e organização da instalação para o som evoluir sem transformar o interior em um caos.</p>
+          </div>
+        </div>
+      </article>
+      <article class="gallery-tile reveal">
+        <div class="car-shape !bg-gradient-to-b !from-slate-500 !to-slate-900 !opacity-70"></div>
+        <div class="window !bg-gradient-to-br !from-indigo-300/35 !to-slate-900/20"></div>
+        <div class="absolute inset-0 p-6 flex flex-col justify-between">
+          <div class="flex justify-between"><span class="badge">Estética</span><span class="text-[9px] text-slate-600 uppercase tracking-widest">02</span></div>
+          <div>
+            <h3 class="font-display text-2xl font-bold">Detalhamento que revela o carro</h3>
+            <p class="text-xs text-slate-500 mt-2 max-w-xs">Descontaminação, cuidado de áreas críticas e proteção para preservar o resultado por mais tempo.</p>
+          </div>
+        </div>
+      </article>
+      <article class="gallery-tile reveal">
+        <div class="car-shape !from-cyan-900 !to-slate-950"></div>
+        <div class="window !from-cyan-200/35 !to-slate-900/20"></div>
+        <div class="absolute inset-0 p-6 flex flex-col justify-between">
+          <div class="flex justify-between"><span class="badge">Elétrica</span><span class="text-[9px] text-slate-600 uppercase tracking-widest">03</span></div>
+          <div>
+            <h3 class="font-display text-2xl font-bold">Elétrica limpa e confiável</h3>
+            <p class="text-xs text-slate-500 mt-2 max-w-xs">Diagnóstico de falhas, acessórios e acabamento de chicotes com foco em segurança e confiabilidade.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="mt-5 p-5 rounded-3xl border border-dashed border-white/10 text-center text-xs text-slate-600">As imagens reais dos seus projetos podem entrar aqui. A estrutura já está preparada para transformar cada caso em uma história de resultado.</div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+    <div class="glow-card p-7 sm:p-12 reveal overflow-hidden">
+      <div class="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-blue-500/10 blur-3xl"></div>
+      <div class="relative max-w-4xl">
+        <div class="eyebrow">Manifesto NCS</div>
+        <h2 class="font-display text-3xl sm:text-5xl font-black mt-3">“O cliente não deveria precisar entender de carro para sentir que está em boas mãos.”</h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-7 mt-6 max-w-3xl">Nosso trabalho é traduzir um problema ou desejo em uma experiência clara. Isso significa explicar, executar bem, cuidar do detalhe e nunca esconder o que está sendo feito.</p>
+        <div class="mt-7 flex flex-wrap gap-2"><span class="badge">Transparência</span><span class="badge">Precisão</span><span class="badge">Cuidado</span><span class="badge">Organização</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="max-w-7xl mx-auto px-4 sm:px-6 py-20">
+    <div class="text-center reveal">
+      <div class="eyebrow mb-3">Prova social</div>
+      <h2 class="font-display text-3xl sm:text-5xl font-black">A confiança é parte <span class="gradient-text">do serviço.</span></h2>
+      <p class="text-xs text-slate-600 mt-3">Use aqui avaliações reais do Google, WhatsApp ou Instagram. Nada de depoimento inventado.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-5 mt-10">
+      <article class="glow-card p-6 reveal">
+        <div class="flex gap-1 text-sky-400">★★★★★</div>
+        <p class="text-sm leading-6 text-slate-300 mt-5">“Serviço impecável, atendimento claro e muito cuidado com o carro. Dá para perceber quando o profissional realmente gosta do que faz.”</p>
+        <div class="mt-7 pt-5 border-t border-white/5"><b class="text-sm">Cliente verificado</b><span class="block text-[10px] text-slate-600 uppercase tracking-widest mt-1">Avaliação real — inserir nome</span></div>
+      </article>
+      <article class="glow-card p-6 reveal">
+        <div class="flex gap-1 text-sky-400">★★★★★</div>
+        <p class="text-sm leading-6 text-slate-300 mt-5">“Explicaram o problema antes de mexer no carro e entregaram tudo organizado. Foi isso que me fez voltar.”</p>
+        <div class="mt-7 pt-5 border-t border-white/5"><b class="text-sm">Cliente verificado</b><span class="block text-[10px] text-slate-600 uppercase tracking-widest mt-1">Avaliação real — inserir nome</span></div>
+      </article>
+      <article class="glow-card p-6 reveal">
+        <div class="flex gap-1 text-sky-400">★★★★★</div>
+        <p class="text-sm leading-6 text-slate-300 mt-5">“A diferença não foi só o resultado. Foi a segurança de saber o que estava sendo feito e por quê.”</p>
+        <div class="mt-7 pt-5 border-t border-white/5"><b class="text-sm">Cliente verificado</b><span class="block text-[10px] text-slate-600 uppercase tracking-widest mt-1">Avaliação real — inserir nome</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FAQ + CONTACT -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 pb-24">
+    <div class="grid lg:grid-cols-[1fr_.75fr] gap-5 items-start">
+      <div class="reveal">
+        <div class="eyebrow mb-3">Perguntas frequentes</div>
+        <h2 class="font-display text-3xl sm:text-4xl font-black">Antes de chamar, <span class="gradient-text">tire suas dúvidas.</span></h2>
+        <div class="mt-7 space-y-3" id="faqList">
+          <div class="faq glow-card p-5">
+            <button class="faq-btn w-full flex justify-between items-center text-left font-bold text-sm">
+              <span>Preciso agendar com antecedência?</span>
+              <span class="faq-icon w-7 h-7 rounded-full border border-white/10 flex items-center justify-center transition"><i data-lucide="plus" class="w-3 h-3"></i></span>
+            </button>
+            <div class="faq-content">
+              <div><p class="pt-4 pr-8 text-xs leading-6 text-slate-500">Para serviços planejados, o agendamento é recomendado. Assim conseguimos reservar tempo e preparar materiais quando necessário.</p></div>
+            </div>
+          </div>
+          <div class="faq glow-card p-5">
+            <button class="faq-btn w-full flex justify-between items-center text-left font-bold text-sm">
+              <span>Vocês trabalham sem cortar fios “na gambiarra”?</span>
+              <span class="faq-icon w-7 h-7 rounded-full border border-white/10 flex items-center justify-center transition"><i data-lucide="plus" class="w-3 h-3"></i></span>
+            </button>
+            <div class="faq-content">
+              <div><p class="pt-4 pr-8 text-xs leading-6 text-slate-500">A proposta da NCS é preservar o carro e priorizar conexões, acabamento e organização adequados ao projeto. O procedimento exato depende de cada veículo.</p></div>
+            </div>
+          </div>
+          <div class="faq glow-card p-5">
+            <button class="faq-btn w-full flex justify-between items-center text-left font-bold text-sm">
+              <span>O simulador é um preço fechado?</span>
+              <span class="faq-icon w-7 h-7 rounded-full border border-white/10 flex items-center justify-center transition"><i data-lucide="plus" class="w-3 h-3"></i></span>
+            </button>
+            <div class="faq-content">
+              <div><p class="pt-4 pr-8 text-xs leading-6 text-slate-500">Não. Ele é uma prévia comercial para acelerar a conversa. O orçamento final depende do diagnóstico e do escopo definido com o cliente.</p></div>
+            </div>
+          </div>
+          <div class="faq glow-card p-5">
+            <button class="faq-btn w-full flex justify-between items-center text-left font-bold text-sm">
+              <span>Posso mandar fotos e vídeos do problema?</span>
+              <span class="faq-icon w-7 h-7 rounded-full border border-white/10 flex items-center justify-center transition"><i data-lucide="plus" class="w-3 h-3"></i></span>
+            </button>
+            <div class="faq-content">
+              <div><p class="pt-4 pr-8 text-xs leading-6 text-slate-500">Sim — e isso pode agilizar bastante o primeiro diagnóstico. O WhatsApp é o melhor canal para essa triagem inicial.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <aside class="glow-card p-7 reveal sticky top-24">
+        <div class="eyebrow">Próximo passo</div>
+        <h3 class="font-display text-2xl font-bold mt-2">Leve seu caso direto para a conversa.</h3>
+        <p class="text-sm text-slate-500 leading-6 mt-3">Sem formulário gigante. Sem enrolação. Clique, explique o que precisa e envie fotos se tiver.</p>
+        <a id="heroWhatsapp" target="_blank" href="#" class="btn-primary w-full mt-7 py-4 rounded-2xl flex items-center justify-center gap-2 text-xs font-black uppercase tracking-[.14em]"><i data-lucide="message-circle" class="w-4 h-4"></i> Falar com a NCS</a>
+        <div class="mt-5 grid grid-cols-2 gap-3 text-center">
+          <div class="rounded-2xl border border-white/5 bg-white/[.02] p-4"><div class="font-display font-black text-xl">1:1</div><div class="range-label mt-1">atendimento</div></div>
+          <div class="rounded-2xl border border-white/5 bg-white/[.02] p-4"><div class="font-display font-black text-xl">360°</div><div class="range-label mt-1">visão</div></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="border-t border-white/5 bg-gradient-to-b from-sky-500/[.035] to-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-20 text-center reveal">
+      <div class="eyebrow mb-4">NCS Garage</div>
+      <h2 class="font-display text-4xl sm:text-6xl font-black tracking-tight">Seu carro merece um serviço<br><span class="gradient-text">à altura dele.</span></h2>
+      <p class="text-sm text-slate-500 max-w-xl mx-auto mt-5">Mostre o carro. Conte o objetivo. Deixe o resto com a gente.</p>
+      <a id="finalWhatsapp" target="_blank" href="#" class="btn-primary inline-flex items-center gap-2 mt-8 px-7 py-4 rounded-2xl text-xs font-black uppercase tracking-[.14em]"><i data-lucide="arrow-up-right" class="w-4 h-4"></i> Solicitar atendimento</a>
+    </div>
+  </section>
 </main>
 
 <footer class="relative z-10 border-t border-white/5 bg-[#020305]">
- <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 grid md:grid-cols-[1fr_auto_auto] gap-8 items-start"><div><div class="font-display font-black text-lg tracking-[.18em]">NCS <span class="text-sky-400">GARAGE</span></div><p class="text-xs text-slate-600 mt-3 max-w-sm leading-5">Estética automotiva, elétrica e som tratados com precisão, cuidado e transparência.</p></div><div><div class="range-label">Atendimento</div><div class="text-sm text-slate-400 mt-2">Ribeirão Preto — SP</div></div><div><div class="range-label">Contato</div><a id="footerWhatsapp" href="#" target="_blank" class="text-sm text-sky-400 mt-2 block hover:text-white transition">WhatsApp →</a></div></div>
- <div class="max-w-7xl mx-auto px-4 sm:px-6 py-5 border-t border-white/5 text-[9px] text-slate-700 uppercase tracking-[.16em] flex flex-col sm:flex-row justify-between gap-2"><span>© 2026 NCS Garage</span><span>Engineering • Care • Sound</span></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 grid md:grid-cols-[1fr_auto_auto] gap-8 items-start">
+    <div>
+      <div class="font-display font-black text-sm tracking-widest text-white">NCS <span class="text-sky-400">GARAGE</span></div>
+      <p class="text-xs text-slate-500 mt-2 max-w-sm">Estética, elétrica e som automotivo com padrão de engenharia em Ribeirão Preto, SP.</p>
+    </div>
+    <div class="text-xs space-y-2 text-slate-400">
+      <div class="font-bold text-white uppercase tracking-wider text-[10px]">Navegação</div>
+      <div><a href="#experience" class="hover:text-white transition">Início</a></div>
+      <div><a href="#services" class="hover:text-white transition">Serviços</a></div>
+      <div><a href="#projects" class="hover:text-white transition">Projetos</a></div>
+      <div><a href="#quote" class="hover:text-white transition">Orçamento</a></div>
+    </div>
+    <div class="text-xs space-y-2 text-slate-400">
+      <div class="font-bold text-white uppercase tracking-wider text-[10px]">Contato</div>
+      <div><a href="#quote" class="hover:text-white transition">WhatsApp direto</a></div>
+      <div><span>Ribeirão Preto, SP</span></div>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-600 gap-4">
+    <div>© 2026 NCS Garage. Todos os direitos reservados.</div>
+    <div class="flex items-center gap-4">
+      <span>Engineering & Precision</span>
+    </div>
+  </div>
 </footer>
 
 <!-- GALLERY MODAL -->
-<div id="galleryModal" class="modal fixed inset-0 z-[70] bg-black/80 backdrop-blur-xl p-4 flex items-center justify-center"><div class="modal-panel w-full max-w-5xl glass rounded-[30px] overflow-hidden max-h-[90vh]"><div class="p-5 sm:p-7 flex items-center justify-between border-b border-white/5"><div><div class="eyebrow">Portfolio</div><h3 class="font-display text-2xl font-bold mt-1">Espaço reservado para os projetos reais</h3></div><button id="closeGallery" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center"><i data-lucide="x" class="w-4 h-4"></i></button></div><div class="p-5 sm:p-7 grid md:grid-cols-3 gap-4 overflow-auto"><div class="gallery-tile min-h-[220px]"><div class="absolute inset-0 p-5 flex flex-col justify-end"><span class="badge w-fit">Antes / Depois</span><h4 class="font-display text-xl font-bold mt-3">Galeria real #01</h4><p class="text-xs text-slate-500 mt-1">Substitua por fotos do serviço.</p></div></div><div class="gallery-tile min-h-[220px]"><div class="absolute inset-0 p-5 flex flex-col justify-end"><span class="badge w-fit">Detalhe</span><h4 class="font-display text-xl font-bold mt-3">Galeria real #02</h4><p class="text-xs text-slate-500 mt-1">Mostre acabamento, não só o carro.</p></div></div><div class="gallery-tile min-h-[220px]"><div class="absolute inset-0 p-5 flex flex-col justify-end"><span class="badge w-fit">Resultado</span><h4 class="font-display text-xl font-bold mt-3">Galeria real #03</h4><p class="text-xs text-slate-500 mt-1">Transforme cada projeto em prova.</p></div></div></div></div></div>
-
-<a id="floatingWhatsapp" target="_blank" href="#" aria-label="WhatsApp" class="fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-2xl shadow-emerald-900/30 hover:scale-105 transition"><i data-lucide="message-circle" class="w-6 h-6"></i><span class="absolute inset-0 rounded-full border border-emerald-300/40 animate-ping opacity-30"></span></a>
+<div id="galleryModal" class="modal fixed inset-0 z-[90] bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+  <div class="modal-panel glass max-w-2xl w-full p-6 sm:p-8 rounded-3xl relative border border-white/10">
+    <button id="closeGallery" class="absolute top-5 right-5 w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center hover:bg-white/10 transition"><i data-lucide="x" class="w-4 h-4"></i></button>
+    <div class="eyebrow mb-2">Portfólio Expandido</div>
+    <h3 class="font-display text-2xl font-bold">Galeria de Projetos NCS</h3>
+    <p class="text-xs text-slate-400 mt-2">Explore os detalhes dos trabalhos realizados em áudio, estética e elétrica automotiva.</p>
+    <div class="mt-6 grid sm:grid-cols-2 gap-4 max-h-[60vh] overflow-y-auto pr-1">
+      <div class="p-4 rounded-2xl bg-white/[.02] border border-white/5">
+        <div class="text-[10px] text-sky-400 font-bold uppercase tracking-widest">Projeto 01</div>
+        <div class="font-bold text-sm mt-1">Tratamento Acústico & Som Hi-Fi</div>
+        <div class="text-xs text-slate-500 mt-1">Instalação limpa em veículo médio com integração total ao painel original.</div>
+      </div>
+      <div class="p-4 rounded-2xl bg-white/[.02] border border-white/5">
+        <div class="text-[10px] text-sky-400 font-bold uppercase tracking-widest">Projeto 02</div>
+        <div class="font-bold text-sm mt-1">Detalhamento & Proteção de Pintura</div>
+        <div class="text-xs text-slate-500 mt-1">Correção de verniz, descontaminação profunda e aplicação de vitrificador.</div>
+      </div>
+      <div class="p-4 rounded-2xl bg-white/[.02] border border-white/5">
+        <div class="text-[10px] text-sky-400 font-bold uppercase tracking-widest">Projeto 03</div>
+        <div class="font-bold text-sm mt-1">Elétrica & Chicotes Customizados</div>
+        <div class="text-xs text-slate-500 mt-1">Organização de módulos, fusíveis dedicados e isolamento térmico de alta performance.</div>
+      </div>
+      <div class="p-4 rounded-2xl bg-white/[.02] border border-white/5">
+        <div class="text-[10px] text-sky-400 font-bold uppercase tracking-widest">Projeto 04</div>
+        <div class="font-bold text-sm mt-1">Iluminação LED & Auxiliares</div>
+        <div class="text-xs text-slate-500 mt-1">Upgrade de faróis com padrão original e sem falhas no sistema CANbus.</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
-const WHATSAPP = '5516999999999'; // TROQUE PELO NÚMERO REAL DA NCS
-const baseMsg = 'Olá! Conheci a NCS Garage pelo site e gostaria de falar sobre um atendimento.';
-const wa = (msg=baseMsg) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
-['heroWhatsapp','finalWhatsapp','footerWhatsapp','floatingWhatsapp'].forEach(id=>{const el=document.getElementById(id);if(el)el.href=wa();});
+  // Inicialização de ícones Lucide
+  lucide.createIcons();
 
-// Spotlight
-if(matchMedia('(hover:hover)').matches){addEventListener('pointermove',e=>document.documentElement.style.setProperty('--mx',e.clientX+'px'));addEventListener('pointermove',e=>document.documentElement.style.setProperty('--my',e.clientY+'px'));}
+  // Spotlight mouse tracker
+  window.addEventListener('mousemove', e => {
+    document.documentElement.style.setProperty('--mx', e.clientX + 'px');
+    document.documentElement.style.setProperty('--my', e.clientY + 'px');
+  });
 
-// Icons
-lucide.createIcons();
+  // Glow card mouse tracker
+  document.querySelectorAll('.glow-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--cx', (e.clientX - rect.left) + 'px');
+      card.style.setProperty('--cy', (e.clientY - rect.top) + 'px');
+    });
+  });
 
-// Mobile menu
-const menuBtn=document.getElementById('menuBtn'), mobileMenu=document.getElementById('mobileMenu');
-menuBtn.addEventListener('click',()=>mobileMenu.classList.toggle('open'));
-document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>mobileMenu.classList.remove('open')));
+  // Menu mobile
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu?.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  });
 
-// Reveal
-const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  // Dados dos serviços
+  const servicesData = [
+    {
+      id: "01",
+      category: "estetica",
+      categoryName: "ESTÉTICA AUTOMOTIVA",
+      title: "Detalhamento & Proteção",
+      highlight: "Brilho & Durabilidade",
+      badgeColor: "bg-sky-600/90 text-white",
+      description: "Correção de verniz, descontaminação de pintura, limpeza técnica de motor e aplicação de proteções de alta performance com acabamento impecável.",
+      glowGradient: "from-sky-900/30"
+    },
+    {
+      id: "02",
+      category: "audio",
+      categoryName: "ÁUDIO & ACÚSTICA",
+      title: "Som Hi-Fi & Tratamento",
+      highlight: "Originalidade Intacta",
+      badgeColor: "bg-indigo-600/90 text-white",
+      description: "Projetos de som sob medida com isolamento acústico de portas, instalação de amplificadores e alto-falantes preservando a estética original do interior.",
+      glowGradient: "from-indigo-900/30"
+    },
+    {
+      id: "03",
+      category: "eletrica",
+      categoryName: "ELÉTRICA AVANÇADA",
+      title: "Diagnóstico & Iluminação",
+      highlight: "Padrão Original",
+      badgeColor: "bg-cyan-600/90 text-white",
+      description: "Mapeamento e correção de falhas eletrônicas, revisão de chicotes com isolamento térmico e instalação de acessórios sem cortes na fiação original.",
+      glowGradient: "from-cyan-900/30"
+    }
+  ];
 
-// Hover glow card
-if(matchMedia('(hover:hover)').matches){document.querySelectorAll('.glow-card').forEach(card=>card.addEventListener('pointermove',e=>{const r=card.getBoundingClientRect();card.style.setProperty('--cx',((e.clientX-r.left)/r.width*100)+'%');card.style.setProperty('--cy',((e.clientY-r.top)/r.height*100)+'%')}));}
+  // Renderizador de serviços
+  function renderServices(filter = 'all') {
+    const grid = document.getElementById('serviceGrid');
+    if (!grid) return;
+    grid.innerHTML = '';
+    const filtered = filter === 'all' ? servicesData : servicesData.filter(s => s.category === filter);
+    filtered.forEach((s) => {
+      const card = document.createElement('article');
+      card.className = 'glow-card p-6 reveal visible';
+      card.innerHTML = `
+        <div class="flex justify-between items-start">
+          <span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">${s.id} // ${s.categoryName}</span>
+          <span class="${s.badgeColor} text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">${s.highlight}</span>
+        </div>
+        <h3 class="font-display text-2xl font-bold mt-4">${s.title}</h3>
+        <p class="text-xs text-slate-500 leading-6 mt-3">${s.description}</p>
+        <div class="mt-6 pt-5 border-t border-white/5 flex items-center justify-between">
+          <a href="#quote" class="text-sky-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 hover:text-sky-300 transition">Simular orçamento <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+    lucide.createIcons();
+  }
+  renderServices('all');
 
-// Counter
-const countEl=document.querySelector('[data-count]');
-if(countEl){let done=false;const co=new IntersectionObserver(es=>{if(es[0].isIntersecting&&!done){done=true;let n=0;const end=+countEl.dataset.count;const t=setInterval(()=>{countEl.textContent=++n;if(n>=end)clearInterval(t)},120)}});co.observe(countEl)}
+  document.querySelectorAll('#serviceTabs button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#serviceTabs button').forEach(b => b.classList.remove('active', 'text-white'));
+      document.querySelectorAll('#serviceTabs button').forEach(b => b.classList.add('text-slate-500'));
+      btn.classList.add('active', 'text-white');
+      btn.classList.remove('text-slate-500');
+      renderServices(btn.dataset.filter);
+    });
+  });
 
-// Services
-const services=[
-{id:'01',cat:'estetica',name:'Estética & Detailing',tag:'Preservação + presença',icon:'sparkles',desc:'Lavagem técnica, descontaminação, limpeza profunda e proteção pensadas para valorizar o carro e preservar o acabamento.',from:{h:150,s:220,p:300}},
-{id:'02',cat:'audio',name:'Som Hi-Fi & Multimídia',tag:'Imersão + integração',icon:'volume-2',desc:'Projetos de áudio com integração, tratamento acústico, amplificação e organização de instalação sem perder a originalidade.',from:{h:600,s:900,p:1500}},
-{id:'03',cat:'eletrica',name:'Elétrica & Diagnóstico',tag:'Precisão + segurança',icon:'cable',desc:'Diagnóstico de falhas, acessórios, iluminação e organização elétrica com foco em confiabilidade e acabamento.',from:{h:180,s:250,p:400}}
-];
-const grid=document.getElementById('serviceGrid');
-function money(n){return n.toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0})}
-function renderServices(filter='all'){
- const arr=filter==='all'?services:services.filter(s=>s.cat===filter);grid.innerHTML=arr.map(s=>`<article class="glow-card p-6 flex flex-col reveal visible"><div class="flex items-center justify-between"><div class="w-11 h-11 rounded-2xl bg-sky-500/10 text-sky-400 flex items-center justify-center"><i data-lucide="${s.icon}"></i></div><span class="badge">${s.tag}</span></div><div class="range-label mt-6">${s.cat==='audio'?'Áudio & acústica':s.cat==='eletrica'?'Diagnóstico & sistemas':'Estética automotiva'}</div><h3 class="font-display text-2xl font-bold mt-2">${s.name}</h3><p class="text-sm leading-6 text-slate-500 mt-3 flex-1">${s.desc}</p><div class="mt-7 pt-5 border-t border-white/5 flex items-end justify-between"><div><div class="range-label">A partir de</div><div class="font-display text-lg font-bold text-white mt-1">${money(s.from.h)}</div></div><button data-service="${s.name}" class="service-quote text-[10px] uppercase tracking-[.16em] font-black text-sky-400 hover:text-white transition">Orçar →</button></div></article>`).join('');lucide.createIcons();
- document.querySelectorAll('.service-quote').forEach(b=>b.onclick=()=>{document.getElementById('serviceChoices').querySelectorAll('input').forEach(i=>{if(i.value===b.dataset.service)i.checked=true;});updateQuote();document.getElementById('quote').scrollIntoView({behavior:'smooth'});});
-}
-renderServices();
-document.querySelectorAll('#serviceTabs .service-tab').forEach(tab=>tab.addEventListener('click',()=>{document.querySelectorAll('#serviceTabs .service-tab').forEach(t=>t.classList.remove('active'));tab.classList.add('active');renderServices(tab.dataset.filter)}));
+  // Calculadora de Orçamento
+  const quoteChoices = [
+    { id: 'estetica_avancada', name: 'Estética & Proteção de Pintura', price: 650, cat: 'Estética' },
+    { id: 'higienizacao_interna', name: 'Higienização Interna Detalhada', price: 450, cat: 'Estética' },
+    { id: 'som_hi_fi', name: 'Upgrade de Som / Alto-falantes', price: 900, cat: 'Som' },
+    { id: 'tratamento_acustico', name: 'Tratamento Acústico de Portas', price: 800, cat: 'Som' },
+    { id: 'diagnostico_eletrico', name: 'Diagnóstico & Correção Elétrica', price: 400, cat: 'Elétrica' },
+    { id: 'instalacao_acessorios', name: 'Instalação de LEDs / Acessórios', price: 350, cat: 'Elétrica' }
+  ];
 
-// Quote builder
-const serviceChoices=document.getElementById('serviceChoices');
-serviceChoices.innerHTML=services.map(s=>`<label class="cursor-pointer"><input class="peer sr-only" type="checkbox" value="${s.name}" data-cat="${s.cat}" data-h="${s.from.h}" data-s="${s.from.s}" data-p="${s.from.p}"><span class="block rounded-2xl border border-white/10 bg-black/20 px-4 py-4 peer-checked:border-sky-400/40 peer-checked:bg-sky-400/[.07] transition"><span class="flex justify-between items-center"><b class="text-sm">${s.name}</b><span class="text-[9px] uppercase tracking-widest text-slate-600">selecionar</span></span><span class="block text-[10px] text-slate-600 mt-1">A partir de ${money(s.from.h)}</span></span></label>`).join('');
-function updateQuote(){
- const size=[...document.getElementById('vehicle').selectedOptions][0].text;const mult=document.getElementById('vehicle').selectedIndex===0?1:document.getElementById('vehicle').selectedIndex===1?1.45:1.95;
- const selected=[...serviceChoices.querySelectorAll('input:checked')];let total=0;
- const breakdown=selected.map(i=>{const base=+i.dataset.h;const val=Math.round(base*mult);total+=val;return `<div class="flex items-center justify-between text-xs"><span class="text-slate-500">${i.value}</span><span class="text-slate-300">≈ ${money(val)}</span></div>`}).join('');
- document.getElementById('estimate').textContent=total?money(total):'R$ 0';document.getElementById('estimateText').textContent=selected.length?`${selected.length} serviço(s) • ${size}`:'Selecione um ou mais serviços.';document.getElementById('estimateBreakdown').innerHTML=breakdown||'<div class="text-xs text-slate-700">Sua composição aparecerá aqui.</div>';
- return {size,total,selected};
-}
-serviceChoices.addEventListener('change',updateQuote);document.getElementById('vehicle').addEventListener('change',updateQuote);updateQuote();
+  const choicesContainer = document.getElementById('serviceChoices');
+  if (choicesContainer) {
+    quoteChoices.forEach(c => {
+      const label = document.createElement('label');
+      label.className = 'flex items-center gap-3 p-3.5 rounded-2xl bg-black/20 border border-white/5 cursor-pointer hover:border-sky-400/30 transition';
+      label.innerHTML = `
+        <input type="checkbox" value="${c.id}" data-price="${c.price}" data-name="${c.name}" class="w-4 h-4 rounded accent-sky-400">
+        <span class="text-xs font-medium text-slate-300">${c.name}</span>
+      `;
+      choicesContainer.appendChild(label);
+    });
+  }
 
-document.getElementById('sendQuote').addEventListener('click',()=>{const q=updateQuote();const names=q.selected.map(x=>x.value).join(', ')||'Ainda quero entender qual serviço preciso';const msg=`Olá! Vim pelo site da NCS Garage e montei uma prévia.\n\nVeículo: ${q.size}\nServiços: ${names}\nEstimativa inicial: ${q.total?money(q.total):'a definir'}\n\nQuero conversar e confirmar o atendimento.`;window.open(wa(msg),'_blank');});
-document.getElementById('copyQuote').addEventListener('click',async()=>{const q=updateQuote();const names=q.selected.map(x=>x.value).join(', ')||'Não selecionado';const text=`NCS Garage — Prévia de atendimento\nVeículo: ${q.size}\nServiços: ${names}\nEstimativa: ${q.total?money(q.total):'a definir'}`;try{await navigator.clipboard.writeText(text);showToast('Prévia copiada.')}catch{showToast('Não foi possível copiar automaticamente.')}});
+  function updateEstimate() {
+    const checkboxes = choicesContainer?.querySelectorAll('input[type="checkbox"]:checked') || [];
+    let total = 0;
+    let breakdownHTML = '';
+    checkboxes.forEach(cb => {
+      const p = parseInt(cb.dataset.price);
+      const name = cb.dataset.name;
+      total += p;
+      breakdownHTML += `<div class="flex justify-between text-xs text-slate-400"><span>• ${name}</span><span class="font-mono text-sky-400">R$ ${p}</span></div>`;
+    });
 
-// FAQ
- document.querySelectorAll('.faq-btn').forEach(btn=>btn.addEventListener('click',()=>btn.closest('.faq').classList.toggle('open')));
+    const estEl = document.getElementById('estimate');
+    const txtEl = document.getElementById('estimateText');
+    const bdEl = document.getElementById('estimateBreakdown');
 
-// Gallery modal
-const modal=document.getElementById('galleryModal');document.getElementById('openGallery').onclick=()=>modal.classList.add('open');document.getElementById('closeGallery').onclick=()=>modal.classList.remove('open');modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
+    if (estEl) estEl.textContent = total > 0 ? `R$ ${total.toLocaleString('pt-BR')}` : 'R$ 0';
+    if (txtEl) txtEl.textContent = total > 0 ? 'Estimativa base calculada para o escopo selecionado.' : 'Selecione um ou mais serviços.';
+    if (bdEl) bdEl.innerHTML = breakdownHTML;
 
-function showToast(text){const t=document.getElementById('toast');t.textContent=text;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+    // Atualizar links do WhatsApp
+    const vehicle = document.getElementById('vehicle')?.value || 'Veículo';
+    const priority = document.getElementById('priority')?.value || 'Prioridade';
+    let msg = `Olá! Gostaria de um orçamento para ${vehicle}.\nObjetivo: ${priority}.\nServiços desejados:\n`;
+    if (checkboxes.length > 0) {
+      checkboxes.forEach(cb => msg += `- ${cb.dataset.name}\n`);
+      msg += `Estimativa prévia: R$ ${total}\n`;
+    } else {
+      msg += `(Nenhum serviço específico selecionado no simulador)`;
+    }
+
+    const waLink = `https://wa.me/5516999999999?text=${encodeURIComponent(msg)}`;
+    const sendQuoteBtn = document.getElementById('sendQuote');
+    const heroWhatsapp = document.getElementById('heroWhatsapp');
+    const finalWhatsapp = document.getElementById('finalWhatsapp');
+    if (sendQuoteBtn) sendQuoteBtn.onclick = () => window.open(waLink, '_blank');
+    if (heroWhatsapp) heroWhatsapp.href = waLink;
+    if (finalWhatsapp) finalWhatsapp.href = waLink;
+  }
+
+  choicesContainer?.addEventListener('change', updateEstimate);
+  document.getElementById('vehicle')?.addEventListener('change', updateEstimate);
+  document.getElementById('priority')?.addEventListener('change', updateEstimate);
+  updateEstimate();
+
+  // Copiar prévia
+  document.getElementById('copyQuote')?.addEventListener('click', () => {
+    const checkboxes = choicesContainer?.querySelectorAll('input[type="checkbox"]:checked') || [];
+    let text = `Prévia NCS Garage:\nVeículo: ${document.getElementById('vehicle')?.value}\nPrioridade: ${document.getElementById('priority')?.value}\n`;
+    checkboxes.forEach(cb => text += `- ${cb.dataset.name}\n`);
+    navigator.clipboard.writeText(text);
+    const toast = document.getElementById('toast');
+    if (toast) {
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+  });
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const faq = btn.closest('.faq');
+      const isOpen = faq.classList.contains('open');
+      document.querySelectorAll('.faq').forEach(f => f.classList.remove('open'));
+      if (!isOpen) faq.classList.add('open');
+    });
+  });
+
+  // Modal Gallery
+  const galleryModal = document.getElementById('galleryModal');
+  document.getElementById('openGallery')?.addEventListener('click', () => galleryModal?.classList.add('open'));
+  document.getElementById('closeGallery')?.addEventListener('click', () => galleryModal?.classList.remove('open'));
+  galleryModal?.addEventListener('click', e => {
+    if (e.target === galleryModal) galleryModal.classList.remove('open');
+  });
+
+  // Scroll Reveal Observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
