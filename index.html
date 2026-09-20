@@ -70,7 +70,7 @@ body{margin:0;background:
 input,select,textarea{color:#e2e8f0} select option{background:#081018}
 input[type=range]{accent-color:#38bdf8}
 .faq-content{display:grid;grid-template-rows:0fr;transition:.35s}.faq-content>div{overflow:hidden}.faq.open .faq-content{grid-template-rows:1fr}.faq.open .faq-icon{transform:rotate(45deg)}
-.gallery-tile{min-height:300px;position:relative;overflow:hidden;border-radius:26px;background:linear-gradient(135deg,#0c1621,#04070a);border:1px solid rgba(148,163,184,.1)}
+.gallery-tile{min-height:300px;position:relative;overflow:hidden;border-radius:26px;background:linear-gradient(135deg,#0c1621,#04070a);border:1px solid rgba(148,163,184,.1);cursor:pointer}
 .gallery-tile:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 35% 30%,rgba(56,189,248,.18),transparent 32%),linear-gradient(150deg,transparent 38%,rgba(99,102,241,.16));}
 .gallery-tile .car-shape{position:absolute;width:70%;height:28%;left:15%;bottom:20%;border-radius:35% 45% 16% 16%/60% 70% 25% 25%;background:linear-gradient(180deg,#1e293b,#090d12);box-shadow:0 16px 40px rgba(0,0,0,.6),0 -8px 35px rgba(56,189,248,.08);transform:skewX(-8deg)}
 .gallery-tile .window{position:absolute;left:29%;bottom:37%;width:39%;height:13%;border-radius:65% 35% 10% 10%;background:linear-gradient(135deg,rgba(125,211,252,.35),rgba(15,23,42,.3));transform:skewX(-10deg)}
@@ -311,7 +311,7 @@ input[type=range]{accent-color:#38bdf8}
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- PROJECTS (Integrado com Django API do ERP) -->
   <section id="projects" class="max-w-7xl mx-auto px-4 sm:px-6 py-20">
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-5 reveal">
       <div>
@@ -355,7 +355,7 @@ input[type=range]{accent-color:#38bdf8}
         </div>
       </article>
     </div>
-    <div class="mt-5 p-5 rounded-3xl border border-dashed border-white/10 text-center text-xs text-slate-600">As imagens reais dos seus projetos podem entrar aqui. A estrutura já está preparada para transformar cada caso em uma história de resultado.</div>
+    <div class="mt-5 p-5 rounded-3xl border border-dashed border-white/10 text-center text-xs text-slate-600">Os projetos cadastrados via ERP pelo painel do sócio carregam automaticamente aqui (clique em qualquer card para ver as fotos e vídeos).</div>
   </section>
 
   <!-- PHILOSOPHY -->
@@ -415,11 +415,11 @@ input[type=range]{accent-color:#38bdf8}
           </div>
           <div class="faq glow-card p-5">
             <button class="faq-btn w-full flex justify-between items-center text-left font-bold text-sm">
-              <span>Vocês trabalham sem cortar fios “na gambiarra”?</span>
+              <span>Vocês atendem fora de Ribeirão Preto?</span>
               <span class="faq-icon w-7 h-7 rounded-full border border-white/10 flex items-center justify-center transition"><i data-lucide="plus" class="w-3 h-3"></i></span>
             </button>
             <div class="faq-content">
-              <div><p class="pt-4 pr-8 text-xs leading-6 text-slate-500">A proposta da NCS é preservar o carro e priorizar conexões, acabamento e organização adequados ao projeto. O procedimento exato depende de cada veículo.</p></div>
+              <div><p class="pt-4 pr-8 text-xs leading-6 text-slate-500">Atendemos Ribeirão Preto e região mediante agendamento prévio e alinhamento de escopo.</p></div>
             </div>
           </div>
           <div class="faq glow-card p-5">
@@ -493,7 +493,7 @@ input[type=range]{accent-color:#38bdf8}
   </div>
 </footer>
 
-<!-- GALLERY MODAL -->
+<!-- GALLERY MODAL (PORTFÓLIO EXPANDIDO) -->
 <div id="galleryModal" class="modal fixed inset-0 z-[90] bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
   <div class="modal-panel glass max-w-2xl w-full p-6 sm:p-8 rounded-3xl relative border border-white/10">
     <button id="closeGallery" class="absolute top-5 right-5 w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center hover:bg-white/10 transition"><i data-lucide="x" class="w-4 h-4"></i></button>
@@ -520,6 +520,22 @@ input[type=range]{accent-color:#38bdf8}
         <div class="text-[10px] text-sky-400 font-bold uppercase tracking-widest">Projeto 04</div>
         <div class="font-bold text-sm mt-1">Iluminação LED & Auxiliares</div>
         <div class="text-xs text-slate-500 mt-1">Upgrade de faróis com padrão original e sem falhas no sistema CANbus.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECT DETAIL MODAL (MODAL PARA VISUALIZAR FOTOS E VÍDEOS DO ERP) -->
+<div id="projectModal" class="modal fixed inset-0 z-[95] bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+  <div class="modal-panel glass max-w-3xl w-full p-6 sm:p-8 rounded-3xl relative border border-white/10 max-h-[90vh] overflow-y-auto">
+    <button id="closeProjectModal" class="absolute top-5 right-5 w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center hover:bg-white/10 transition"><i data-lucide="x" class="w-4 h-4"></i></button>
+    <div id="modalCategory" class="badge mb-2">Categoria</div>
+    <h3 id="modalTitle" class="font-display text-2xl sm:text-3xl font-bold text-white">Título do Projeto</h3>
+    <p id="modalDescription" class="text-sm text-slate-300 mt-3 leading-6">Descrição detalhada...</p>
+    <div class="mt-6">
+      <div class="text-[10px] text-slate-400 uppercase tracking-widest font-bold mb-3">Mídia do Projeto (Fotos e Vídeos)</div>
+      <div id="modalMediaGrid" class="grid sm:grid-cols-2 gap-4">
+        <!-- Preenchido dinamicamente via JS com suporte a imagem/vídeo -->
       </div>
     </div>
   </div>
@@ -677,7 +693,7 @@ input[type=range]{accent-color:#38bdf8}
       msg += `(Nenhum serviço específico selecionado no simulador)`;
     }
 
-    const waLink = `https://wa.me/5516999999999?text=${encodeURIComponent(msg)}`;
+    const waLink = `https://wa.me/5516997377126?text=${encodeURIComponent(msg)}`;
     const sendQuoteBtn = document.getElementById('sendQuote');
     const heroWhatsapp = document.getElementById('heroWhatsapp');
     const finalWhatsapp = document.getElementById('finalWhatsapp');
@@ -722,6 +738,81 @@ input[type=range]{accent-color:#38bdf8}
     if (e.target === galleryModal) galleryModal.classList.remove('open');
   });
 
+  // Modal Detalhes do Projeto / Fotografias e Vídeos
+  const projectModal = document.getElementById('projectModal');
+  document.getElementById('closeProjectModal')?.addEventListener('click', () => projectModal?.classList.remove('open'));
+  projectModal?.addEventListener('click', e => {
+    if (e.target === projectModal) projectModal.classList.remove('open');
+  });
+
+  // Função auxiliar para detetar se o URL é um vídeo
+  function isVideoFile(url) {
+    if (!url) return false;
+    return /\.(mp4|webm|ogg|mov)$/i.test(url) || url.includes('/videos/') || url.includes('video');
+  }
+
+  function openProjectModal(proj) {
+    if (!projectModal) return;
+    document.getElementById('modalCategory').textContent = proj.category || 'Projeto';
+    document.getElementById('modalTitle').textContent = proj.title || '';
+    document.getElementById('modalDescription').textContent = proj.description || '';
+
+    const mediaGrid = document.getElementById('modalMediaGrid');
+    mediaGrid.innerHTML = '';
+
+    if (proj.media && proj.media.length > 0) {
+      proj.media.forEach((mediaUrl, idx) => {
+        const item = document.createElement('div');
+        const isVid = isVideoFile(mediaUrl);
+
+        item.className = 'rounded-2xl overflow-hidden aspect-video bg-black/40 border border-white/10 relative group/img cursor-pointer';
+        
+        if (isVid) {
+          item.innerHTML = `
+            <video src="${mediaUrl}" class="w-full h-full object-cover" preload="metadata"></video>
+            <div class="play-overlay absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300">
+              <div class="w-12 h-12 rounded-full bg-sky-500/90 text-white flex items-center justify-center shadow-lg group-hover/img:scale-110 transition">
+                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+              </div>
+            </div>
+            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-[10px] text-sky-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
+              <i data-lucide="video" class="w-3.5 h-3.5"></i> Vídeo 0${idx + 1}
+            </div>
+          `;
+          
+          // Ao clicar, reproduz o vídeo e oculta o overlay do play
+          item.addEventListener('click', () => {
+            const vidEl = item.querySelector('video');
+            const overlay = item.querySelector('.play-overlay');
+            if (vidEl.paused) {
+              vidEl.play();
+              vidEl.controls = true;
+              if (overlay) {
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+              }
+            }
+          });
+        } else {
+          item.innerHTML = `
+            <img src="${mediaUrl}" alt="${proj.title} - Foto ${idx + 1}" class="w-full h-full object-cover transition duration-300 group-hover/img:scale-105" />
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition flex items-center justify-center">
+              <span class="px-3 py-1.5 rounded-xl glass text-xs font-bold text-white flex items-center gap-1.5"><i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Ampliar</span>
+            </div>
+          `;
+          item.addEventListener('click', () => {
+            window.open(mediaUrl, '_blank');
+          });
+        }
+        mediaGrid.appendChild(item);
+      });
+    } else {
+      mediaGrid.innerHTML = '<div class="col-span-2 text-xs text-slate-500 text-center py-6">Sem mídias adicionais registadas para este projeto.</div>';
+    }
+
+    projectModal.classList.add('open');
+    lucide.createIcons();
+  }
+
   // Scroll Reveal Observer
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -732,6 +823,62 @@ input[type=range]{accent-color:#38bdf8}
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // CARREGAMENTO DINÂMICO DE PROJETOS DO ERP (DJANGO API)
+  async function loadProjects() {
+    try {
+      const response = await fetch('http://127.0.0.1:8000/api/projects/');
+      if (!response.ok) return;
+      const projects = await response.json();
+      
+      const grid = document.querySelector('#projects .grid');
+      if (!grid || projects.length === 0) return;
+
+      grid.innerHTML = ''; 
+
+      projects.forEach((proj, index) => {
+        const article = document.createElement('article');
+        article.className = 'gallery-tile reveal visible group';
+        
+        const coverMedia = proj.media && proj.media.length > 0 ? proj.media[0] : '';
+        const isCoverVid = isVideoFile(coverMedia);
+
+        if (coverMedia && !isCoverVid) {
+          article.style.backgroundImage = `url(${coverMedia})`;
+          article.style.backgroundSize = 'cover';
+          article.style.backgroundPosition = 'center';
+        } else if (isCoverVid) {
+          article.style.backgroundColor = '#0a1018';
+        }
+        
+        article.innerHTML = `
+          <div class="absolute inset-0 bg-gradient-to-t from-[#030507] via-[#030507]/50 to-transparent p-6 flex flex-col justify-between transition group-hover:bg-black/70">
+            <div class="flex justify-between items-center">
+              <span class="badge">${proj.category}</span>
+              <span class="text-[9px] text-slate-200 uppercase tracking-widest flex items-center gap-1.5 bg-black/60 px-2.5 py-1 rounded-lg backdrop-blur-md border border-white/10">
+                <i data-lucide="${isCoverVid ? 'video' : 'eye'}" class="w-3 h-3 text-sky-400"></i> ${isCoverVid ? 'Ver vídeo' : 'Ver fotos'} (0${index + 1})
+              </span>
+            </div>
+            <div>
+              <h3 class="font-display text-2xl font-bold text-white">${proj.title}</h3>
+              <p class="text-xs text-slate-300 mt-2 max-w-xs">${proj.description}</p>
+            </div>
+          </div>
+        `;
+
+        article.addEventListener('click', () => {
+          openProjectModal(proj);
+        });
+
+        grid.appendChild(article);
+      });
+      lucide.createIcons();
+    } catch (err) {
+      console.log('Modo portfólio estático ativo (API offline)');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadProjects);
 </script>
 </body>
 </html>
