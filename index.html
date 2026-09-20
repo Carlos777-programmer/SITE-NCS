@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#030507">
 <meta name="description" content="NCS Garage — estética automotiva, elétrica e som. Diagnóstico preciso, acabamento premium e atendimento direto pelo WhatsApp.">
-<title>NCS Garage — Engenharia, Estética & Som Automotivo</title>
+<title>NCS Garage — Estética & Som Automotivo</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
@@ -94,7 +94,7 @@ input[type=range]{accent-color:#38bdf8}
       <div class="pulse-dot w-3 h-3 rounded-full bg-sky-400"></div>
       <div>
         <div class="font-display font-black text-lg tracking-[.18em] text-white">NCS <span class="text-sky-400">GARAGE</span></div>
-        <div class="text-[8px] text-slate-500 tracking-[.28em] uppercase">Engineering • Care • Sound</div>
+        <div class="text-[8px] text-slate-500 tracking-[.28em] uppercase">Estética • Polimento • Som</div>
       </div>
     </a>
     <nav class="hidden lg:flex items-center gap-7 text-[10px] uppercase tracking-[.16em] font-bold text-slate-500">
@@ -127,7 +127,6 @@ input[type=range]{accent-color:#38bdf8}
     <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-16 sm:pt-24 pb-12">
       <div class="grid lg:grid-cols-[1.1fr_.9fr] gap-10 items-center">
         <div class="reveal">
-          <div class="badge mb-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Atendimento por agendamento • Ribeirão Preto & região</div>
           <h1 class="font-display text-5xl sm:text-7xl lg:text-[82px] leading-[.94] font-black tracking-[-.055em] max-w-4xl">SEU CARRO.<br><span class="gradient-text">OUTRO NÍVEL.</span></h1>
           <p class="mt-7 text-slate-400 text-sm sm:text-base max-w-xl leading-7">Estética automotiva, elétrica e som tratados como projeto — não como improviso. Diagnóstico, execução e acabamento com padrão premium do primeiro contato à entrega.</p>
           <div class="mt-8 flex flex-col sm:flex-row gap-3">
@@ -135,10 +134,6 @@ input[type=range]{accent-color:#38bdf8}
             <a href="#projects" class="btn-secondary inline-flex justify-center items-center gap-2 px-6 py-4 rounded-2xl text-xs font-black uppercase tracking-[.14em]"><i data-lucide="play-circle" class="w-4 h-4"></i> Ver padrão de entrega</a>
           </div>
           <div class="mt-9 grid grid-cols-3 max-w-xl gap-4">
-            <div>
-              <div class="text-2xl font-display font-black text-white number" data-count="3">0</div>
-              <div class="range-label mt-1">Pilares de atuação</div>
-            </div>
             <div>
               <div class="text-2xl font-display font-black text-white">360°</div>
               <div class="range-label mt-1">Visão do veículo</div>
@@ -151,20 +146,28 @@ input[type=range]{accent-color:#38bdf8}
         </div>
         <div class="reveal relative">
           <div class="glow-card p-3 sm:p-4 float">
-            <div class="rounded-[20px] aspect-[4/3] bg-[radial-gradient(circle_at_30%_30%,rgba(56,189,248,.22),transparent_28%),linear-gradient(145deg,#111a25,#05080b)] relative overflow-hidden">
-              <div class="absolute inset-0 opacity-40" style="background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:28px 28px"></div>
-              <div class="absolute top-5 left-5 text-[9px] font-bold tracking-[.2em] text-slate-500 uppercase">NCS / WORKFLOW 01</div>
-              <div class="absolute top-5 right-5 badge">Live service flow</div>
-              <div class="car-shape !bottom-[24%]"></div>
-              <div class="window !bottom-[41%]"></div>
-              <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between">
+            <div id="latestServiceCard" class="rounded-[20px] aspect-[4/3] bg-[radial-gradient(circle_at_30%_30%,rgba(56,189,248,.22),transparent_28%),linear-gradient(145deg,#111a25,#05080b)] relative overflow-hidden cursor-pointer group">
+              <div class="absolute inset-0 opacity-40" style="background-image:linear-gradient(rgba(255, 3, 3, 0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:28px 28px"></div>
+              
+              <!-- Container dinâmico para a foto ou vídeo do último serviço -->
+              <div id="latestServiceMedia" class="absolute inset-0 z-0">
+                <div class="car-shape !bottom-[24%]"></div>
+                <div class="window !bottom-[41%]"></div>
+              </div>
+
+              <div class="absolute inset-0 bg-gradient-to-t from-[#030507] via-[#030507]/40 to-transparent z-10"></div>
+
+              <div class="absolute top-5 left-5 text-[9px] font-bold tracking-[.2em] text-slate-400 uppercase z-25">NCS - Garage</div>
+              <div class="absolute top-5 right-5 badge z-25">Último Serviço realizado</div>
+              
+              <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between z-25">
                 <div>
-                  <div class="text-[9px] uppercase tracking-[.16em] text-slate-500">Manifesto</div>
-                  <div class="font-display font-bold text-xl">Sem gambiarra. Sem pressa.</div>
+                  <div id="latestServiceCategory" class="text-[9px] uppercase tracking-[.16em] text-sky-400 font-bold">ERP NCS</div>
+                  <div id="latestServiceTitle" class="font-display font-bold text-lg text-white">Carregando último serviço...</div>
                 </div>
                 <div class="text-right">
-                  <div class="text-xs font-bold text-sky-400">PRECISÃO</div>
-                  <div class="text-[9px] text-slate-500 uppercase tracking-widest">+ acabamento</div>
+                  <div class="text-xs font-bold text-sky-400 flex items-center justify-end gap-1"><i data-lucide="play-circle" class="w-3.5 h-3.5"></i> Ver mídia</div>
+                  <div class="text-[9px] text-slate-400 uppercase tracking-widest">Toque para abrir</div>
                 </div>
               </div>
             </div>
@@ -188,7 +191,7 @@ input[type=range]{accent-color:#38bdf8}
   <!-- VALUE SYSTEM -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
     <div class="reveal max-w-3xl">
-      <div class="eyebrow mb-3">Por que a NCS</div>
+      <div class="eyebrow mb-3">Por que a NCS ?</div>
       <h2 class="font-display text-3xl sm:text-5xl font-black tracking-tight">Você não compra uma tarefa.<br><span class="gradient-text">Compra confiança no resultado.</span></h2>
     </div>
     <div class="grid md:grid-cols-3 gap-5 mt-10">
@@ -222,7 +225,7 @@ input[type=range]{accent-color:#38bdf8}
             <label class="block">
               <span class="range-label">Seu veículo</span>
               <select id="vehicle" class="mt-2 w-full rounded-2xl bg-black/25 border border-white/10 px-4 py-3.5 text-sm outline-none focus:border-sky-400/50">
-                <option>Hatch / Sedan médio</option>
+                <option>Hatch / Sedan</option>
                 <option>SUV / Picape</option>
                 <option>Esportivo / Premium</option>
               </select>
@@ -240,9 +243,7 @@ input[type=range]{accent-color:#38bdf8}
             <div class="range-label mb-3">O que você quer fazer?</div>
             <div id="serviceChoices" class="grid sm:grid-cols-2 gap-3"></div>
           </div>
-          <div class="mt-7 p-4 rounded-2xl bg-sky-400/[.045] border border-sky-400/10 flex gap-3">
-            <i data-lucide="info" class="w-4 h-4 mt-0.5 text-sky-400 shrink-0"></i>
-            <p class="text-xs text-slate-500 leading-5">A melhor venda começa pela clareza. Por isso, o cliente recebe uma prévia do escopo antes de conversar com a equipe.</p>
+            <div>
           </div>
         </div>
         <aside class="border-t lg:border-t-0 lg:border-l border-white/5 p-6 sm:p-9 lg:p-11 bg-white/[.018] rounded-b-[26px] lg:rounded-r-[26px] flex flex-col justify-between">
@@ -355,7 +356,6 @@ input[type=range]{accent-color:#38bdf8}
         </div>
       </article>
     </div>
-    <div class="mt-5 p-5 rounded-3xl border border-dashed border-white/10 text-center text-xs text-slate-600">Os projetos cadastrados via ERP pelo painel do sócio carregam automaticamente aqui (clique em qualquer card para ver as fotos e vídeos).</div>
   </section>
 
   <!-- PHILOSOPHY -->
@@ -364,7 +364,7 @@ input[type=range]{accent-color:#38bdf8}
       <div class="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-blue-500/10 blur-3xl"></div>
       <div class="relative max-w-4xl">
         <div class="eyebrow">Manifesto NCS</div>
-        <h2 class="font-display text-3xl sm:text-5xl font-black mt-3">“O cliente não deveria precisar entender de carro para sentir que está em boas mãos.”</h2>
+        <h2 class="font-display text-3xl sm:text-5xl font-black mt-3">“O cliente não precisa entender de carro para sentir que está em boas mãos.”</h2>
         <p class="text-slate-400 text-sm sm:text-base leading-7 mt-6 max-w-3xl">Nosso trabalho é traduzir um problema ou desejo em uma experiência clara. Isso significa explicar, executar bem, cuidar do detalhe e nunca esconder o que está sendo feito.</p>
         <div class="mt-7 flex flex-wrap gap-2"><span class="badge">Transparência</span><span class="badge">Precisão</span><span class="badge">Cuidado</span><span class="badge">Organização</span></div>
       </div>
@@ -376,23 +376,22 @@ input[type=range]{accent-color:#38bdf8}
     <div class="text-center reveal">
       <div class="eyebrow mb-3">Prova social</div>
       <h2 class="font-display text-3xl sm:text-5xl font-black">A confiança é parte <span class="gradient-text">do serviço.</span></h2>
-      <p class="text-xs text-slate-600 mt-3">Use aqui avaliações reais do Google, WhatsApp ou Instagram. Nada de depoimento inventado.</p>
     </div>
     <div class="grid md:grid-cols-3 gap-5 mt-10">
       <article class="glow-card p-6 reveal">
         <div class="flex gap-1 text-sky-400">★★★★★</div>
         <p class="text-sm leading-6 text-slate-300 mt-5">“Serviço impecável, atendimento claro e muito cuidado com o carro. Dá para perceber quando o profissional realmente gosta do que faz.”</p>
-        <div class="mt-7 pt-5 border-t border-white/5"><b class="text-sm">Cliente verificado</b><span class="block text-[10px] text-slate-600 uppercase tracking-widest mt-1">Avaliação real — inserir nome</span></div>
+        <div class="mt-7 pt-5 border-t border-white/5"><b class="text-sm">---</b><span class="block text-[10px] text-slate-600 uppercase tracking-widest mt-1">---</span></div>
       </article>
       <article class="glow-card p-6 reveal">
         <div class="flex gap-1 text-sky-400">★★★★★</div>
         <p class="text-sm leading-6 text-slate-300 mt-5">“Explicaram o problema antes de mexer no carro e entregaram tudo organizado. Foi isso que me fez voltar.”</p>
-        <div class="mt-7 pt-5 border-t border-white/5"><b class="text-sm">Cliente verificado</b><span class="block text-[10px] text-slate-600 uppercase tracking-widest mt-1">Avaliação real — inserir nome</span></div>
+        <div class="mt-7 pt-5 border-t border-white/5"><b class="text-sm">---</b><span class="block text-[10px] text-slate-600 uppercase tracking-widest mt-1">---</span></div>
       </article>
       <article class="glow-card p-6 reveal">
         <div class="flex gap-1 text-sky-400">★★★★★</div>
         <p class="text-sm leading-6 text-slate-300 mt-5">“A diferença não foi só o resultado. Foi a segurança de saber o que estava sendo feito e por quê.”</p>
-        <div class="mt-7 pt-5 border-t border-white/5"><b class="text-sm">Cliente verificado</b><span class="block text-[10px] text-slate-600 uppercase tracking-widest mt-1">Avaliação real — inserir nome</span></div>
+        <div class="mt-7 pt-5 border-t border-white/5"><b class="text-sm">---</b><span class="block text-[10px] text-slate-600 uppercase tracking-widest mt-1">---</span></div>
       </article>
     </div>
   </section>
@@ -415,11 +414,11 @@ input[type=range]{accent-color:#38bdf8}
           </div>
           <div class="faq glow-card p-5">
             <button class="faq-btn w-full flex justify-between items-center text-left font-bold text-sm">
-              <span>Vocês atendem fora de Ribeirão Preto?</span>
+              <span>Vocês atendem fora de Santa Cruz da Esperança?</span>
               <span class="faq-icon w-7 h-7 rounded-full border border-white/10 flex items-center justify-center transition"><i data-lucide="plus" class="w-3 h-3"></i></span>
             </button>
             <div class="faq-content">
-              <div><p class="pt-4 pr-8 text-xs leading-6 text-slate-500">Atendemos Ribeirão Preto e região mediante agendamento prévio e alinhamento de escopo.</p></div>
+              <div><p class="pt-4 pr-8 text-xs leading-6 text-slate-500">Atendemos Santa Cruz da Esperança e região mediante agendamento prévio e alinhamento de escopo.</p></div>
             </div>
           </div>
           <div class="faq glow-card p-5">
@@ -470,7 +469,7 @@ input[type=range]{accent-color:#38bdf8}
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 grid md:grid-cols-[1fr_auto_auto] gap-8 items-start">
     <div>
       <div class="font-display font-black text-sm tracking-widest text-white">NCS <span class="text-sky-400">GARAGE</span></div>
-      <p class="text-xs text-slate-500 mt-2 max-w-sm">Estética, elétrica e som automotivo com padrão de engenharia em Ribeirão Preto, SP.</p>
+      <p class="text-xs text-slate-500 mt-2 max-w-sm">Estética, elétrica e som automotivo com padrão de engenharia em Santa Cruz da Esperança, SP.</p>
     </div>
     <div class="text-xs space-y-2 text-slate-400">
       <div class="font-bold text-white uppercase tracking-wider text-[10px]">Navegação</div>
@@ -482,7 +481,7 @@ input[type=range]{accent-color:#38bdf8}
     <div class="text-xs space-y-2 text-slate-400">
       <div class="font-bold text-white uppercase tracking-wider text-[10px]">Contato</div>
       <div><a href="#quote" class="hover:text-white transition">WhatsApp direto</a></div>
-      <div><span>Ribeirão Preto, SP</span></div>
+      <div><span>Santa Cruz da Esperança, SP</span></div>
     </div>
   </div>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-600 gap-4">
@@ -642,12 +641,12 @@ input[type=range]{accent-color:#38bdf8}
 
   // Calculadora de Orçamento
   const quoteChoices = [
-    { id: 'estetica_avancada', name: 'Estética & Proteção de Pintura', price: 650, cat: 'Estética' },
-    { id: 'higienizacao_interna', name: 'Higienização Interna Detalhada', price: 450, cat: 'Estética' },
-    { id: 'som_hi_fi', name: 'Upgrade de Som / Alto-falantes', price: 900, cat: 'Som' },
-    { id: 'tratamento_acustico', name: 'Tratamento Acústico de Portas', price: 800, cat: 'Som' },
-    { id: 'diagnostico_eletrico', name: 'Diagnóstico & Correção Elétrica', price: 400, cat: 'Elétrica' },
-    { id: 'instalacao_acessorios', name: 'Instalação de LEDs / Acessórios', price: 350, cat: 'Elétrica' }
+    { id: 'estetica_avancada', name: 'Lavagem Técnica de Motor', price: 50, cat: 'Estética' },
+    { id: 'higienizacao_interna', name: 'Lavagem Detalhada', price: 150, cat: 'Estética' },
+    { id: 'som_hi_fi', name: 'Upgrade de Som / Alto-falantes', price: 100, cat: 'Som' },
+    { id: 'tratamento_acustico', name: 'Lavagem Completa', price: 80, cat: 'Estética' },
+    { id: 'diagnostico_eletrico', name: 'Remoção de Chuva Ácida', price: 45, cat: 'Elétrica' },
+    { id: 'instalacao_acessorios', name: 'Instalação de LEDs / Acessórios', price: 100, cat: 'Elétrica' }
   ];
 
   const choicesContainer = document.getElementById('serviceChoices');
@@ -780,7 +779,6 @@ input[type=range]{accent-color:#38bdf8}
             </div>
           `;
           
-          // Ao clicar, reproduz o vídeo e oculta o overlay do play
           item.addEventListener('click', () => {
             const vidEl = item.querySelector('video');
             const overlay = item.querySelector('.play-overlay');
@@ -824,15 +822,49 @@ input[type=range]{accent-color:#38bdf8}
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // CARREGAMENTO DINÂMICO DE PROJETOS DO ERP (DJANGO API)
+  // CARREGAMENTO DINÂMICO DE PROJETOS E DO ÚLTIMO SERVIÇO DO ERP (DJANGO API)
   async function loadProjects() {
     try {
       const response = await fetch('http://127.0.0.1:8000/api/projects/');
       if (!response.ok) return;
       const projects = await response.json();
       
+      if (!projects || projects.length === 0) return;
+
+      // 1. Atualizar card de "Último Serviço realizado" no Hero com o projeto mais recente
+      const latest = projects[0];
+      const latestCard = document.getElementById('latestServiceCard');
+      const latestMedia = document.getElementById('latestServiceMedia');
+      const latestCategory = document.getElementById('latestServiceCategory');
+      const latestTitle = document.getElementById('latestServiceTitle');
+
+      if (latestCard && latestMedia && latest) {
+        latestCategory.textContent = latest.category || 'Último Projeto';
+        latestTitle.textContent = latest.title || 'Serviço Recente';
+
+        const coverMedia = latest.media && latest.media.length > 0 ? latest.media[0] : '';
+        const isCoverVid = isVideoFile(coverMedia);
+
+        if (coverMedia) {
+          if (isCoverVid) {
+            latestMedia.innerHTML = `
+              <video src="${coverMedia}" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition duration-500" muted autoplay loop playsinline></video>
+              <div class="absolute inset-0 bg-black/30"></div>
+            `;
+          } else {
+            latestMedia.innerHTML = `
+              <img src="${coverMedia}" alt="${latest.title}" class="w-full h-full object-cover opacity-85 group-hover:scale-105 transition duration-500" />
+              <div class="absolute inset-0 bg-black/20"></div>
+            `;
+          }
+        }
+
+        latestCard.onclick = () => openProjectModal(latest);
+      }
+
+      // 2. Renderizar lista na seção de projetos
       const grid = document.querySelector('#projects .grid');
-      if (!grid || projects.length === 0) return;
+      if (!grid) return;
 
       grid.innerHTML = ''; 
 
