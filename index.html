@@ -151,7 +151,6 @@ input[type=range]{accent-color:#38bdf8}
             <div id="latestServiceCard" class="rounded-[20px] aspect-[4/3] bg-[radial-gradient(circle_at_30%_30%,rgba(56,189,248,.22),transparent_28%),linear-gradient(145deg,#111a25,#05080b)] relative overflow-hidden cursor-pointer group">
               <div class="absolute inset-0 opacity-40" style="background-image:linear-gradient(rgba(255, 3, 3, 0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:28px 28px"></div>
               
-              <!-- Container dinâmico para a foto ou vídeo do último serviço -->
               <div id="latestServiceMedia" class="absolute inset-0 z-0">
                 <div class="car-shape !bottom-[24%]"></div>
                 <div class="window !bottom-[41%]"></div>
@@ -274,18 +273,8 @@ input[type=range]{accent-color:#38bdf8}
       <p class="text-sm text-slate-500 max-w-md">Tudo conectado pela mesma filosofia: precisão técnica, instalação limpa e resultado que faz sentido para o veículo.</p>
     </div>
 
-    <!-- Filtros por Categoria de Veículo -->
-    <div class="mt-8 flex flex-wrap gap-2 items-center reveal" id="vehicleFilterTabs">
-      <span class="text-[10px] uppercase font-bold tracking-widest text-slate-500 mr-2">Veículo:</span>
-      <button data-vehicle="all" class="vehicle-tab active px-3.5 py-2 rounded-xl text-[10px] font-black uppercase tracking-[.12em]">Todos</button>
-      <button data-vehicle="hatch" class="vehicle-tab px-3.5 py-2 rounded-xl text-[10px] font-black uppercase tracking-[.12em] text-slate-500">Hatch / Sedan</button>
-      <button data-vehicle="suv" class="vehicle-tab px-3.5 py-2 rounded-xl text-[10px] font-black uppercase tracking-[.12em] text-slate-500">SUV / Picape</button>
-      <button data-vehicle="motos" class="vehicle-tab px-3.5 py-2 rounded-xl text-[10px] font-black uppercase tracking-[.12em] text-slate-500">Motos</button>
-      <button data-vehicle="esportivo" class="vehicle-tab px-3.5 py-2 rounded-xl text-[10px] font-black uppercase tracking-[.12em] text-slate-500">Esportivo / Premium</button>
-    </div>
-
     <!-- Controles de Filtro: Categoria de Serviço e Tipo -->
-    <div class="mt-4 flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between reveal">
+    <div class="mt-8 flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between reveal">
       <!-- Abas de Categoria de Serviço -->
       <div class="flex flex-wrap gap-2" id="serviceTabs">
         <button data-filter="all" class="service-tab active px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em]">Todas Áreas</button>
@@ -348,7 +337,18 @@ input[type=range]{accent-color:#38bdf8}
       </div>
       <button id="openGallery" class="btn-secondary px-4 py-3 rounded-xl text-[10px] font-black uppercase tracking-[.14em]">Expandir portfólio</button>
     </div>
-    <div class="grid md:grid-cols-3 gap-5 mt-8">
+
+    <!-- Filtros por Categoria de Veículo adicionados no #projects -->
+    <div class="mt-8 flex flex-wrap gap-2 items-center reveal" id="vehicleFilterTabs">
+      <span class="text-[10px] uppercase font-bold tracking-widest text-slate-500 mr-2">Veículo:</span>
+      <button data-vehicle="all" class="vehicle-tab active px-3.5 py-2 rounded-xl text-[10px] font-black uppercase tracking-[.12em]">Todos</button>
+      <button data-vehicle="hatch" class="vehicle-tab px-3.5 py-2 rounded-xl text-[10px] font-black uppercase tracking-[.12em] text-slate-500">Hatch / Sedan</button>
+      <button data-vehicle="suv" class="vehicle-tab px-3.5 py-2 rounded-xl text-[10px] font-black uppercase tracking-[.12em] text-slate-500">SUV / Picape</button>
+      <button data-vehicle="motos" class="vehicle-tab px-3.5 py-2 rounded-xl text-[10px] font-black uppercase tracking-[.12em] text-slate-500">Motos</button>
+      <button data-vehicle="esportivo" class="vehicle-tab px-3.5 py-2 rounded-xl text-[10px] font-black uppercase tracking-[.12em] text-slate-500">Esportivo / Premium</button>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5 mt-8" id="projectsGrid">
       <article class="gallery-tile reveal">
         <div class="car-shape"></div>
         <div class="window"></div>
@@ -519,7 +519,7 @@ input[type=range]{accent-color:#38bdf8}
   </div>
 </footer>
 
-<!-- GALLERY MODAL (PORTFÓLIO EXPANDIDO COM BUSCA EM TEMPO REAL) -->
+<!-- GALLERY MODAL -->
 <div id="galleryModal" class="modal fixed inset-0 z-[90] bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
   <div class="modal-panel glass max-w-2xl w-full p-6 sm:p-8 rounded-3xl relative border border-white/15">
     <button id="closeGallery" class="absolute top-5 right-5 w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center hover:bg-white/10 transition cursor-pointer"><i data-lucide="x" class="w-4 h-4"></i></button>
@@ -527,19 +527,17 @@ input[type=range]{accent-color:#38bdf8}
     <h3 class="font-display text-2xl font-bold">Galeria de Projetos NCS</h3>
     <p class="text-xs text-slate-400 mt-2">Explore os detalhes dos trabalhos realizados em áudio, estética e elétrica automotiva.</p>
     
-    <!-- Barra de Pesquisa Integrada no Modal -->
     <div class="mt-4">
       <input type="text" id="searchGalleryInput" placeholder="Pesquisar projetos por título, categoria..." class="w-full rounded-xl bg-black/40 border border-white/10 px-4 py-2.5 text-xs text-slate-200 outline-none focus:border-sky-400/50" />
     </div>
 
-    <!-- Lista preenchida dinamicamente via API -->
     <div class="mt-4 grid sm:grid-cols-2 gap-4 max-h-[50vh] overflow-y-auto pr-1" id="modalGalleryGrid">
       <div class="p-4 rounded-2xl bg-white/[.02] border border-white/5 text-xs text-slate-500 text-center col-span-2">A carregar portfólio...</div>
     </div>
   </div>
 </div>
 
-<!-- PROJECT DETAIL MODAL (MODAL PARA VISUALIZAR FOTOS E VÍDEOS DO ERP) -->
+<!-- PROJECT DETAIL MODAL -->
 <div id="projectModal" class="modal fixed inset-0 z-[95] bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
   <div class="modal-panel glass max-w-3xl w-full p-6 sm:p-8 rounded-3xl relative border border-white/10 max-h-[90vh] overflow-y-auto">
     <button id="closeProjectModal" class="absolute top-5 right-5 w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center hover:bg-white/10 transition"><i data-lucide="x" class="w-4 h-4"></i></button>
@@ -548,27 +546,21 @@ input[type=range]{accent-color:#38bdf8}
     <p id="modalDescription" class="text-sm text-slate-300 mt-3 leading-6">Descrição detalhada...</p>
     <div class="mt-6">
       <div class="text-[10px] text-slate-400 uppercase tracking-widest font-bold mb-3">Mídia do Projeto (Fotos e Vídeos)</div>
-      <div id="modalMediaGrid" class="grid sm:grid-cols-2 gap-4">
-        <!-- Preenchido dinamicamente via JS com suporte a imagem/vídeo -->
-      </div>
+      <div id="modalMediaGrid" class="grid sm:grid-cols-2 gap-4"></div>
     </div>
   </div>
 </div>
 
 <script>
-  // Inicialização de ícones Lucide
   lucide.createIcons();
 
-  // Variável global para armazenar os projetos da API
   let allProjects = [];
 
-  // Spotlight mouse tracker
   window.addEventListener('mousemove', e => {
     document.documentElement.style.setProperty('--mx', e.clientX + 'px');
     document.documentElement.style.setProperty('--my', e.clientY + 'px');
   });
 
-  // Glow card mouse tracker
   document.querySelectorAll('.glow-card').forEach(card => {
     card.addEventListener('mousemove', e => {
       const rect = card.getBoundingClientRect();
@@ -577,7 +569,6 @@ input[type=range]{accent-color:#38bdf8}
     });
   });
 
-  // Menu mobile
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   menuBtn?.addEventListener('click', () => {
@@ -587,7 +578,7 @@ input[type=range]{accent-color:#38bdf8}
     a.addEventListener('click', () => mobileMenu.classList.remove('open'));
   });
 
-  // Dados dos serviços com as propriedades 'vehicle' adicionadas para os filtros por categoria
+  // Dados dos serviços
   const servicesData = [
     {
       id: "01",
@@ -639,26 +630,20 @@ input[type=range]{accent-color:#38bdf8}
     }
   ];
 
-  // Renderizador de serviços com suporte a triplo filtro (Veículo + Categoria de Serviço + Tipo)
   function renderServices() {
     const grid = document.getElementById('serviceGrid');
     if (!grid) return;
-    
-    const activeVehicleBtn = document.querySelector('#vehicleFilterTabs button.active');
-    const vehicleFilter = activeVehicleBtn ? activeVehicleBtn.dataset.vehicle : 'all';
 
     const activeTab = document.querySelector('#serviceTabs button.active');
     const categoryFilter = activeTab ? activeTab.dataset.filter : 'all';
-    
     const typeFilter = document.getElementById('serviceTypeFilter')?.value || 'all';
 
     grid.innerHTML = '';
     
     const filtered = servicesData.filter(s => {
-      const matchesVehicle = vehicleFilter === 'all' || s.vehicle.includes(vehicleFilter);
       const matchesCategory = categoryFilter === 'all' || s.category === categoryFilter;
       const matchesType = typeFilter === 'all' || s.type === typeFilter;
-      return matchesVehicle && matchesCategory && matchesType;
+      return matchesCategory && matchesType;
     });
 
     if (filtered.length === 0) {
@@ -685,18 +670,6 @@ input[type=range]{accent-color:#38bdf8}
     lucide.createIcons();
   }
 
-  // Eventos para botões de filtro de veículo
-  document.querySelectorAll('#vehicleFilterTabs button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('#vehicleFilterTabs button').forEach(b => b.classList.remove('active', 'text-white'));
-      document.querySelectorAll('#vehicleFilterTabs button').forEach(b => b.classList.add('text-slate-500'));
-      btn.classList.add('active', 'text-white');
-      btn.classList.remove('text-slate-500');
-      renderServices();
-    });
-  });
-
-  // Eventos para abas de categoria de serviço
   document.querySelectorAll('#serviceTabs button').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('#serviceTabs button').forEach(b => b.classList.remove('active', 'text-white'));
@@ -710,7 +683,7 @@ input[type=range]{accent-color:#38bdf8}
   document.getElementById('serviceTypeFilter')?.addEventListener('change', renderServices);
   renderServices();
 
-  // Calculadora de Orçamento
+  // Simulador de orçamento
   const quoteChoices = [
     { id: 'estetica_avancada', name: 'Lavagem Técnica de Motor', price: 50, cat: 'Estética' },
     { id: 'higienizacao_interna', name: 'Lavagem Detalhada', price: 150, cat: 'Estética' },
@@ -776,7 +749,6 @@ input[type=range]{accent-color:#38bdf8}
   document.getElementById('priority')?.addEventListener('change', updateEstimate);
   updateEstimate();
 
-  // Copiar prévia
   document.getElementById('copyQuote')?.addEventListener('click', () => {
     const checkboxes = choicesContainer?.querySelectorAll('input[type="checkbox"]:checked') || [];
     let text = `Prévia NCS Garage:\nVeículo: ${document.getElementById('vehicle')?.value}\nPrioridade: ${document.getElementById('priority')?.value}\n`;
@@ -789,7 +761,6 @@ input[type=range]{accent-color:#38bdf8}
     }
   });
 
-  // FAQ Accordion
   document.querySelectorAll('.faq-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const faq = btn.closest('.faq');
@@ -799,7 +770,6 @@ input[type=range]{accent-color:#38bdf8}
     });
   });
 
-  // Modal Gallery (Portfólio Expandido)
   const galleryModal = document.getElementById('galleryModal');
   document.getElementById('openGallery')?.addEventListener('click', () => galleryModal?.classList.add('open'));
   document.getElementById('closeGallery')?.addEventListener('click', () => galleryModal?.classList.remove('open'));
@@ -807,7 +777,6 @@ input[type=range]{accent-color:#38bdf8}
     if (e.target === galleryModal) galleryModal.classList.remove('open');
   });
 
-  // Função para renderizar o grid dinâmico dentro do Modal de Portfólio Expandido
   function renderModalGallery(projectsToDisplay) {
     const modalGrid = document.getElementById('modalGalleryGrid');
     if (!modalGrid) return;
@@ -839,7 +808,6 @@ input[type=range]{accent-color:#38bdf8}
     });
   }
 
-  // Barra de pesquisa em tempo real no modal expandido
   document.getElementById('searchGalleryInput')?.addEventListener('input', (e) => {
     const term = e.target.value.toLowerCase();
     const filtered = allProjects.filter(p => 
@@ -850,7 +818,6 @@ input[type=range]{accent-color:#38bdf8}
     renderModalGallery(filtered);
   });
 
-  // Modal Detalhes do Projeto (Fotos e Vídeos do ERP)
   const projectModal = document.getElementById('projectModal');
   document.getElementById('closeProjectModal')?.addEventListener('click', () => projectModal?.classList.remove('open'));
   projectModal?.addEventListener('click', e => {
@@ -923,7 +890,6 @@ input[type=range]{accent-color:#38bdf8}
     lucide.createIcons();
   }
 
-  // Scroll Reveal Observer
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -934,7 +900,85 @@ input[type=range]{accent-color:#38bdf8}
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // CARREGAMENTO DINÂMICO DE PROJETOS E DO ÚLTIMO SERVIÇO DO ERP (DJANGO API)
+  // Renderização e filtragem dos projetos no #projects com base nas abas de veículos
+  function renderProjectsList(projectsToDisplay) {
+    const grid = document.getElementById('projectsGrid');
+    if (!grid) return;
+    grid.innerHTML = ''; 
+
+    if (projectsToDisplay.length === 0) {
+      grid.innerHTML = `<div class="col-span-3 text-center py-12 text-slate-500 text-xs uppercase tracking-widest">Nenhum projeto encontrado para este filtro.</div>`;
+      return;
+    }
+
+    projectsToDisplay.forEach((proj, index) => {
+      const article = document.createElement('article');
+      article.className = 'gallery-tile reveal visible group';
+      
+      const coverMedia = proj.media && proj.media.length > 0 ? proj.media[0] : '';
+      const isCoverVid = isVideoFile(coverMedia);
+
+      if (coverMedia && !isCoverVid) {
+        article.style.backgroundImage = `url(${coverMedia})`;
+        article.style.backgroundSize = 'cover';
+        article.style.backgroundPosition = 'center';
+      } else if (isCoverVid) {
+        article.style.backgroundColor = '#0a1018';
+      }
+      
+      article.innerHTML = `
+        <div class="absolute inset-0 bg-gradient-to-t from-[#030507] via-[#030507]/50 to-transparent p-6 flex flex-col justify-between transition group-hover:bg-black/70">
+          <div class="flex justify-between items-center">
+            <span class="badge">${proj.category}</span>
+            <span class="text-[9px] text-slate-200 uppercase tracking-widest flex items-center gap-1.5 bg-black/60 px-2.5 py-1 rounded-lg backdrop-blur-md border border-white/10">
+              <i data-lucide="${isCoverVid ? 'video' : 'eye'}" class="w-3 h-3 text-sky-400"></i> ${isCoverVid ? 'Ver vídeo' : 'Ver fotos'} (0${index + 1})
+            </span>
+          </div>
+          <div>
+            <h3 class="font-display text-2xl font-bold text-white">${proj.title}</h3>
+            <p class="text-xs text-slate-300 mt-2 max-w-xs">${proj.description}</p>
+          </div>
+        </div>
+      `;
+
+      article.addEventListener('click', () => {
+        openProjectModal(proj);
+      });
+
+      grid.appendChild(article);
+    });
+    lucide.createIcons();
+  }
+
+  function filterAndRenderProjects() {
+    const activeVehicleBtn = document.querySelector('#projects #vehicleFilterTabs button.active');
+    const vehicleFilter = activeVehicleBtn ? activeVehicleBtn.dataset.vehicle : 'all';
+
+    if (vehicleFilter === 'all') {
+      renderProjectsList(allProjects);
+    } else {
+      const filtered = allProjects.filter(proj => {
+        const text = ((proj.title || '') + ' ' + (proj.description || '') + ' ' + (proj.category || '')).toLowerCase();
+        if (vehicleFilter === 'motos') return text.includes('moto') || text.includes('duas rodas');
+        if (vehicleFilter === 'suv') return text.includes('suv') || text.includes('picape');
+        if (vehicleFilter === 'hatch') return text.includes('hatch') || text.includes('sedan');
+        if (vehicleFilter === 'esportivo') return text.includes('esportivo') || text.includes('premium');
+        return true;
+      });
+      renderProjectsList(filtered);
+    }
+  }
+
+  document.querySelectorAll('#projects #vehicleFilterTabs button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#projects #vehicleFilterTabs button').forEach(b => b.classList.remove('active', 'text-white'));
+      document.querySelectorAll('#projects #vehicleFilterTabs button').forEach(b => b.classList.add('text-slate-500'));
+      btn.classList.add('active', 'text-white');
+      btn.classList.remove('text-slate-500');
+      filterAndRenderProjects();
+    });
+  });
+
   async function loadProjects() {
     try {
       const API_URL = 'https://ncscar.pythonanywhere.com';
@@ -944,7 +988,6 @@ input[type=range]{accent-color:#38bdf8}
       
       if (!allProjects || allProjects.length === 0) return;
 
-      // 1. Atualizar card de "Último Serviço realizado" no Hero com o projeto mais recente
       const latest = allProjects[0];
       const latestCard = document.getElementById('latestServiceCard');
       const latestMedia = document.getElementById('latestServiceMedia');
@@ -975,50 +1018,7 @@ input[type=range]{accent-color:#38bdf8}
         latestCard.onclick = () => openProjectModal(latest);
       }
 
-      // 2. Renderizar lista na seção principal de projetos
-      const grid = document.querySelector('#projects .grid');
-      if (grid) {
-        grid.innerHTML = ''; 
-
-        allProjects.forEach((proj, index) => {
-          const article = document.createElement('article');
-          article.className = 'gallery-tile reveal visible group';
-          
-          const coverMedia = proj.media && proj.media.length > 0 ? proj.media[0] : '';
-          const isCoverVid = isVideoFile(coverMedia);
-
-          if (coverMedia && !isCoverVid) {
-            article.style.backgroundImage = `url(${coverMedia})`;
-            article.style.backgroundSize = 'cover';
-            article.style.backgroundPosition = 'center';
-          } else if (isCoverVid) {
-            article.style.backgroundColor = '#0a1018';
-          }
-          
-          article.innerHTML = `
-            <div class="absolute inset-0 bg-gradient-to-t from-[#030507] via-[#030507]/50 to-transparent p-6 flex flex-col justify-between transition group-hover:bg-black/70">
-              <div class="flex justify-between items-center">
-                <span class="badge">${proj.category}</span>
-                <span class="text-[9px] text-slate-200 uppercase tracking-widest flex items-center gap-1.5 bg-black/60 px-2.5 py-1 rounded-lg backdrop-blur-md border border-white/10">
-                  <i data-lucide="${isCoverVid ? 'video' : 'eye'}" class="w-3 h-3 text-sky-400"></i> ${isCoverVid ? 'Ver vídeo' : 'Ver fotos'} (0${index + 1})
-                </span>
-              </div>
-              <div>
-                <h3 class="font-display text-2xl font-bold text-white">${proj.title}</h3>
-                <p class="text-xs text-slate-300 mt-2 max-w-xs">${proj.description}</p>
-              </div>
-            </div>
-          `;
-
-          article.addEventListener('click', () => {
-            openProjectModal(proj);
-          });
-
-          grid.appendChild(article);
-        });
-      }
-
-      // 3. Popular o Modal de Portfólio Expandido dinamicamente
+      filterAndRenderProjects();
       renderModalGallery(allProjects);
 
       lucide.createIcons();
