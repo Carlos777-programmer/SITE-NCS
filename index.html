@@ -261,7 +261,7 @@ input[type=range]{accent-color:#38bdf8}
     </div>
   </section>
 
-  <!-- SERVICES -->
+<!-- SERVICES -->
   <section id="services" class="max-w-7xl mx-auto px-4 sm:px-6 py-20">
     <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 reveal">
       <div>
@@ -270,12 +270,28 @@ input[type=range]{accent-color:#38bdf8}
       </div>
       <p class="text-sm text-slate-500 max-w-md">Tudo conectado pela mesma filosofia: precisão técnica, instalação limpa e resultado que faz sentido para o carro.</p>
     </div>
-    <div class="flex flex-wrap gap-2 mt-8 reveal" id="serviceTabs">
-      <button data-filter="all" class="service-tab active px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em]">Todos</button>
-      <button data-filter="estetica" class="service-tab px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em] text-slate-500">Estética</button>
-      <button data-filter="audio" class="service-tab px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em] text-slate-500">Som</button>
-      <button data-filter="eletrica" class="service-tab px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em] text-slate-500">Elétrica</button>
+
+    <!-- Controles de Filtro: Categoria e Tipo de Serviço -->
+    <div class="mt-8 flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between reveal">
+      <!-- Abas de Categoria -->
+      <div class="flex flex-wrap gap-2" id="serviceTabs">
+        <button data-filter="all" class="service-tab active px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em]">Todos</button>
+        <button data-filter="estetica" class="service-tab px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em] text-slate-500">Estética</button>
+        <button data-filter="audio" class="service-tab px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em] text-slate-500">Som</button>
+        <button data-filter="eletrica" class="service-tab px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em] text-slate-500">Elétrica</button>
+      </div>
+
+      <!-- Filtro por Tipo de Serviço (Integrado com o Back-end) -->
+      <div class="w-full md:w-64">
+        <select id="serviceTypeFilter" class="w-full rounded-xl bg-black/40 border border-white/10 px-4 py-2.5 text-xs font-semibold outline-none focus:border-sky-400/50">
+          <option value="all">Todos os tipos de serviço</option>
+          <option value="preventiva">Preventiva / Manutenção</option>
+          <option value="upgrade">Upgrade / Instalação</option>
+          <option value="corretiva">Correção / Diagnóstico</option>
+        </select>
+      </div>
     </div>
+
     <div id="serviceGrid" class="grid lg:grid-cols-3 gap-5 mt-6"></div>
   </section>
 
@@ -567,11 +583,12 @@ input[type=range]{accent-color:#38bdf8}
     a.addEventListener('click', () => mobileMenu.classList.remove('open'));
   });
 
-  // Dados dos serviços
+// Dados dos serviços com a propriedade 'type' adicionada
   const servicesData = [
     {
       id: "01",
       category: "estetica",
+      type: "corretiva",
       categoryName: "ESTÉTICA AUTOMOTIVA",
       title: "Detalhamento & Proteção",
       highlight: "Brilho & Durabilidade",
@@ -582,6 +599,7 @@ input[type=range]{accent-color:#38bdf8}
     {
       id: "02",
       category: "audio",
+      type: "upgrade",
       categoryName: "ÁUDIO & ACÚSTICA",
       title: "Som Hi-Fi & Tratamento",
       highlight: "Originalidade Intacta",
@@ -592,6 +610,7 @@ input[type=range]{accent-color:#38bdf8}
     {
       id: "03",
       category: "eletrica",
+      type: "preventiva",
       categoryName: "ELÉTRICA AVANÇADA",
       title: "Diagnóstico & Iluminação",
       highlight: "Padrão Original",
@@ -601,12 +620,29 @@ input[type=range]{accent-color:#38bdf8}
     }
   ];
 
-  // Renderizador de serviços
-  function renderServices(filter = 'all') {
+  // Renderizador de serviços com suporte a duplo filtro (Categoria + Tipo)
+  function renderServices() {
     const grid = document.getElementById('serviceGrid');
     if (!grid) return;
+    
+    const activeTab = document.querySelector('#serviceTabs button.active');
+    const categoryFilter = activeTab ? activeTab.dataset.filter : 'all';
+    const typeFilter = document.getElementById('serviceTypeFilter')?.value || 'all';
+
     grid.innerHTML = '';
-    const filtered = filter === 'all' ? servicesData : servicesData.filter(s => s.category === filter);
+    
+    // Filtra considerando Categoria E Tipo simultaneamente
+    const filtered = servicesData.filter(s => {
+      const matchesCategory = categoryFilter === 'all' || s.category === categoryFilter;
+      const matchesType = typeFilter === 'all' || s.type === typeFilter;
+      return matchesCategory && matchesType;
+    });
+
+    if (filtered.length === 0) {
+      grid.innerHTML = `<div class="col-span-3 text-center py-12 text-slate-500 text-xs uppercase tracking-widest">Nenhum serviço encontrado para os filtros selecionados.</div>`;
+      return;
+    }
+
     filtered.forEach((s) => {
       const card = document.createElement('article');
       card.className = 'glow-card p-6 reveal visible';
@@ -625,17 +661,22 @@ input[type=range]{accent-color:#38bdf8}
     });
     lucide.createIcons();
   }
-  renderServices('all');
 
+  // Event Listeners para os botões de categoria e o select de tipo
   document.querySelectorAll('#serviceTabs button').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('#serviceTabs button').forEach(b => b.classList.remove('active', 'text-white'));
       document.querySelectorAll('#serviceTabs button').forEach(b => b.classList.add('text-slate-500'));
       btn.classList.add('active', 'text-white');
       btn.classList.remove('text-slate-500');
-      renderServices(btn.dataset.filter);
+      renderServices();
     });
   });
+
+  document.getElementById('serviceTypeFilter')?.addEventListener('change', renderServices);
+
+  // Chamada inicial
+  renderServices();
 
   // Calculadora de Orçamento
   const quoteChoices = [
