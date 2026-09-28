@@ -950,24 +950,36 @@ input[type=range]{accent-color:#38bdf8}
     lucide.createIcons();
   }
 
-  function filterAndRenderProjects() {
-    const activeVehicleBtn = document.querySelector('#projects #vehicleFilterTabs button.active');
-    const vehicleFilter = activeVehicleBtn ? activeVehicleBtn.dataset.vehicle : 'all';
+function filterAndRenderProjects() {
+  const activeVehicleBtn = document.querySelector('#projects #vehicleFilterTabs button.active');
+  const vehicleFilter = activeVehicleBtn ? activeVehicleBtn.dataset.vehicle : 'all';
 
-    if (vehicleFilter === 'all') {
-      renderProjectsList(allProjects);
-    } else {
-      const filtered = allProjects.filter(proj => {
-        const text = ((proj.title || '') + ' ' + (proj.description || '') + ' ' + (proj.category || '')).toLowerCase();
-        if (vehicleFilter === 'motos') return text.includes('moto') || text.includes('duas rodas');
-        if (vehicleFilter === 'suv') return text.includes('suv') || text.includes('picape');
-        if (vehicleFilter === 'hatch') return text.includes('hatch') || text.includes('sedan');
-        if (vehicleFilter === 'esportivo') return text.includes('esportivo') || text.includes('premium');
-        return true;
-      });
-      renderProjectsList(filtered);
-    }
+  if (vehicleFilter === 'all') {
+    renderProjectsList(allProjects);
+  } else {
+    const filtered = allProjects.filter(proj => {
+      // ATENÇÃO: Verifique se a propriedade no seu objeto JSON se chama 'vehicle_type', 'vehicleType' ou 'category'
+      const vehicleType = (proj.vehicle_type || proj.category || '').toLowerCase();
+
+      if (vehicleFilter === 'motos') {
+        return vehicleType.includes('motos');
+      }
+      if (vehicleFilter === 'suv') {
+        return vehicleType.includes('suv') || vehicleType.includes('picape') || vehicleType.includes('vans');
+      }
+      if (vehicleFilter === 'hatch') {
+        return vehicleType.includes('hatch') || vehicleType.includes('sedan');
+      }
+      if (vehicleFilter === 'esportivo') {
+        return vehicleType.includes('esportivo') || vehicleType.includes('premium');
+      }
+
+      return false;
+    });
+    
+    renderProjectsList(filtered);
   }
+}
 
   document.querySelectorAll('#projects #vehicleFilterTabs button').forEach(btn => {
     btn.addEventListener('click', () => {
