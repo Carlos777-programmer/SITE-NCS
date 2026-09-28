@@ -66,6 +66,8 @@ body{margin:0;background:
 .metric-line{height:2px;background:linear-gradient(90deg,#38bdf8,#6366f1);border-radius:999px}
 .service-tab{transition:.22s;border:1px solid rgba(148,163,184,.11)}
 .service-tab.active{color:white;border-color:rgba(96,165,250,.4);background:linear-gradient(180deg,rgba(37,99,235,.18),rgba(37,99,235,.08));box-shadow:inset 0 0 30px rgba(37,99,235,.08)}
+.vehicle-tab{transition:.22s;border:1px solid rgba(148,163,184,.11)}
+.vehicle-tab.active{color:white;border-color:rgba(96,165,250,.4);background:linear-gradient(180deg,rgba(37,99,235,.18),rgba(37,99,235,.08));box-shadow:inset 0 0 30px rgba(37,99,235,.08)}
 .range-label{font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:.12em}
 input,select,textarea{color:#e2e8f0} select option{background:#081018}
 input[type=range]{accent-color:#38bdf8}
@@ -228,6 +230,7 @@ input[type=range]{accent-color:#38bdf8}
                 <option>Hatch / Sedan</option>
                 <option>SUV / Picape</option>
                 <option>Esportivo / Premium</option>
+                <option>Motos</option>
               </select>
             </label>
             <label class="block">
@@ -268,14 +271,24 @@ input[type=range]{accent-color:#38bdf8}
         <div class="eyebrow mb-3">Portfólio de atuação</div>
         <h2 class="font-display text-3xl sm:text-5xl font-black">Um ecossistema. <span class="gradient-text">Três especialidades.</span></h2>
       </div>
-      <p class="text-sm text-slate-500 max-w-md">Tudo conectado pela mesma filosofia: precisão técnica, instalação limpa e resultado que faz sentido para o carro.</p>
+      <p class="text-sm text-slate-500 max-w-md">Tudo conectado pela mesma filosofia: precisão técnica, instalação limpa e resultado que faz sentido para o veículo.</p>
     </div>
 
-    <!-- Controles de Filtro: Categoria e Tipo de Serviço -->
-    <div class="mt-8 flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between reveal">
-      <!-- Abas de Categoria -->
+    <!-- Filtros por Categoria de Veículo -->
+    <div class="mt-8 flex flex-wrap gap-2 items-center reveal" id="vehicleFilterTabs">
+      <span class="text-[10px] uppercase font-bold tracking-widest text-slate-500 mr-2">Veículo:</span>
+      <button data-vehicle="all" class="vehicle-tab active px-3.5 py-2 rounded-xl text-[10px] font-black uppercase tracking-[.12em]">Todos</button>
+      <button data-vehicle="hatch" class="vehicle-tab px-3.5 py-2 rounded-xl text-[10px] font-black uppercase tracking-[.12em] text-slate-500">Hatch / Sedan</button>
+      <button data-vehicle="suv" class="vehicle-tab px-3.5 py-2 rounded-xl text-[10px] font-black uppercase tracking-[.12em] text-slate-500">SUV / Picape</button>
+      <button data-vehicle="motos" class="vehicle-tab px-3.5 py-2 rounded-xl text-[10px] font-black uppercase tracking-[.12em] text-slate-500">Motos</button>
+      <button data-vehicle="esportivo" class="vehicle-tab px-3.5 py-2 rounded-xl text-[10px] font-black uppercase tracking-[.12em] text-slate-500">Esportivo / Premium</button>
+    </div>
+
+    <!-- Controles de Filtro: Categoria de Serviço e Tipo -->
+    <div class="mt-4 flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between reveal">
+      <!-- Abas de Categoria de Serviço -->
       <div class="flex flex-wrap gap-2" id="serviceTabs">
-        <button data-filter="all" class="service-tab active px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em]">Todos</button>
+        <button data-filter="all" class="service-tab active px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em]">Todas Áreas</button>
         <button data-filter="estetica" class="service-tab px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em] text-slate-500">Estética</button>
         <button data-filter="audio" class="service-tab px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em] text-slate-500">Som</button>
         <button data-filter="eletrica" class="service-tab px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em] text-slate-500">Elétrica</button>
@@ -311,7 +324,7 @@ input[type=range]{accent-color:#38bdf8}
       <article class="reveal relative p-6 rounded-3xl border border-white/5 bg-white/[.02]">
         <div class="timeline-dot w-10 h-10 rounded-full bg-sky-500/10 text-sky-400 flex items-center justify-center font-display font-black">02</div>
         <h3 class="mt-5 font-bold">Diagnóstico</h3>
-        <p class="text-xs text-slate-500 leading-5 mt-2">O carro é avaliado para definir escopo, materiais e melhor abordagem.</p>
+        <p class="text-xs text-slate-500 leading-5 mt-2">O veículo é avaliado para definir escopo, materiais e melhor abordagem.</p>
       </article>
       <article class="reveal relative p-6 rounded-3xl border border-white/5 bg-white/[.02]">
         <div class="timeline-dot w-10 h-10 rounded-full bg-sky-500/10 text-sky-400 flex items-center justify-center font-display font-black">03</div>
@@ -321,7 +334,7 @@ input[type=range]{accent-color:#38bdf8}
       <article class="reveal relative p-6 rounded-3xl border border-white/5 bg-white/[.02]">
         <div class="timeline-dot w-10 h-10 rounded-full bg-sky-500/10 text-sky-400 flex items-center justify-center font-display font-black">04</div>
         <h3 class="mt-5 font-bold">Entrega</h3>
-        <p class="text-xs text-slate-500 leading-5 mt-2">Você recebe o carro e uma explicação objetiva do que foi feito.</p>
+        <p class="text-xs text-slate-500 leading-5 mt-2">Você recebe o veículo e uma explicação objetiva do que foi feito.</p>
       </article>
     </div>
   </section>
@@ -353,7 +366,7 @@ input[type=range]{accent-color:#38bdf8}
         <div class="absolute inset-0 p-6 flex flex-col justify-between">
           <div class="flex justify-between"><span class="badge">Estética</span><span class="text-[9px] text-slate-600 uppercase tracking-widest">02</span></div>
           <div>
-            <h3 class="font-display text-2xl font-bold">Detalhamento que revela o carro</h3>
+            <h3 class="font-display text-2xl font-bold">Detalhamento que revela o veículo</h3>
             <p class="text-xs text-slate-500 mt-2 max-w-xs">Descontaminação, cuidado de áreas críticas e proteção para preservar o resultado por mais tempo.</p>
           </div>
         </div>
@@ -378,7 +391,7 @@ input[type=range]{accent-color:#38bdf8}
       <div class="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-blue-500/10 blur-3xl"></div>
       <div class="relative max-w-4xl">
         <div class="eyebrow">Manifesto NCS</div>
-        <h2 class="font-display text-3xl sm:text-5xl font-black mt-3">“O cliente não precisa entender de carro para sentir que está em boas mãos.”</h2>
+        <h2 class="font-display text-3xl sm:text-5xl font-black mt-3">“O cliente não precisa entender de mecânica para sentir que está em boas mãos.”</h2>
         <p class="text-slate-400 text-sm sm:text-base leading-7 mt-6 max-w-3xl">Nosso trabalho é traduzir um problema ou desejo em uma experiência clara. Isso significa explicar, executar bem, cuidar do detalhe e nunca esconder o que está sendo feito.</p>
         <div class="mt-7 flex flex-wrap gap-2"><span class="badge">Transparência</span><span class="badge">Precisão</span><span class="badge">Cuidado</span><span class="badge">Organização</span></div>
       </div>
@@ -394,12 +407,12 @@ input[type=range]{accent-color:#38bdf8}
     <div class="grid md:grid-cols-3 gap-5 mt-10">
       <article class="glow-card p-6 reveal">
         <div class="flex gap-1 text-sky-400">★★★★★</div>
-        <p class="text-sm leading-6 text-slate-300 mt-5">“Serviço impecável, atendimento claro e muito cuidado com o carro. Dá para perceber quando o profissional realmente gosta do que faz.”</p>
+        <p class="text-sm leading-6 text-slate-300 mt-5">“Serviço impecável, atendimento claro e muito cuidado com o veículo. Dá para perceber quando o profissional realmente gosta do que faz.”</p>
         <div class="mt-7 pt-5 border-t border-white/5"><b class="text-sm">Marcos Vinícius</b><span class="block text-[10px] text-slate-600 uppercase tracking-widest mt-1">Cliente Verificado</span></div>
       </article>
       <article class="glow-card p-6 reveal">
         <div class="flex gap-1 text-sky-400">★★★★★</div>
-        <p class="text-sm leading-6 text-slate-300 mt-5">“Explicaram o problema antes de mexer no carro e entregaram tudo organizado. Foi isso que me fez voltar.”</p>
+        <p class="text-sm leading-6 text-slate-300 mt-5">“Explicaram o problema antes de mexer e entregaram tudo organizado. Foi isso que me fez voltar.”</p>
         <div class="mt-7 pt-5 border-t border-white/5"><b class="text-sm">Rafael Souza</b><span class="block text-[10px] text-slate-600 uppercase tracking-widest mt-1">Cliente Verificado</span></div>
       </article>
       <article class="glow-card p-6 reveal">
@@ -472,8 +485,8 @@ input[type=range]{accent-color:#38bdf8}
   <section class="border-t border-white/5 bg-gradient-to-b from-sky-500/[.035] to-transparent">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-20 text-center reveal">
       <div class="eyebrow mb-4">NCS Garage</div>
-      <h2 class="font-display text-4xl sm:text-6xl font-black tracking-tight">Seu carro merece um serviço<br><span class="gradient-text">à altura dele.</span></h2>
-      <p class="text-sm text-slate-500 max-w-xl mx-auto mt-5">Mostre o carro. Conte o objetivo. Deixe o resto com a gente.</p>
+      <h2 class="font-display text-4xl sm:text-6xl font-black tracking-tight">Seu veículo merece um serviço<br><span class="gradient-text">à altura dele.</span></h2>
+      <p class="text-sm text-slate-500 max-w-xl mx-auto mt-5">Mostre o veículo. Conte o objetivo. Deixe o resto com a gente.</p>
       <a id="finalWhatsapp" target="_blank" href="#" class="btn-primary inline-flex items-center gap-2 mt-8 px-7 py-4 rounded-2xl text-xs font-black uppercase tracking-[.14em]"><i data-lucide="arrow-up-right" class="w-4 h-4"></i> Solicitar atendimento</a>
     </div>
   </section>
@@ -574,12 +587,13 @@ input[type=range]{accent-color:#38bdf8}
     a.addEventListener('click', () => mobileMenu.classList.remove('open'));
   });
 
-  // Dados dos serviços com a propriedade 'type' adicionada
+  // Dados dos serviços com as propriedades 'vehicle' adicionadas para os filtros por categoria
   const servicesData = [
     {
       id: "01",
       category: "estetica",
       type: "corretiva",
+      vehicle: "hatch,suv,esportivo",
       categoryName: "ESTÉTICA AUTOMOTIVA",
       title: "Detalhamento & Proteção",
       highlight: "Brilho & Durabilidade",
@@ -591,6 +605,7 @@ input[type=range]{accent-color:#38bdf8}
       id: "02",
       category: "audio",
       type: "upgrade",
+      vehicle: "hatch,suv,esportivo",
       categoryName: "ÁUDIO & ACÚSTICA",
       title: "Som Hi-Fi & Tratamento",
       highlight: "Originalidade Intacta",
@@ -602,30 +617,48 @@ input[type=range]{accent-color:#38bdf8}
       id: "03",
       category: "eletrica",
       type: "preventiva",
+      vehicle: "hatch,suv,esportivo,motos",
       categoryName: "ELÉTRICA AVANÇADA",
       title: "Diagnóstico & Iluminação",
       highlight: "Padrão Original",
       badgeColor: "bg-cyan-600/90 text-white",
       description: "Mapeamento e correção de falhas eletrônicas, revisão de chicotes com isolamento térmico e instalação de acessórios sem cortes na fiação original.",
       glowGradient: "from-cyan-900/30"
+    },
+    {
+      id: "04",
+      category: "estetica",
+      type: "preventiva",
+      vehicle: "motos",
+      categoryName: "ESTÉTICA DE DUAS RODAS",
+      title: "Detalhamento Especializado para Motos",
+      highlight: "Limpeza & Proteção",
+      badgeColor: "bg-emerald-600/90 text-white",
+      description: "Limpeza técnica minuciosa de carenagens, motor, corrente e rodas, com proteção cerâmica de alta resistência para motocicletas.",
+      glowGradient: "from-emerald-900/30"
     }
   ];
 
-  // Renderizador de serviços com suporte a duplo filtro (Categoria + Tipo)
+  // Renderizador de serviços com suporte a triplo filtro (Veículo + Categoria de Serviço + Tipo)
   function renderServices() {
     const grid = document.getElementById('serviceGrid');
     if (!grid) return;
     
+    const activeVehicleBtn = document.querySelector('#vehicleFilterTabs button.active');
+    const vehicleFilter = activeVehicleBtn ? activeVehicleBtn.dataset.vehicle : 'all';
+
     const activeTab = document.querySelector('#serviceTabs button.active');
     const categoryFilter = activeTab ? activeTab.dataset.filter : 'all';
+    
     const typeFilter = document.getElementById('serviceTypeFilter')?.value || 'all';
 
     grid.innerHTML = '';
     
     const filtered = servicesData.filter(s => {
+      const matchesVehicle = vehicleFilter === 'all' || s.vehicle.includes(vehicleFilter);
       const matchesCategory = categoryFilter === 'all' || s.category === categoryFilter;
       const matchesType = typeFilter === 'all' || s.type === typeFilter;
-      return matchesCategory && matchesType;
+      return matchesVehicle && matchesCategory && matchesType;
     });
 
     if (filtered.length === 0) {
@@ -652,6 +685,18 @@ input[type=range]{accent-color:#38bdf8}
     lucide.createIcons();
   }
 
+  // Eventos para botões de filtro de veículo
+  document.querySelectorAll('#vehicleFilterTabs button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#vehicleFilterTabs button').forEach(b => b.classList.remove('active', 'text-white'));
+      document.querySelectorAll('#vehicleFilterTabs button').forEach(b => b.classList.add('text-slate-500'));
+      btn.classList.add('active', 'text-white');
+      btn.classList.remove('text-slate-500');
+      renderServices();
+    });
+  });
+
+  // Eventos para abas de categoria de serviço
   document.querySelectorAll('#serviceTabs button').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('#serviceTabs button').forEach(b => b.classList.remove('active', 'text-white'));
@@ -794,7 +839,7 @@ input[type=range]{accent-color:#38bdf8}
     });
   }
 
-  // Novo Ouvinte: Barra de pesquisa em tempo real no modal expandido
+  // Barra de pesquisa em tempo real no modal expandido
   document.getElementById('searchGalleryInput')?.addEventListener('input', (e) => {
     const term = e.target.value.toLowerCase();
     const filtered = allProjects.filter(p => 
