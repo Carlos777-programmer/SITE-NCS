@@ -51,5 +51,8 @@ Como o site utiliza apenas arquivos estáticos, executá-lo é extremamente simp
 * **Canal de Atendimento:** WhatsApp direto integrado ao fluxo do site
 
 ---
+## Desenvolvido por Carlos Marques
+
+[LinkedIn](https://www.linkedin.com/in/carlos-marques-0b9346267/) | [GitHub](https://github.com/Carlos777-programmer)
 
 © 2026 NCS Garage. Todos os direitos reservados.
