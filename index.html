@@ -555,6 +555,7 @@ input[type=range]{accent-color:#38bdf8}
   lucide.createIcons();
 
   let allProjects = [];
+  let showAllProjects = false; // Controle de estado para expandir/recolher projetos
 
   window.addEventListener('mousemove', e => {
     document.documentElement.style.setProperty('--mx', e.clientX + 'px');
@@ -900,7 +901,13 @@ input[type=range]{accent-color:#38bdf8}
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // Renderização e filtragem dos projetos no #projects com base nas abas de veículos
+  // Função auxiliar para esconder o contentor de carregar mais se necessário
+  function removeExtraContainers() {
+    const loadMoreContainer = document.getElementById('loadMoreProjectsContainer');
+    if (loadMoreContainer) loadMoreContainer.style.display = 'none';
+  }
+
+  // Renderização e filtragem dos projetos no #projects com suporte a paginação e recolha mobile
   function renderProjectsList(projectsToDisplay) {
     const grid = document.getElementById('projectsGrid');
     if (!grid) return;
@@ -908,10 +915,15 @@ input[type=range]{accent-color:#38bdf8}
 
     if (projectsToDisplay.length === 0) {
       grid.innerHTML = `<div class="col-span-3 text-center py-12 text-slate-500 text-xs uppercase tracking-widest">Nenhum projeto encontrado para este filtro.</div>`;
+      removeExtraContainers();
       return;
     }
 
-    projectsToDisplay.forEach((proj, index) => {
+    // Limita a exibição inicial a 4 projetos se showAllProjects for false
+    const limit = showAllProjects ? projectsToDisplay.length : 4;
+    const slicedProjects = projectsToDisplay.slice(0, limit);
+
+    slicedProjects.forEach((proj, index) => {
       const article = document.createElement('article');
       article.className = 'gallery-tile reveal visible group';
       
@@ -946,40 +958,81 @@ input[type=range]{accent-color:#38bdf8}
       });
 
       grid.appendChild(article);
+
+      // OTIMIZAÇÃO MOBILE: Injeta o botão de recolher logo abaixo do 4º item se a lista estiver expandida
+      if (showAllProjects && index === 3 && projectsToDisplay.length > 4) {
+        const collapseBar = document.createElement('div');
+        collapseBar.id = 'inlineCollapseContainer';
+        collapseBar.className = 'col-span-full my-4 text-center';
+        collapseBar.innerHTML = `
+          <button id="inlineCollapseBtn" class="w-full sm:w-auto bg-slate-900/80 hover:bg-slate-800 text-slate-300 border border-white/10 px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-[.14em] inline-flex items-center justify-center gap-2 transition cursor-pointer backdrop-blur-md shadow-lg">
+            <span>Recolher lista (Mostrar menos)</span>
+            <i data-lucide="chevron-up" class="w-4 h-4 text-sky-400"></i>
+          </button>
+        `;
+        grid.appendChild(collapseBar);
+
+        collapseBar.querySelector('#inlineCollapseBtn').addEventListener('click', () => {
+          showAllProjects = false;
+          renderProjectsList(projectsToDisplay);
+          document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+        });
+      }
     });
-    lucide.createIcons();
+
+    // Gerenciamento do botão inferior tradicional (no fim da lista)
+    let loadMoreContainer = document.getElementById('loadMoreProjectsContainer');
+    if (!loadMoreContainer) {
+      loadMoreContainer = document.createElement('div');
+      loadMoreContainer.id = 'loadMoreProjectsContainer';
+      loadMoreContainer.className = 'mt-8 text-center col-span-full';
+      grid.after(loadMoreContainer);
+    }
+
+    if (projectsToDisplay.length > 4) {
+      loadMoreContainer.style.display = 'block';
+      const remainingCount = projectsToDisplay.length - 4;
+      loadMoreContainer.innerHTML = `
+        <button id="toggleShowMore" class="btn-secondary px-6 py-3.5 rounded-xl text-xs font-black uppercase tracking-[.14em] inline-flex items-center gap-2 cursor-pointer shadow-lg">
+          <span>${showAllProjects ? 'Recolher lista' : `Ver mais projetos (${remainingCount} restantes)`}</span>
+          <i data-lucide="${showAllProjects ? 'chevron-up' : 'chevron-down'}" class="w-4 h-4"></i>
+        </button>
+      `;
+      
+      document.getElementById('toggleShowMore')?.addEventListener('click', () => {
+        showAllProjects = !showAllProjects;
+        renderProjectsList(projectsToDisplay);
+        if (!showAllProjects) {
+          document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    } else {
+      loadMoreContainer.style.display = 'none';
+    }
+
+    if (typeof lucide !== 'undefined' && lucide.createIcons) {
+      lucide.createIcons();
+    }
   }
 
-function filterAndRenderProjects() {
-  const activeVehicleBtn = document.querySelector('#projects #vehicleFilterTabs button.active');
-  const vehicleFilter = activeVehicleBtn ? activeVehicleBtn.dataset.vehicle : 'all';
+  function filterAndRenderProjects() {
+    const activeVehicleBtn = document.querySelector('#projects #vehicleFilterTabs button.active');
+    const vehicleFilter = activeVehicleBtn ? activeVehicleBtn.dataset.vehicle : 'all';
 
-  if (vehicleFilter === 'all') {
-    renderProjectsList(allProjects);
-  } else {
-    const filtered = allProjects.filter(proj => {
-      // ATENÇÃO: Verifique se a propriedade no seu objeto JSON se chama 'vehicle_type', 'vehicleType' ou 'category'
-      const vehicleType = (proj.vehicle_type || proj.category || '').toLowerCase();
-
-      if (vehicleFilter === 'motos') {
-        return vehicleType.includes('motos');
-      }
-      if (vehicleFilter === 'suv') {
-        return vehicleType.includes('suv') || vehicleType.includes('picape') || vehicleType.includes('vans');
-      }
-      if (vehicleFilter === 'hatch') {
-        return vehicleType.includes('hatch') || vehicleType.includes('sedan');
-      }
-      if (vehicleFilter === 'esportivo') {
-        return vehicleType.includes('esportivo') || vehicleType.includes('premium');
-      }
-
-      return false;
-    });
+    let filtered = allProjects;
+    if (vehicleFilter !== 'all') {
+      filtered = allProjects.filter(proj => {
+        const vehicleType = (proj.vehicle_type || proj.category || '').toLowerCase();
+        if (vehicleFilter === 'motos') return vehicleType.includes('motos');
+        if (vehicleFilter === 'suv') return vehicleType.includes('suv') || vehicleType.includes('picape') || vehicleType.includes('vans');
+        if (vehicleFilter === 'hatch') return vehicleType.includes('hatch') || vehicleType.includes('sedan');
+        if (vehicleFilter === 'esportivo') return vehicleType.includes('esportivo') || vehicleType.includes('premium');
+        return false;
+      });
+    }
     
     renderProjectsList(filtered);
   }
-}
 
   document.querySelectorAll('#projects #vehicleFilterTabs button').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -987,6 +1040,7 @@ function filterAndRenderProjects() {
       document.querySelectorAll('#projects #vehicleFilterTabs button').forEach(b => b.classList.add('text-slate-500'));
       btn.classList.add('active', 'text-white');
       btn.classList.remove('text-slate-500');
+      showAllProjects = false; // Reseta o estado ao trocar de aba de filtro
       filterAndRenderProjects();
     });
   });
