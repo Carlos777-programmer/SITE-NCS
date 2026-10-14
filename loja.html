@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#030507">
+  <meta name="description" content="Produtos de estética automotiva escolhidos pela NCS Garage. Compare, salve e consulte ofertas de parceiros com transparência.">
+  <title>Curadoria NCS Garage — Produtos de Detalhamento</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config={darkMode:'class',theme:{extend:{colors:{ink:'#030507',electric:'#38bdf8',blue:'#2563eb',violet:'#6366f1'},fontFamily:{display:['Space Grotesk','sans-serif'],sans:['DM Sans','sans-serif']}}}};
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+    :root{--mx:50vw;--my:22vh;color-scheme:dark}
+    *{box-sizing:border-box}
+    html{background:#030507;scroll-padding-top:90px}
+    body{margin:0;min-height:100vh;overflow-x:hidden;color:#e8edf5;font-family:'DM Sans',sans-serif;background:radial-gradient(850px 540px at 65% -15%,rgba(37,99,235,.2),transparent 70%),radial-gradient(700px 480px at 0 58%,rgba(56,189,248,.055),transparent 70%),#030507}
+    .font-display{font-family:'Space Grotesk',sans-serif}
+    .site-grid{background-image:linear-gradient(rgba(255,255,255,.014) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.014) 1px,transparent 1px);background-size:52px 52px}
+    .spotlight{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(500px circle at var(--mx) var(--my),rgba(56,189,248,.055),transparent 70%)}
+    .glass{background:rgba(8,13,20,.76);border:1px solid rgba(148,163,184,.12);backdrop-filter:blur(16px)}
+    .brand-mark{background:linear-gradient(135deg,#67e8f9,#2563eb 58%,#6366f1);box-shadow:0 0 26px rgba(56,189,248,.25)}
+    .gradient-text{color:transparent;background:linear-gradient(100deg,#e0f2fe 5%,#67e8f9 50%,#818cf8 100%);-webkit-background-clip:text;background-clip:text}
+    .eyebrow{display:flex;align-items:center;gap:9px;color:#7dd3fc;font-size:9px;font-weight:800;letter-spacing:.22em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:18px;height:1px;background:#38bdf8}
+    .hero-visual{position:relative;min-height:285px;overflow:hidden;border:1px solid rgba(125,211,252,.14);border-radius:28px;background:radial-gradient(ellipse at 56% 62%,rgba(37,99,235,.25),transparent 56%),linear-gradient(145deg,rgba(14,24,38,.92),rgba(4,8,13,.95))}
+    .hero-visual:before{content:"";position:absolute;width:270px;height:270px;border:1px solid rgba(56,189,248,.13);border-radius:50%;right:-38px;top:-117px;box-shadow:0 0 55px rgba(56,189,248,.08)}
+    .hero-visual:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 24%,rgba(255,255,255,.035) 48%,transparent 70%)}
+    .car-svg{position:absolute;inset:26px 10px 38px;width:calc(100% - 20px);height:calc(100% - 64px);filter:drop-shadow(0 12px 22px rgba(14,165,233,.2))}
+    .hero-stamp{position:absolute;z-index:2;left:20px;top:18px;color:#93c5fd;font:800 8px ui-monospace,monospace;letter-spacing:.18em}
+    .hero-stamp-right{position:absolute;z-index:2;right:20px;bottom:17px;color:#64748b;font:8px ui-monospace,monospace;letter-spacing:.12em}
+    .hero-orb{position:absolute;z-index:0;width:190px;height:190px;left:45%;top:14%;border-radius:50%;background:rgba(37,99,235,.14);filter:blur(48px)}
+    .btn-primary{color:#fff;background:linear-gradient(120deg,#2563eb,#4f46e5);box-shadow:0 12px 32px rgba(37,99,235,.24);transition:transform .24s,box-shadow .24s}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(37,99,235,.4)}
+    .btn-quiet{border:1px solid rgba(148,163,184,.17);background:rgba(255,255,255,.025);transition:.2s}
+    .btn-quiet:hover{border-color:rgba(56,189,248,.42);background:rgba(56,189,248,.07)}
+    .ritual-pill{border:1px solid rgba(148,163,184,.14);background:rgba(255,255,255,.025);color:#94a3b8;transition:background .2s,border-color .2s,color .2s}
+    .ritual-pill:hover{border-color:rgba(56,189,248,.4);color:#e0f2fe}
+    .ritual-pill.active{background:rgba(37,99,235,.16);border-color:rgba(56,189,248,.48);color:#e0f2fe}
+    .product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
+    @media(max-width:1023px){.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}}
+    @media(max-width:599px){.product-grid{grid-template-columns:minmax(0,1fr);gap:.875rem}}
+    .product-card{position:relative;display:flex;flex-direction:column;min-width:0;overflow:hidden;border:1px solid rgba(148,163,184,.12);border-radius:22px;background:linear-gradient(155deg,rgba(12,18,27,.96),rgba(5,8,13,.98));transition:transform .28s cubic-bezier(.2,.8,.2,1),border-color .28s,box-shadow .28s}
+    .product-card:hover{transform:translateY(-4px);border-color:rgba(56,189,248,.34);box-shadow:0 24px 55px rgba(0,0,0,.35),0 0 28px rgba(56,189,248,.05)}
+    .card-visual{position:relative;display:flex;align-items:center;justify-content:space-between;min-height:120px;padding:18px 20px;overflow:hidden;background:radial-gradient(220px circle at 78% 30%,rgba(56,189,248,.15),transparent 60%),linear-gradient(120deg,rgba(37,99,235,.1),rgba(99,102,241,.055))}
+    .card-visual:after{content:"";position:absolute;width:160px;height:160px;border:1px solid rgba(125,211,252,.1);border-radius:50%;right:-42px;top:-97px}
+    .ritual-chip{position:relative;z-index:1;display:inline-flex;align-items:center;gap:6px;color:#a5dff7;font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .product-icon{position:relative;z-index:1;display:grid;place-items:center;width:46px;height:46px;border-radius:15px;color:#bae6fd;border:1px solid rgba(125,211,252,.17);background:rgba(56,189,248,.08)}
+    .product-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.45;transition:opacity 0.3s;}
+    .product-card:hover .product-img{opacity:0.65;}
+    .card-content{padding:18px 19px 17px;display:flex;flex:1;flex-direction:column}
+    .card-tools{display:flex;gap:6px}
+    .icon-button{display:grid;place-items:center;width:32px;height:32px;border:1px solid rgba(148,163,184,.14);border-radius:10px;background:rgba(0,0,0,.22);color:#94a3b8;transition:.18s}
+    .icon-button:hover{color:#e0f2fe;border-color:rgba(56,189,248,.4)}
+    .icon-button[aria-pressed="true"]{color:#7dd3fc;background:rgba(56,189,248,.12);border-color:rgba(56,189,248,.4)}
+    .icon-button.fav-active[aria-pressed="true"]{color:#fda4af;background:rgba(251,113,133,.1);border-color:rgba(251,113,133,.35)}
+    .product-card h3{font:700 18px/1.2 'Space Grotesk',sans-serif;color:#f8fafc;margin:0}
+    .product-description{color:#94a3b8;font-size:11px;line-height:1.65;margin:9px 0 0;min-height:38px}
+    .spec-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:15px}
+    .spec-cell{padding:8px 9px;border:1px solid rgba(148,163,184,.08);border-radius:9px;background:rgba(255,255,255,.02)}
+    .spec-cell dt{font-size:7px;text-transform:uppercase;letter-spacing:.12em;color:#64748b}
+    .spec-cell dd{margin:4px 0 0;font:9px ui-monospace,monospace;color:#cbd5e1}
+    .pending-note{display:flex;align-items:center;gap:6px;color:#fbbf24;font-size:8px;text-transform:uppercase;letter-spacing:.1em;margin-top:13px}
+    .pending-note i{width:5px;height:5px;border-radius:50%;background:#fbbf24}
+    .card-buy{margin-top:auto;padding-top:16px}
+    .price-line{display:flex;align-items:end;justify-content:space-between;gap:8px;margin-bottom:11px}
+    .price{font:700 16px 'Space Grotesk',sans-serif;color:#bae6fd}.price-caption{font-size:7px;color:#64748b;text-transform:uppercase;letter-spacing:.1em;margin-top:3px}
+    .status-text{color:#fbbf24;font-size:7px;text-align:right;text-transform:uppercase;letter-spacing:.08em}
+    .buy-link{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;min-height:42px;padding:10px;border-radius:11px;text-align:center;font-size:8px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+    a.buy-link{color:#fff;background:linear-gradient(120deg,#2563eb,#4f46e5);box-shadow:0 9px 22px rgba(37,99,235,.2);transition:.22s}
+    a.buy-link:hover{transform:translateY(-1px);box-shadow:0 13px 30px rgba(37,99,235,.35)}
+    button.buy-link{color:#8693a5;background:rgba(148,163,184,.055);border:1px solid rgba(148,163,184,.12);cursor:not-allowed}
+    .terminal-out{font:9px ui-monospace,monospace;color:#64748b}
+    .terminal-out b{color:#7dd3fc}
+    .dialog{width:min(920px,calc(100% - 24px));max-height:min(88vh,820px);padding:0;border:1px solid rgba(148,163,184,.17);border-radius:24px;color:#e5edf7;background:linear-gradient(155deg,#0b121c,#05080d);box-shadow:0 28px 100px rgba(0,0,0,.7);overflow:auto}
+    .dialog::backdrop{background:rgba(0,0,0,.76);backdrop-filter:blur(7px)}
+    .dialog-inner{padding:20px}@media(min-width:640px){.dialog-inner{padding:28px}}
+    .compare-scroll{overflow-x:auto;border:1px solid rgba(148,163,184,.1);border-radius:15px}
+    .compare-table{width:100%;min-width:570px;border-collapse:collapse}
+    .compare-table th,.compare-table td{padding:12px;border-bottom:1px solid rgba(255,255,255,.06);text-align:left;font-size:10px}
+    .compare-table thead th{color:#e2e8f0;background:rgba(255,255,255,.025)}
+    .compare-table tbody th{color:#64748b;text-transform:uppercase;letter-spacing:.08em;font-size:8px}
+    .compare-table tbody td{color:#cbd5e1}.compare-table tr:last-child th,.compare-table tr:last-child td{border-bottom:0}
+    .compare-name{font:700 13px 'Space Grotesk',sans-serif}
+    .fav-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px;border:1px solid rgba(148,163,184,.1);border-radius:14px;background:rgba(255,255,255,.025)}
+    .toast{position:fixed;z-index:100;left:50%;bottom:90px;transform:translate(-50%,12px);opacity:0;pointer-events:none;padding:10px 15px;border:1px solid rgba(56,189,248,.22);border-radius:12px;background:rgba(8,14,22,.96);color:#bae6fd;font-size:10px;box-shadow:0 14px 38px rgba(0,0,0,.45);transition:.22s;white-space:nowrap}
+    .toast.show{opacity:1;transform:translate(-50%,0)}
+    .compare-tray{position:fixed;z-index:40;left:50%;bottom:14px;transform:translate(-50%,130%);width:min(720px,calc(100% - 22px));padding:10px 12px;border:1px solid rgba(56,189,248,.24);border-radius:16px;background:rgba(5,10,17,.94);box-shadow:0 22px 65px rgba(0,0,0,.55);backdrop-filter:blur(16px);transition:transform .32s cubic-bezier(.2,.8,.2,1)}
+    .compare-tray.open{transform:translate(-50%,0)}.compare-tray[hidden]{display:none}
+    .tray-inner{display:flex;align-items:center;gap:9px}.tray-items{display:flex;gap:6px;overflow:auto;flex:1}.tray-item{display:flex;align-items:center;gap:5px;max-width:170px;padding:6px 8px;border-radius:9px;background:rgba(255,255,255,.04);color:#cbd5e1;font-size:8px;white-space:nowrap}.tray-item span{overflow:hidden;text-overflow:ellipsis}.tray-item button{color:#718096}
+    .tray-go{border:0;border-radius:10px;padding:10px 12px;background:linear-gradient(120deg,#2563eb,#4f46e5);color:white;font-size:8px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;white-space:nowrap}.tray-go:disabled{opacity:.45;cursor:not-allowed}
+    :focus-visible{outline:2px solid #38bdf8;outline-offset:3px}
+    @media(max-width:639px){.hero-visual{min-height:220px}.product-description{min-height:0}.card-content{padding:15px}.product-card h3{font-size:16px}.tray-label{display:none}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body class="site-grid">
+  <div class="spotlight" aria-hidden="true"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <header class="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-[#030507]/85 backdrop-blur-2xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-[70px] flex items-center justify-between gap-3">
+      <a href="{% url 'loja_vitrine' %}" class="flex items-center gap-3 group" aria-label="NCS Garage — início">
+        <span class="brand-mark grid place-items-center w-10 h-10 rounded-xl font-display font-black text-ink">N</span>
+        <span><span class="block font-display font-bold text-sm tracking-[.14em] text-white">NCS <span class="text-sky-400">GARAGE</span></span><span class="hidden sm:block text-[8px] text-slate-500 tracking-[.2em] uppercase">Curadoria de detalhamento</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-[9px] font-bold uppercase tracking-[.14em] text-slate-400" aria-label="Navegação principal">
+        <a class="text-white" href="#catalogo" aria-current="page">Catálogo</a>
+        <a class="hover:text-white transition" href="{% url 'novo_produto_ia' %}">Gestão / IA</a>
+        <a class="hover:text-white transition" href="#sobre">Sobre a curadoria</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button id="compareOpen" type="button" class="btn-quiet relative grid place-items-center w-10 h-10 rounded-xl text-slate-200" aria-label="Comparar produtos"><i data-lucide="git-compare" class="w-4 h-4"></i><span id="compareCount" class="hidden absolute -top-1 -right-1 min-w-4 h-4 px-1 rounded-full bg-sky-400 text-ink text-[8px] font-black grid place-items-center">0</span></button>
+        <button id="favoritesOpen" type="button" class="btn-quiet relative grid place-items-center w-10 h-10 rounded-xl text-slate-200" aria-label="Abrir favoritos"><i data-lucide="bookmark" class="w-4 h-4"></i><span id="favoriteCount" class="hidden absolute -top-1 -right-1 min-w-4 h-4 px-1 rounded-full bg-rose-400 text-ink text-[8px] font-black grid place-items-center">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10 pt-[70px]">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-9 sm:pt-14 pb-8 sm:pb-12">
+      <div class="grid lg:grid-cols-[1fr_.9fr] gap-8 lg:gap-12 items-center">
+        <div class="py-2">
+          <div class="eyebrow mb-5">Curadoria NCS Garage</div>
+          <h1 class="font-display text-[2.55rem] sm:text-5xl lg:text-[4rem] leading-[1.02] font-bold tracking-[-.05em]">Cuide do carro.<br><span class="gradient-text">Escolha com confiança.</span></h1>
+          <p class="mt-5 max-w-xl text-sm sm:text-base leading-7 text-slate-400">Produtos para cada etapa do detalhamento, com informação clara e compra feita diretamente na loja parceira.</p>
+          <div class="flex flex-wrap items-center gap-3 mt-7">
+            <a href="#catalogo" class="btn-primary inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-[9px] font-black uppercase tracking-[.14em]">Encontrar meu produto <i data-lucide="arrow-down" class="w-4 h-4"></i></a>
+            <span class="text-[9px] text-slate-500">Sem carrinho. Sem checkout simulado.</span>
+          </div>
+          <div class="flex flex-wrap gap-x-5 gap-y-2 mt-7 text-[9px] uppercase tracking-[.1em] text-slate-500">
+            <span class="inline-flex items-center gap-2"><i data-lucide="badge-check" class="w-3.5 h-3.5 text-sky-400"></i>Curadoria especializada</span>
+            <span class="inline-flex items-center gap-2"><i data-lucide="external-link" class="w-3.5 h-3.5 text-indigo-300"></i>Compra com o parceiro</span>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Ilustração de um automóvel sob luz de detalhamento">
+          <span class="hero-stamp">NCS / DETAILING STUDIO</span><span class="hero-orb" aria-hidden="true"></span>
+          <svg class="car-svg" viewBox="0 0 720 340" role="img" aria-label="Silhueta luminosa de um carro esportivo">
+            <defs>
+              <linearGradient id="bodyGlow" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e0f2fe" stop-opacity=".9"/><stop offset=".42" stop-color="#38bdf8" stop-opacity=".78"/><stop offset="1" stop-color="#6366f1" stop-opacity=".45"/></linearGradient>
+              <linearGradient id="glassGlow" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#0b1725"/><stop offset=".55" stop-color="#193b5b"/><stop offset="1" stop-color="#09111d"/></linearGradient>
+              <radialGradient id="floorGlow"><stop stop-color="#2563eb" stop-opacity=".38"/><stop offset="1" stop-color="#2563eb" stop-opacity="0"/></radialGradient>
+            </defs>
+            <ellipse cx="366" cy="284" rx="290" ry="32" fill="url(#floorGlow)"/>
+            <path d="M78 234c15-28 42-44 82-51l80-15 74-66c20-18 44-28 73-28h74c26 0 49 9 70 27l68 61 43 12c20 6 34 20 39 39l7 27-34 15h-28c-6-43-39-72-80-72s-74 29-80 72H258c-6-43-39-72-80-72s-74 29-80 72H68z" fill="#0a1421" stroke="url(#bodyGlow)" stroke-width="3" stroke-linejoin="round"/>
+            <path d="m274 160 57-48c14-12 31-19 53-19h68c20 0 36 7 52 21l52 46z" fill="url(#glassGlow)" stroke="#7dd3fc" stroke-opacity=".45" stroke-width="2"/>
+            <path d="m398 94-9 66m70-65 38 65" fill="none" stroke="#7dd3fc" stroke-opacity=".32" stroke-width="2"/>
+            <path d="M110 204h36m421-8 31 10M250 230h313" fill="none" stroke="#bae6fd" stroke-opacity=".75" stroke-width="3" stroke-linecap="round"/>
+            <path d="M92 225h30m475-25 36 9" fill="none" stroke="#38bdf8" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="178" cy="239" r="51" fill="#060a10" stroke="#334155" stroke-width="4"/><circle cx="178" cy="239" r="32" fill="#0d1724" stroke="#7dd3fc" stroke-opacity=".65" stroke-width="3"/><circle cx="178" cy="239" r="8" fill="#38bdf8"/>
+            <circle cx="594" cy="239" r="51" fill="#060a10" stroke="#334155" stroke-width="4"/><circle cx="594" cy="239" r="32" fill="#0d1724" stroke="#7dd3fc" stroke-opacity=".65" stroke-width="3"/><circle cx="594" cy="239" r="8" fill="#38bdf8"/>
+            <path d="M95 277h510" stroke="#38bdf8" stroke-opacity=".14" stroke-width="1"/>
+            <path d="M144 63h156M190 48h76M545 90h82M566 75h44" stroke="#7dd3fc" stroke-opacity=".22" stroke-width="1"/>
+          </svg>
+          <span class="hero-stamp-right">RITUAL / CUIDADO / RESULTADO</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="catalogo" class="max-w-7xl mx-auto px-4 sm:px-6 pt-6 pb-16 scroll-mt-20">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-5">
+        <div><div class="eyebrow">Encontre pelo seu ritual</div><h2 class="font-display text-2xl sm:text-3xl font-bold mt-2">O que seu carro precisa?</h2></div>
+        <div class="text-[9px] text-slate-500"><span id="resultCount">0</span> categorias</div>
+      </div>
+      <div class="glass rounded-2xl p-3 sm:p-4 mb-5">
+        <div class="flex flex-col lg:flex-row gap-3">
+          <label class="flex flex-1 min-w-0 items-center gap-3 px-3.5 rounded-xl bg-black/25 border border-white/10 focus-within:border-sky-400/45 transition">
+            <i data-lucide="search" class="w-4 h-4 text-sky-400"></i><span class="sr-only">Buscar produtos</span>
+            <input id="search" type="search" autocomplete="off" placeholder="Busque por produto ou especificação" class="w-full py-3 bg-transparent outline-none text-xs text-white placeholder:text-slate-500">
+            <button id="clearSearch" class="hidden text-slate-500 hover:text-white" type="button" aria-label="Limpar busca"><i data-lucide="x" class="w-4 h-4"></i></button>
+          </label>
+          <label class="flex items-center gap-2 px-3.5 rounded-xl bg-black/25 border border-white/10">
+            <span class="text-[8px] uppercase tracking-[.12em] text-slate-500 whitespace-nowrap">Ordenar</span>
+            <select id="sort" class="bg-transparent py-3 text-xs text-slate-200 outline-none"><option value="featured">Recomendados</option><option value="priceAsc">Menor preço</option><option value="priceDesc">Maior preço</option></select>
+          </label>
+        </div>
+        <div id="rituals" class="flex gap-2 mt-3 overflow-x-auto pb-1" role="group" aria-label="Filtrar por etapa de cuidado"></div>
+      </div>
+      <div class="flex items-start gap-2.5 px-3.5 py-3 mb-5 rounded-xl border border-amber-300/15 bg-amber-300/[.03]">
+        <i data-lucide="info" class="w-4 h-4 mt-0.5 flex-none text-amber-300"></i>
+        <p class="text-[9px] leading-5 text-amber-100/70"><strong class="text-amber-200">Catálogo em preparação.</strong> Preços, especificações e links só serão exibidos após conferência. A NCS pode receber comissão por compras feitas em links de afiliados.</p>
+      </div>
+      <div id="productGrid" class="product-grid" aria-live="polite"></div>
+    </section>
+
+    <section id="sobre" class="max-w-7xl mx-auto px-4 sm:px-6 pb-16 scroll-mt-20">
+      <div class="grid lg:grid-cols-[1.1fr_.9fr] gap-4">
+        <div class="glass rounded-2xl p-6 sm:p-8">
+          <div class="eyebrow">Transparência NCS</div>
+          <h2 class="font-display text-2xl sm:text-3xl font-bold mt-3">Compra direta. Comissão declarada.</h2>
+          <p class="text-slate-400 text-xs sm:text-sm leading-6 mt-3 max-w-2xl">Esta página não vende nem processa pagamentos. Quando uma oferta estiver disponível, o link leva ao site externo do parceiro. Preço, estoque, entrega e condições são definidos pela loja.</p>
+        </div>
+        <div class="rounded-2xl p-6 sm:p-8 border border-blue-400/15 bg-gradient-to-br from-blue-500/10 via-indigo-500/[.06] to-transparent flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+          <div><div class="eyebrow">Serviço NCS</div><h2 class="font-display text-xl sm:text-2xl font-bold mt-3">Prefere que a gente cuide?</h2><p class="text-slate-400 text-xs leading-5 mt-2">Conheça os serviços e projetos da oficina.</p></div>
+          <a href="{% url 'dashboard' %}" class="btn-primary inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-[8px] font-black uppercase tracking-[.12em] whitespace-nowrap"><i data-lucide="wrench" class="w-4 h-4"></i>Ir para o ERP</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative z-10 border-t border-white/5 bg-[#020305] py-7">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-[9px] text-slate-600"><span>NCS Garage · Santa Cruz da Esperança, SP</span><span>© 2026 NCS Garage · Compras realizadas em lojas externas</span></div>
+  </footer>
+
+  <div id="compareTray" class="compare-tray" hidden aria-hidden="true"><div class="tray-inner"><span class="tray-label text-[8px] uppercase tracking-[.12em] text-sky-300">Comparar</span><div id="trayItems" class="tray-items"></div><button id="trayOpen" class="tray-go" type="button" disabled>Escolha mais 1</button></div></div>
+
+  <dialog id="compareDialog" class="dialog" aria-labelledby="compareTitle"><div class="dialog-inner">
+    <div class="flex items-start justify-between gap-4"><div><div class="eyebrow mb-2">Comparação técnica</div><h2 id="compareTitle" class="font-display text-2xl font-bold">Veja lado a lado</h2><p class="text-[10px] text-slate-500 mt-2">Até três itens · dados sem validação aparecem como “A confirmar”.</p></div><button type="button" data-close class="btn-quiet grid place-items-center w-9 h-9 rounded-xl" aria-label="Fechar comparador"><i data-lucide="x" class="w-4 h-4"></i></button></div>
+    <div id="compareBody" class="mt-5"></div>
+  </div></dialog>
+  <dialog id="favoritesDialog" class="dialog" aria-labelledby="favoritesTitle"><div class="dialog-inner">
+    <div class="flex items-start justify-between gap-4"><div><div class="eyebrow mb-2">Seu arsenal</div><h2 id="favoritesTitle" class="font-display text-2xl font-bold">Salvos para depois</h2></div><button type="button" data-close class="btn-quiet grid place-items-center w-9 h-9 rounded-xl" aria-label="Fechar favoritos"><i data-lucide="x" class="w-4 h-4"></i></button></div>
+    <div id="favoritesBody" class="mt-5 space-y-2"></div>
+  </div></dialog>
+
+  <script>
+  (() => {
+    let products = [];
+
+    const rituals={all:'Tudo',lavagem:'Lavagem',blindagem:'Blindagem',acabamento:'Acabamento'};
+    const labels={volume:'Volume',rendimento:'Rendimento',ph:'pH',durabilidade:'Durabilidade'};
+    const storeKey='ncs_matrix_favs',maxCompare=3;
+    const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+    const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const fold=s=>String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR');
+    const byId=id=>products.find(p=>String(p.id)===String(id));
+    const formatPrice=v=>Number(v).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+    const state={ritual:'all',query:'',sort:'featured',favorites:[],compare:[]};
+
+    try{const saved=JSON.parse(localStorage.getItem(storeKey)||'[]');if(Array.isArray(saved))state.favorites=saved.filter(id=>byId(id))}catch{state.favorites=[]}
+    let toastTimer;
+
+    function linkFor(p){
+      if(!p||p.verifiedPartner!==true||!p.affiliateUrl)return'';
+      try{const url=new URL(p.affiliateUrl);return url.protocol==='https:'&&!/example\.(com|org|net)$/i.test(url.hostname)?url.href:''}catch{return''}
+    }
+    function iconRefresh(){if(window.lucide)window.lucide.createIcons()}
+    function toast(message){const el=$('#toast');el.textContent=message;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),2200)}
+    function terms(){return fold(state.query).split(/\s+/).filter(Boolean)}
+    function searchIndex(p){return fold([p.name,p.tag,p.description,rituals[p.ritual]||'',...Object.keys(p.specs||{}).map(k=>labels[k]||k),...Object.values(p.specs||{})].join(' '))}
+    
+    function listProducts(){
+      const q=terms();let list=products.filter(p=>(state.ritual==='all'||p.ritual===state.ritual)&&q.every(t=>searchIndex(p).includes(t)));
+      if(state.sort!=='featured'){const dir=state.sort==='priceAsc'?1:-1;list.sort((a,b)=>{const ak=Number.isFinite(a.price),bk=Number.isFinite(b.price);if(ak&&bk)return(a.price-b.price)*dir;if(ak)return-1;if(bk)return 1;return a.rank-b.rank})}
+      else list.sort((a,b)=>a.rank-b.rank);
+      return list;
+    }
+
+    function linkButton(p){
+      const href=linkFor(p);
+      if(href)return'<a class="buy-link" href="'+esc(href)+'" target="_blank" rel="sponsored noopener noreferrer"><i data-lucide="external-link" class="w-4 h-4"></i>Ver na loja parceira</a>';
+      return'<button class="buy-link" type="button" disabled aria-disabled="true"><i data-lucide="clock-3" class="w-4 h-4"></i>Oferta em preparação</button>';
+    }
+
+    function renderCard(p){
+      const favorite=state.favorites.includes(p.id),compared=state.compare.includes(p.id),ok=!!linkFor(p);
+      const specs=Object.entries(p.specs||{}).map(([key,value])=>'<div class="spec-cell"><dt>'+esc(labels[key]||key)+'</dt><dd>'+esc(value||'A confirmar')+'</dd></div>').join('');
+      
+      const imgHtml = p.image 
+        ? '<img src="'+esc(p.image)+'" alt="'+esc(p.name)+'" class="product-img">'
+        : '';
+
+      return'<article class="product-card">'+
+        '<div class="card-visual">'+imgHtml+'<span class="ritual-chip"><i data-lucide="'+esc(p.icon)+'" class="w-3.5 h-3.5"></i>'+esc(rituals[p.ritual]||p.ritual)+'</span><span class="product-icon"><i data-lucide="'+esc(p.icon)+'" class="w-5 h-5"></i></span></div>'+
+        '<div class="card-content"><div class="flex items-start justify-between gap-3"><div><span class="text-[7px] uppercase tracking-[.14em] text-slate-600">'+esc(p.tag)+'</span><h3 class="mt-1">'+esc(p.name)+'</h3></div><div class="card-tools">'+
+        '<button type="button" class="icon-button" data-action="compare" data-id="'+esc(p.id)+'" aria-pressed="'+compared+'" aria-label="Adicionar '+esc(p.name)+' à comparação" title="Comparar"><i data-lucide="git-compare" class="w-4 h-4"></i></button>'+
+        '<button type="button" class="icon-button fav-active" data-action="favorite" data-id="'+esc(p.id)+'" aria-pressed="'+favorite+'" aria-label="Salvar '+esc(p.name)+' nos favoritos" title="Salvar"><i data-lucide="bookmark" class="w-4 h-4"></i></button></div></div>'+
+        '<p class="product-description">'+esc(p.description)+'</p><dl class="spec-grid">'+specs+'</dl><div class="pending-note"><i></i>'+ (ok?'Parceiro verificado':'Ficha em preparação')+'</div>'+
+        '<div class="card-buy"><div class="price-line"><div><div class="price">'+(Number.isFinite(p.price)?formatPrice(p.price):'Preço a confirmar')+'</div><div class="price-caption">Preço na loja parceira</div></div><span class="status-text">'+(ok?'Link ativo':'Oferta pendente')+'</span></div>'+linkButton(p)+'</div></div></article>';
+    }
+
+    function renderRituals(){
+      const counts={all:products.filter(p=>terms().every(t=>searchIndex(p).includes(t))).length};
+      Object.keys(rituals).filter(k=>k!=='all').forEach(k=>counts[k]=products.filter(p=>p.ritual===k&&terms().every(t=>searchIndex(p).includes(t))).length);
+      $('#rituals').innerHTML=Object.entries(rituals).map(([key,label])=>'<button type="button" data-ritual="'+key+'" aria-pressed="'+(state.ritual===key)+'" class="ritual-pill '+(state.ritual===key?'active':'')+' shrink-0 inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-[8px] font-bold uppercase tracking-[.1em]">'+esc(label)+'<span class="text-slate-500 font-mono">'+counts[key]+'</span></button>').join('');
+    }
+
+    function render(){
+      const items=listProducts();
+      $('#resultCount').textContent=items.length;
+      $('#productGrid').innerHTML=items.length?items.map(renderCard).join(''):'<div class="col-span-full rounded-2xl border border-white/10 bg-white/[.02] px-5 py-14 text-center"><i data-lucide="search-x" class="w-7 h-7 mx-auto text-slate-500"></i><h3 class="font-display text-lg font-bold mt-3">Não encontramos esse cuidado</h3><p class="text-xs text-slate-500 mt-2">Experimente outro termo ou limpe os filtros.</p><button data-action="reset" class="btn-quiet rounded-xl px-4 py-2.5 mt-4 text-[8px] uppercase tracking-[.1em]">Limpar filtros</button></div>';
+      $('#clearSearch').classList.toggle('hidden',!state.query);
+      renderRituals();renderCounts();iconRefresh();
+    }
+
+    function renderCounts(){
+      const fav=$('#favoriteCount'),cmp=$('#compareCount');
+      fav.textContent=state.favorites.length;cmp.textContent=state.compare.length;
+      fav.classList.toggle('hidden',state.favorites.length===0);cmp.classList.toggle('hidden',state.compare.length===0);
+      renderTray();iconRefresh();
+    }
+
+    function renderTray(){
+      const tray=$('#compareTray'),n=state.compare.length;
+      tray.hidden=n===0;tray.classList.toggle('open',n>0);tray.setAttribute('aria-hidden',String(n===0));
+      $('#trayItems').innerHTML=state.compare.map(id=>{const p=byId(id);return'<span class="tray-item"><span>'+esc(p ? p.name : '')+'</span><button data-action="uncompare" data-id="'+esc(id)+'" aria-label="Remover '+(p ? esc(p.name) : '')+'"><i data-lucide="x" class="w-3 h-3"></i></button></span>'}).join('');
+      $('#trayOpen').disabled=n<2;$('#trayOpen').textContent=n<2?'Escolha mais 1':'Comparar '+n;
+    }
+
+    function renderComparison(){
+      const chosen=state.compare.map(byId).filter(Boolean),body=$('#compareBody');
+      if(!chosen.length){body.innerHTML='<div class="py-10 text-center text-xs text-slate-500">Selecione itens nos cartões para comparar.</div>';return}
+      const keys=['volume','rendimento','ph','durabilidade'];
+      const rows=[['Etapa',p=>rituals[p.ritual]||p.ritual],['Preço',p=>Number.isFinite(p.price)?formatPrice(p.price):'A confirmar'],...keys.map(k=>[labels[k],p=>(p.specs&&p.specs[k])?p.specs[k]:'A confirmar'])];
+      body.innerHTML='<div class="compare-scroll"><table class="compare-table"><thead><tr><th></th>'+chosen.map(p=>'<th><div class="compare-name">'+esc(p.name)+'</div><button class="text-[8px] text-sky-300 underline mt-2" data-action="uncompare" data-id="'+esc(p.id)+'">Remover</button></th>').join('')+'</tr></thead><tbody>'+
+        rows.map(([label,fn])=>'<tr><th>'+esc(label)+'</th>'+chosen.map(p=>'<td>'+esc(fn(p))+'</td>').join('')+'</tr>').join('')+
+        '<tr><th>Oferta</th>'+chosen.map(p=>'<td>'+linkButton(p)+'</td>').join('')+'</tr></tbody></table></div>';
+      iconRefresh();
+    }
+
+    function renderFavorites(){
+      const chosen=state.favorites.map(byId).filter(Boolean),body=$('#favoritesBody');
+      body.innerHTML=chosen.length?chosen.map(p=>'<article class="fav-row"><div class="min-w-0"><span class="text-[7px] uppercase tracking-[.12em] text-sky-300">'+esc(rituals[p.ritual]||p.ritual)+'</span><h3 class="font-display text-sm font-bold mt-1">'+esc(p.name)+'</h3></div><div class="flex items-center gap-2 shrink-0">'+linkButton(p)+'<button type="button" data-action="favorite" data-id="'+esc(p.id)+'" class="icon-button" aria-label="Remover dos favoritos"><i data-lucide="trash-2" class="w-4 h-4"></i></button></div></article>').join(''):'<div class="py-12 text-center text-xs text-slate-500">Seus favoritos aparecem aqui.</div>';
+      iconRefresh();
+    }
+
+    function toggleFavorite(id){
+      if(!byId(id))return;
+      const had=state.favorites.includes(id);state.favorites=had?state.favorites.filter(x=>x!==id):[...state.favorites,id];
+      try{localStorage.setItem(storeKey,JSON.stringify(state.favorites))}catch{toast('Não foi possível salvar neste navegador.')}
+      toast(had?'Removido dos favoritos.':'Salvo nos favoritos.');render();if($('#favoritesDialog').open)renderFavorites();
+    }
+
+    function toggleCompare(id){
+      if(!byId(id))return;
+      if(state.compare.includes(id))state.compare=state.compare.filter(x=>x!==id);
+      else if(state.compare.length>=maxCompare){toast('Compare até três itens por vez.');return}
+      else state.compare=[...state.compare,id];
+      render();if($('#compareDialog').open)renderComparison();
+    }
+
+    function resetFilters(){state.ritual='all';state.query='';$('#search').value='';render()}
+
+    // Carrega os produtos diretamente da API DRF do app loja (/api/produtos/)
+    async function loadStoreProducts() {
+      try {
+        const response = await fetch('/api/produtos/');
+        if (!response.ok) throw new Error('Erro na resposta da API');
+        
+        const data = await response.json();
+        if (data && data.length > 0) {
+          products = data.map(item => ({
+            id: String(item.id),
+            name: item.name,
+            ritual: item.ritual,
+            icon: item.icon || 'droplets',
+            tag: item.tag || 'Curadoria',
+            rank: item.rank || 1,
+            description: item.description,
+            price: item.price ? parseFloat(item.price) : null,
+            specs: {
+              volume: item.volume || 'A confirmar',
+              rendimento: item.rendimento || 'A confirmar',
+              ph: item.ph || 'A confirmar',
+              durabilidade: item.durabilidade || 'A confirmar'
+            },
+            affiliateUrl: item.affiliate_url,
+            verifiedPartner: item.verified_partner,
+            image: item.image
+          }));
+        }
+      } catch (err) {
+        console.log('Modo fallback ou erro ao carregar API:', err);
+      }
+      render();
+    }
+
+    $('#search').addEventListener('input',e=>{state.query=e.target.value;render()});
+    $('#clearSearch').addEventListener('click',()=>{state.query='';$('#search').value='';render();$('#search').focus()});
+    $('#sort').addEventListener('change',e=>{state.sort=e.target.value;render()});
+    $('#rituals').addEventListener('click',e=>{const b=e.target.closest('[data-ritual]');if(!b)return;state.ritual=b.dataset.ritual;render()});
+    $('#productGrid').addEventListener('click',e=>{const b=e.target.closest('[data-action]');if(!b)return;if(b.dataset.action==='favorite')toggleFavorite(b.dataset.id);if(b.dataset.action==='compare')toggleCompare(b.dataset.id);if(b.dataset.action==='reset')resetFilters()});
+    $('#trayItems').addEventListener('click',e=>{const b=e.target.closest('[data-action="uncompare"]');if(b)toggleCompare(b.dataset.id)});
+    $('#compareBody').addEventListener('click',e=>{const b=e.target.closest('[data-action="uncompare"]');if(b)toggleCompare(b.dataset.id)});
+    $('#favoritesBody').addEventListener('click',e=>{const b=e.target.closest('[data-action="favorite"]');if(b)toggleFavorite(b.dataset.id)});
+    $('#compareOpen').addEventListener('click',()=>{if(state.compare.length<2){toast('Escolha pelo menos dois produtos para comparar.');return}renderComparison();$('#compareDialog').showModal()});
+    $('#trayOpen').addEventListener('click',()=>{if(state.compare.length>=2){renderComparison();$('#compareDialog').showModal()}});
+    $('#favoritesOpen').addEventListener('click',()=>{renderFavorites();$('#favoritesDialog').showModal()}); $$('.dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d||e.target.closest('[data-close]'))d.close()}));
+    document.addEventListener('keydown',e=>{if(e.key==='/'&&!/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){e.preventDefault();$('#search').focus()}});
+    window.addEventListener('storage',e=>{if(e.key!==storeKey)return;try{const ids=JSON.parse(e.newValue||'[]');state.favorites=Array.isArray(ids)?ids.filter(id=>byId(id)):[]}catch{state.favorites=[]}render();if($('#favoritesDialog').open)renderFavorites()});
+    if(matchMedia('(pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches)window.addEventListener('pointermove',e=>{document.documentElement.style.setProperty('--mx',e.clientX+'px');document.documentElement.style.setProperty('--my',e.clientY+'px')},{passive:true});
+    
+    loadStoreProducts();
+    iconRefresh();
+  })();
+  </script>
+</body>
+</html>

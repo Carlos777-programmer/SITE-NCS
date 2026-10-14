@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#030507">
-<meta name="description" content="NCS Garage — estética automotiva, elétrica e som. Diagnóstico preciso, acabamento premium e atendimento direto pelo WhatsApp.">
-<title>NCS Garage — Estética & Som Automotivo</title>
+<meta name="description" content="NCS CAR — estética automotiva, elétrica e som. Diagnóstico preciso, acabamento premium e atendimento direto pelo WhatsApp.">
+<title>NCS CAR — Estética, Som & Loja Automotiva</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
@@ -95,7 +95,7 @@ input[type=range]{accent-color:#38bdf8}
     <a href="#top" class="flex items-center gap-3 group">
       <div class="pulse-dot w-3 h-3 rounded-full bg-sky-400"></div>
       <div>
-        <div class="font-display font-black text-lg tracking-[.18em] text-white">NCS <span class="text-sky-400">GARAGE</span></div>
+        <div class="font-display font-black text-lg tracking-[.18em] text-white">NCS <span class="text-sky-400">CAR</span></div>
         <div class="text-[8px] text-slate-500 tracking-[.28em] uppercase">Estética • Polimento • Som</div>
       </div>
     </a>
@@ -103,6 +103,7 @@ input[type=range]{accent-color:#38bdf8}
       <a class="hover:text-white transition" href="#experience">Experiência</a>
       <a class="hover:text-white transition" href="#services">Serviços</a>
       <a class="hover:text-white transition" href="#projects">Projetos</a>
+      <a class="hover:text-white transition text-sky-400 font-black" href="loja.html">Loja de Produtos</a>
       <a class="hover:text-white transition" href="#process">Processo</a>
       <a class="hover:text-white transition" href="#reviews">Clientes</a>
     </nav>
@@ -116,6 +117,7 @@ input[type=range]{accent-color:#38bdf8}
       <a class="p-3 rounded-xl hover:bg-white/5" href="#experience">Experiência</a>
       <a class="p-3 rounded-xl hover:bg-white/5" href="#services">Serviços</a>
       <a class="p-3 rounded-xl hover:bg-white/5" href="#projects">Projetos</a>
+      <a class="p-3 rounded-xl hover:bg-white/5 text-sky-400" href="loja.html">Loja de Produtos</a>
       <a class="p-3 rounded-xl hover:bg-white/5" href="#process">Processo</a>
       <a class="p-3 rounded-xl hover:bg-white/5" href="#reviews">Clientes</a>
       <a href="#quote" class="btn-primary p-3 rounded-xl text-center">Solicitar orçamento</a>
@@ -131,10 +133,13 @@ input[type=range]{accent-color:#38bdf8}
         <div class="reveal">
           <h1 class="font-display text-5xl sm:text-7xl lg:text-[82px] leading-[.94] font-black tracking-[-.055em] max-w-4xl">SEU CARRO.<br><span class="gradient-text">OUTRO NÍVEL.</span></h1>
           <p class="mt-7 text-slate-400 text-sm sm:text-base max-w-xl leading-7">Estética automotiva, elétrica e som tratados como projeto — não como improviso. Diagnóstico, execução e acabamento com padrão premium do primeiro contato à entrega.</p>
+          
+          <!-- BOTÕES DE CTA NO TOPO MODIFICADOS: GALERIA E LOJA DESTAQUE -->
           <div class="mt-8 flex flex-col sm:flex-row gap-3">
-            <a href="#quote" class="btn-primary inline-flex justify-center items-center gap-2 px-6 py-4 rounded-2xl text-xs font-black uppercase tracking-[.14em]"><i data-lucide="sparkles" class="w-4 h-4"></i> Montar meu orçamento</a>
-            <a href="#projects" class="btn-secondary inline-flex justify-center items-center gap-2 px-6 py-4 rounded-2xl text-xs font-black uppercase tracking-[.14em]"><i data-lucide="play-circle" class="w-4 h-4"></i> Ver padrão de entrega</a>
+            <a href="#projects" class="btn-primary inline-flex justify-center items-center gap-2 px-6 py-4 rounded-2xl text-xs font-black uppercase tracking-[.14em]"><i data-lucide="camera" class="w-4 h-4"></i> Ver fotos dos carros</a>
+            <a href="loja.html" class="inline-flex justify-center items-center gap-2 px-6 py-4 rounded-2xl text-xs font-black uppercase tracking-[.14em] text-white bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 shadow-[0_0_25px_rgba(56,189,248,0.35)] hover:shadow-[0_0_35px_rgba(56,189,248,0.55)] transition transform hover:-translate-y-0.5"><i data-lucide="shopping-bag" class="w-4 h-4"></i> Visitar Loja de Produtos</a>
           </div>
+
           <div class="mt-9 grid grid-cols-3 max-w-xl gap-4">
             <div>
               <div class="text-2xl font-display font-black text-white">360°</div>
@@ -158,7 +163,7 @@ input[type=range]{accent-color:#38bdf8}
 
               <div class="absolute inset-0 bg-gradient-to-t from-[#030507] via-[#030507]/40 to-transparent z-10"></div>
 
-              <div class="absolute top-5 left-5 text-[9px] font-bold tracking-[.2em] text-slate-400 uppercase z-25">NCS - Garage</div>
+              <div class="absolute top-5 left-5 text-[9px] font-bold tracking-[.2em] text-slate-400 uppercase z-25">NCS - CAR</div>
               <div class="absolute top-5 right-5 badge z-25">Último Serviço realizado</div>
               
               <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between z-25">
@@ -273,9 +278,7 @@ input[type=range]{accent-color:#38bdf8}
       <p class="text-sm text-slate-500 max-w-md">Tudo conectado pela mesma filosofia: precisão técnica, instalação limpa e resultado que faz sentido para o veículo.</p>
     </div>
 
-    <!-- Controles de Filtro: Categoria de Serviço e Tipo -->
     <div class="mt-8 flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between reveal">
-      <!-- Abas de Categoria de Serviço -->
       <div class="flex flex-wrap gap-2" id="serviceTabs">
         <button data-filter="all" class="service-tab active px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em]">Todas Áreas</button>
         <button data-filter="estetica" class="service-tab px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em] text-slate-500">Estética</button>
@@ -283,7 +286,6 @@ input[type=range]{accent-color:#38bdf8}
         <button data-filter="eletrica" class="service-tab px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[.15em] text-slate-500">Elétrica</button>
       </div>
 
-      <!-- Filtro por Tipo de Serviço -->
       <div class="w-full md:w-64">
         <select id="serviceTypeFilter" class="w-full rounded-xl bg-black/40 border border-white/10 px-4 py-2.5 text-xs font-semibold outline-none focus:border-sky-400/50">
           <option value="all">Todos os tipos de serviço</option>
@@ -338,7 +340,6 @@ input[type=range]{accent-color:#38bdf8}
       <button id="openGallery" class="btn-secondary px-4 py-3 rounded-xl text-[10px] font-black uppercase tracking-[.14em]">Expandir portfólio</button>
     </div>
 
-    <!-- Filtros por Categoria de Veículo adicionados no #projects -->
     <div class="mt-8 flex flex-wrap gap-2 items-center reveal" id="vehicleFilterTabs">
       <span class="text-[10px] uppercase font-bold tracking-widest text-slate-500 mr-2">Veículo:</span>
       <button data-vehicle="all" class="vehicle-tab active px-3.5 py-2 rounded-xl text-[10px] font-black uppercase tracking-[.12em]">Todos</button>
@@ -484,7 +485,7 @@ input[type=range]{accent-color:#38bdf8}
   <!-- FINAL CTA -->
   <section class="border-t border-white/5 bg-gradient-to-b from-sky-500/[.035] to-transparent">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-20 text-center reveal">
-      <div class="eyebrow mb-4">NCS Garage</div>
+      <div class="eyebrow mb-4">NCS CAR</div>
       <h2 class="font-display text-4xl sm:text-6xl font-black tracking-tight">Seu veículo merece um serviço<br><span class="gradient-text">à altura dele.</span></h2>
       <p class="text-sm text-slate-500 max-w-xl mx-auto mt-5">Mostre o veículo. Conte o objetivo. Deixe o resto com a gente.</p>
       <a id="finalWhatsapp" target="_blank" href="#" class="btn-primary inline-flex items-center gap-2 mt-8 px-7 py-4 rounded-2xl text-xs font-black uppercase tracking-[.14em]"><i data-lucide="arrow-up-right" class="w-4 h-4"></i> Solicitar atendimento</a>
@@ -495,7 +496,7 @@ input[type=range]{accent-color:#38bdf8}
 <footer class="relative z-10 border-t border-white/5 bg-[#020305]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 grid md:grid-cols-[1fr_auto_auto] gap-8 items-start">
     <div>
-      <div class="font-display font-black text-sm tracking-widest text-white">NCS <span class="text-sky-400">GARAGE</span></div>
+      <div class="font-display font-black text-sm tracking-widest text-white">NCS <span class="text-sky-400">CAR</span></div>
       <p class="text-xs text-slate-500 mt-2 max-w-sm">Estética, elétrica e som automotivo com padrão de engenharia em Santa Cruz da Esperança, SP.</p>
     </div>
     <div class="text-xs space-y-2 text-slate-400">
@@ -503,6 +504,7 @@ input[type=range]{accent-color:#38bdf8}
       <div><a href="#experience" class="hover:text-white transition">Início</a></div>
       <div><a href="#services" class="hover:text-white transition">Serviços</a></div>
       <div><a href="#projects" class="hover:text-white transition">Projetos</a></div>
+      <div><a href="loja.html" class="hover:text-white transition text-sky-400 font-bold">Loja de Produtos</a></div>
       <div><a href="#quote" class="hover:text-white transition">Orçamento</a></div>
     </div>
     <div class="text-xs space-y-2 text-slate-400">
@@ -512,7 +514,7 @@ input[type=range]{accent-color:#38bdf8}
     </div>
   </div>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-600 gap-4">
-    <div>© 2026 NCS Garage. Todos os direitos reservados.</div>
+    <div>© 2026 NCS CAR. Todos os direitos reservados.</div>
     <div class="flex items-center gap-4">
       <span>Engineering & Precision</span>
     </div>
@@ -555,7 +557,7 @@ input[type=range]{accent-color:#38bdf8}
   lucide.createIcons();
 
   let allProjects = [];
-  let showAllProjects = false; // Controle de estado para expandir/recolher projetos
+  let showAllProjects = false;
 
   window.addEventListener('mousemove', e => {
     document.documentElement.style.setProperty('--mx', e.clientX + 'px');
@@ -579,7 +581,6 @@ input[type=range]{accent-color:#38bdf8}
     a.addEventListener('click', () => mobileMenu.classList.remove('open'));
   });
 
-  // Dados dos serviços
   const servicesData = [
     {
       id: "01",
@@ -684,7 +685,6 @@ input[type=range]{accent-color:#38bdf8}
   document.getElementById('serviceTypeFilter')?.addEventListener('change', renderServices);
   renderServices();
 
-  // Simulador de orçamento
   const quoteChoices = [
     { id: 'estetica_avancada', name: 'Lavagem Técnica de Motor', price: 50, cat: 'Estética' },
     { id: 'higienizacao_interna', name: 'Lavagem Detalhada', price: 150, cat: 'Estética' },
@@ -752,7 +752,7 @@ input[type=range]{accent-color:#38bdf8}
 
   document.getElementById('copyQuote')?.addEventListener('click', () => {
     const checkboxes = choicesContainer?.querySelectorAll('input[type="checkbox"]:checked') || [];
-    let text = `Prévia NCS Garage:\nVeículo: ${document.getElementById('vehicle')?.value}\nPrioridade: ${document.getElementById('priority')?.value}\n`;
+    let text = `Prévia NCS CAR:\nVeículo: ${document.getElementById('vehicle')?.value}\nPrioridade: ${document.getElementById('priority')?.value}\n`;
     checkboxes.forEach(cb => text += `- ${cb.dataset.name}\n`);
     navigator.clipboard.writeText(text);
     const toast = document.getElementById('toast');
@@ -901,13 +901,11 @@ input[type=range]{accent-color:#38bdf8}
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // Função auxiliar para esconder o contentor de carregar mais se necessário
   function removeExtraContainers() {
     const loadMoreContainer = document.getElementById('loadMoreProjectsContainer');
     if (loadMoreContainer) loadMoreContainer.style.display = 'none';
   }
 
-  // Renderização e filtragem dos projetos no #projects com suporte a paginação e recolha mobile
   function renderProjectsList(projectsToDisplay) {
     const grid = document.getElementById('projectsGrid');
     if (!grid) return;
@@ -919,7 +917,6 @@ input[type=range]{accent-color:#38bdf8}
       return;
     }
 
-    // Limita a exibição inicial a 4 projetos se showAllProjects for false
     const limit = showAllProjects ? projectsToDisplay.length : 4;
     const slicedProjects = projectsToDisplay.slice(0, limit);
 
@@ -959,7 +956,6 @@ input[type=range]{accent-color:#38bdf8}
 
       grid.appendChild(article);
 
-      // OTIMIZAÇÃO MOBILE: Injeta o botão de recolher logo abaixo do 4º item se a lista estiver expandida
       if (showAllProjects && index === 3 && projectsToDisplay.length > 4) {
         const collapseBar = document.createElement('div');
         collapseBar.id = 'inlineCollapseContainer';
@@ -980,7 +976,6 @@ input[type=range]{accent-color:#38bdf8}
       }
     });
 
-    // Gerenciamento do botão inferior tradicional (no fim da lista)
     let loadMoreContainer = document.getElementById('loadMoreProjectsContainer');
     if (!loadMoreContainer) {
       loadMoreContainer = document.createElement('div');
@@ -1040,7 +1035,7 @@ input[type=range]{accent-color:#38bdf8}
       document.querySelectorAll('#projects #vehicleFilterTabs button').forEach(b => b.classList.add('text-slate-500'));
       btn.classList.add('active', 'text-white');
       btn.classList.remove('text-slate-500');
-      showAllProjects = false; // Reseta o estado ao trocar de aba de filtro
+      showAllProjects = false;
       filterAndRenderProjects();
     });
   });
