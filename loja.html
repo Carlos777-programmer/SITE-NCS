@@ -334,7 +334,7 @@
 
     async function loadStoreProducts() {
       try {
-        const response = await fetch('/api/produtos/');
+        const response = await fetch('https://ncscar.pythonanywhere.com/api/produtos/');
         if (!response.ok) throw new Error('Erro na resposta da API');
         
         const data = await response.json();
